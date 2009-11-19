@@ -1,4 +1,4 @@
-set gfn=Monospace\ 13
+set gfn=Monospace\ 11
 colorscheme darkspectrum
 set nu!
 set hlsearch
