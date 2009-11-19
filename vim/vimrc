@@ -1,0 +1,15 @@
+set gfn=Monospace\ 13
+colorscheme darkspectrum
+set nu!
+set hlsearch
+set softtabstop=2
+set shiftwidth=2
+set nocompatible      " We're running Vim, not Vi!
+syntax on             " Enable syntax highlighting
+filetype on           " Enable filetype detection
+filetype indent on    " Enable filetype-specific indenting
+filetype plugin on    " Enable filetype-specific plugins
+compiler ruby         " Enable compiler support for ruby
+set nobackup
+set nowrap
+set guioptions-=T     " Disable toolbars by default
