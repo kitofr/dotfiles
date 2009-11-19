@@ -107,8 +107,9 @@ fi
 # some more ls aliases
 alias ..='cd ..'
 alias cd..='..'
+alias ll='ls -l -h'
+alias lla='ls -l -a -h'
 alias lldf='ll -d -F'
-alias lla='ls -d -A'
 alias la='ls -A'
 alias l='ls -CF'
 alias cls=clear
