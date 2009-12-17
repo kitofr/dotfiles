@@ -1,0 +1,9 @@
+desc "Removes old .bashrc/.vimrc and .vim files/folders in favour of links towards this folder"
+task :install do
+  sh "rm -f ~/.bashrc"
+  sh "ln -s ~/dotfiles/.bashrc ~/.bashrc"
+
+  sh "rm -rf ~/.*vim*"
+  sh "ln -s ~/dotfiles/vim/vimrc ~/.vimrc"
+  sh "ln -s ~/dotfiles/vim ~/.vim"
+end
