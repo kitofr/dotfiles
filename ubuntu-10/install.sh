@@ -4,7 +4,7 @@
 apt-get install vim-gnome
 
 # source control
-apt-get install git-core subersion
+apt-get install git-core subversion
 
 # servers
 apt-get install apache2 mysql-server mysql-query-browser 
