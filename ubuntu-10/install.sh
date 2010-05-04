@@ -31,8 +31,5 @@ gem install passenger -v=2.2.11
 apt-get install apache2-prefork-dev libapr1-dev libaprutil1-dev --assume-yes
 passenger-install-apache2-module
 
-PASSENGER_CONF="LoadModule passenger_module /var/lib/gems/1.8/gems/passenger-2.2.11/ext/apache2/mod_passenger.so
-PassengerRoot /var/lib/gems/1.8/gems/passenger-2.2.11
-PassengerRuby /usr/bin/ruby1.8
-"
+PASSENGER_CONF="LoadModule passenger_module /var/lib/gems/1.8/gems/passenger-2.2.11/ext/apache2/mod_passenger.so\nPassengerRoot /var/lib/gems/1.8/gems/passenger-2.2.11\nPassengerRuby /usr/bin/ruby1.8"
 echo $PASSENGER_CONF > /etc/apache2/conf.d/passenger.conf
