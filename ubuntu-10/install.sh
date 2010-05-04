@@ -14,7 +14,7 @@ apt-get install ruby rake rubygems libxslt1-dev irb ri rdoc ruby1.8-dev libzlib-
 
 # install gems
 gem install cucumber -v=0.6.4
-gem install actionmailer actionpack activerecord activeresource activesupport acts_as_audited authlogic builder cgi_multipart_eof_fix cucumber-rails daemons database_cleaner diff-lcs fastthread gem_plugin haml jrails json_pure mocha mongrel open4 polyglot rack rack-test rails rake rspec rspec-rails rubygems-update selenium-client term-ansicolor treetop uuidtools vlad nokogiri fastercsv webrat
+gem install actionmailer actionpack activerecord activeresource activesupport acts_as_audited authlogic builder cgi_multipart_eof_fix cucumber-rails daemons database_cleaner diff-lcs fastthread gem_plugin haml jrails json_pure mocha mongrel mysql open4 polyglot rack rack-test rails rake rspec rspec-rails rubygems-update selenium-client term-ansicolor treetop uuidtools vlad nokogiri fastercsv webrat
 
 gem sources -a http://gems.github.com
 gem install mislav-will_paginate spicycode-rcov
