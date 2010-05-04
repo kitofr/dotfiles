@@ -35,4 +35,4 @@ PASSENGER_CONF="LoadModule passenger_module /var/lib/gems/1.8/gems/passenger-2.2
 PassengerRoot /var/lib/gems/1.8/gems/passenger-2.2.11
 PassengerRuby /usr/bin/ruby1.8
 "
-echo @PASSENGER_CONF > /etc/apache2/conf.d/passenger.conf
+echo $PASSENGER_CONF > /etc/apache2/conf.d/passenger.conf
