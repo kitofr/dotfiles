@@ -126,6 +126,4 @@ if [ -f /etc/bash_completion ]; then
     . /etc/bash_completion
 fi
 
-source ~/.git-completion.sh
-
 export PATH=/var/lib/gems/1.8/bin:$PATH
