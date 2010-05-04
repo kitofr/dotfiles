@@ -14,7 +14,7 @@ apt-get install ruby rake rubygems libxslt1-dev irb ri rdoc ruby1.8-dev libzlib-
 
 # install gems
 gem install cucumber -v=0.6.4
-gem install actionmailer actionpack activerecord activeresource activesupport acts_as_audited authlogic builder cgi_multipart_eof_fix cucumber-rails daemons database_cleaner diff-lcs fastthread gem_plugin haml jrails json_pure mocha mongrel open4 passenger polyglot rack rack-test rails rake rspec rspec-rails rubygems-update selenium-client term-ansicolor treetop uuidtools vlad nokogiri fastercsv webrat
+gem install actionmailer actionpack activerecord activeresource activesupport acts_as_audited authlogic builder cgi_multipart_eof_fix cucumber-rails daemons database_cleaner diff-lcs fastthread gem_plugin haml jrails json_pure mocha mongrel open4 polyglot rack rack-test rails rake rspec rspec-rails rubygems-update selenium-client term-ansicolor treetop uuidtools vlad nokogiri fastercsv webrat
 
 gem sources -a http://gems.github.com
 gem install mislav-will_paginate spicycode-rcov
@@ -25,3 +25,14 @@ gem install mislav-will_paginate spicycode-rcov
 
 # add gem/bin to path
 PATH=$PATH:/var/lib/gems/1.8/bin:/home/dev/.gem/ruby/1.8/bin
+
+#setup passenger
+gem install passenger -v=2.2.11
+apt-get install apache2-prefork-dev libapr1-dev libaprutil1-dev
+passenger-install-apache2-module
+
+PASSENGER_CONF = "LoadModule passenger_module /var/lib/gems/1.8/gems/passenger-2.2.11/ext/apache2/mod_passenger.so
+PassengerRoot /var/lib/gems/1.8/gems/passenger-2.2.11
+PassengerRuby /usr/bin/ruby1.8
+"
+echo @PASSENGER_CONF > /etc/apache2/conf.d/passenger.conf
