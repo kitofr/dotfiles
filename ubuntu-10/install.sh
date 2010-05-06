@@ -7,9 +7,20 @@ apt-get install git-core subversion --assume-yes
 apt-get install apache2 mysql-server mysql-query-browser --assume-yes
 
 # desktop tools
-if [ $# -gt 0 -a $1 = "desktop" ]; then
-  echo "Installing desktop tools"
-  apt-get install vim-gnome --assume-yes
+if [ $# -gt 0 -a $1 = "development" ]; then
+  echo "Installing development tools"
+  apt-get install vim-gnome xvfb --assume-yes
+  
+  if [ $2 = "rubymine"]; then
+    # install java and unpack rubymine
+    echo "!!!Experimental!!! - You'll need to set your JAVA_HOME/JDK_HOME/RUBYMINE_JDK after installation"
+    echo "@see_also : http://www.jetbrains.net/devnet/message/5230386;jsessionid=24F5BDD42D5E5FFBB59D4AB6AC155D35"
+    apt-get install openjdk-6-jre-headless openjdk-6-jdk --assume-yes
+    wget http://download.jetbrains.com/ruby/rubymine-2.0.2.tar.gz 
+    tar -xvzf rubymine-2.0.2.tar.gz
+    mv rubymine-2.0.2 /opt/rubymine
+    ln -s /usr/bin/java /bin/java
+  fi
 fi
 
 # ruby (and deps)
