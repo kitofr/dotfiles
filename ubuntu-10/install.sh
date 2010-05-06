@@ -13,7 +13,7 @@ if [ $# -gt 0 -a $1 = "development" ]; then
   
   if [ $2 = "rubymine"]; then
     # install java and unpack rubymine
-    echo "!!!Experimental!!! - You'll need to set your JAVA_HOME/JDK_HOME/RUBYMINE_JDK after installation"
+    echo "!!!Experimental!!! - You'll need to set your JAVA_HOME/JDK_HOME/RUBYMINE_JDK after installation if you 'care' about warnings."
     echo "@see_also : http://www.jetbrains.net/devnet/message/5230386;jsessionid=24F5BDD42D5E5FFBB59D4AB6AC155D35"
     apt-get install openjdk-6-jre-headless openjdk-6-jdk --assume-yes
     wget http://download.jetbrains.com/ruby/rubymine-2.0.2.tar.gz 
