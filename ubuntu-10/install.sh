@@ -65,3 +65,6 @@ echo "    Allow from all" >> $CONF_FILE
 echo "    Options -MultiViews" >> $CONF_FILE
 echo "  </Directory>" >> $CONF_FILE
 echo "</VirtualHost>" >> $CONF_FILE
+
+# kill apache default site
+a2dissite default
