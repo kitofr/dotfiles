@@ -24,7 +24,7 @@ if [ $# -gt 0 -a $1 = "development" ]; then
 fi
 
 # ruby (and deps)
-apt-get install ruby rake rails rubygems libdbd-mysql-ruby1.8 libxslt1-dev irb ri rdoc ruby1.8-dev libzlib-ruby libyaml-ruby libreadline-ruby libncurses-ruby libcurses-ruby libruby libruby-extras libfcgi-dev libfcgi-ruby1.8 build-essential libopenssl-ruby libdbm-ruby libdbi-ruby libdbd-sqlite3-ruby sqlite3 libsqlite3-dev libsqlite3-ruby libxml-ruby libxml2-dev --assume-yes
+apt-get install ruby rake rails rubygems libdbd-mysql-ruby1.8 libxslt1-dev irb ri rdoc ruby1.8-dev libzlib-ruby libyaml-ruby libreadline-ruby libncurses-ruby libcurses-ruby libruby libruby-extras libfcgi-dev libfcgi-ruby1.8 build-essential libopenssl-ruby libdbm-ruby libdbi-ruby libdbd-sqlite3-ruby sqlite3 libsqlite3-dev librestclient-ruby1.8 libsqlite3-ruby libxml-ruby libxml2-dev --assume-yes
 
 # install gems
 GEM_OPTS="-q --backtrace --no-ri --no-rdoc"
