@@ -4,7 +4,7 @@
 apt-get install git-core subversion --assume-yes
 
 # servers
-apt-get install apache2  --assume-yes
+apt-get install apache2 apache2-mpm-prefork apache2-prefork-dev --assume-yes
 
 # desktop tools
 if [ $# -gt 0 -a $1 = "development" ]; then
@@ -24,13 +24,15 @@ if [ $# -gt 0 -a $1 = "development" ]; then
 fi
 
 # ruby (and deps)
-apt-get install ruby rake rails rubygems libdbd-mysql-ruby1.8 libxslt1-dev irb ri rdoc ruby1.8-dev libzlib-ruby libyaml-ruby libreadline-ruby libncurses-ruby libcurses-ruby libruby libruby-extras libfcgi-ruby1.8 build-essential libopenssl-ruby libdbm-ruby libdbi-ruby libdbd-sqlite3-ruby sqlite3 libsqlite3-dev libsqlite3-ruby libxml-ruby libxml2-dev --assume-yes
+apt-get install ruby rake rails rubygems libdbd-mysql-ruby1.8 libxslt1-dev irb ri rdoc ruby1.8-dev libzlib-ruby libyaml-ruby libreadline-ruby libncurses-ruby libcurses-ruby libruby libruby-extras libfcgi-dev libfcgi-ruby1.8 build-essential libopenssl-ruby libdbm-ruby libdbi-ruby libdbd-sqlite3-ruby sqlite3 libsqlite3-dev libsqlite3-ruby libxml-ruby libxml2-dev --assume-yes
 
 # install gems
 GEM_OPTS="-q --backtrace --no-ri --no-rdoc"
 gem install cucumber -v=0.6.4 $GEM_OPTS
-gem install rack open4 $GEM_OPTS
-gem install actionmailer actionpack activerecord activeresource activesupport acts_as_audited authlogic builder cgi_multipart_eof_fix cucumber-rails daemons database_cleaner diff-lcs fastthread gem_plugin haml jrails json_pure mocha mongrel mysql polyglot rack-test rails rake rspec rspec-rails rubygems-update selenium-client term-ansicolor treetop uuidtools vlad nokogiri fastercsv webrat rest-client simple-rss test-spec camping fcgi machinist faker $GEM_OPTS
+gem install rack -v=1.0.0 $GEM_OPTS
+gem install open4 -v=0.9.0 $GEM_OPTS
+gem install gherkin 
+gem install actionmailer actionpack activerecord activeresource activesupport acts_as_audited authlogic builder cgi_multipart_eof_fix cucumber-rails daemons database_cleaner diff-lcs fastthread gem_plugin haml jrails json_pure memcache-client mocha mongrel mysql polyglot rack-test rails rake rspec rspec-rails rubygems-update selenium-client term-ansicolor treetop uuidtools vlad nokogiri fastercsv webrat rest-client simple-rss test-spec camping fcgi machinist faker $GEM_OPTS
 
 gem sources -a http://gems.github.com
 gem install mislav-will_paginate spicycode-rcov $GEM_OPTS
