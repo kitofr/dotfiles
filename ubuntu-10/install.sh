@@ -4,12 +4,12 @@
 apt-get install git-core subversion --assume-yes
 
 # servers
-apt-get install apache2 mysql-server mysql-query-browser --assume-yes
+apt-get install apache2  --assume-yes
 
 # desktop tools
 if [ $# -gt 0 -a $1 = "development" ]; then
   echo "Installing development tools"
-  apt-get install vim-gnome xvfb --assume-yes
+  apt-get install vim-gnome xvfb mysql-server mysql-query-browser --assume-yes
   
   if [ $2 = "rubymine"]; then
     # install java and unpack rubymine
@@ -30,7 +30,7 @@ apt-get install ruby rake rubygems libdbd-mysql-ruby1.8 libxslt1-dev irb ri rdoc
 GEM_OPTS="-q --backtrace --no-ri --no-rdoc"
 gem install cucumber -v=0.6.4 $GEM_OPTS
 gem install rack open4
-gem install actionmailer actionpack activerecord activeresource activesupport acts_as_audited authlogic builder cgi_multipart_eof_fix cucumber-rails daemons database_cleaner diff-lcs fastthread gem_plugin haml jrails json_pure mocha mongrel mysql polyglot rack-test rails rake rspec rspec-rails rubygems-update selenium-client term-ansicolor treetop uuidtools vlad nokogiri fastercsv webrat rest-client simple-rss test-spec camping fcgi $GEM_OPTS
+gem install actionmailer actionpack activerecord activeresource activesupport acts_as_audited authlogic builder cgi_multipart_eof_fix cucumber-rails daemons database_cleaner diff-lcs fastthread gem_plugin haml jrails json_pure mocha mongrel mysql polyglot rack-test rails rake rspec rspec-rails rubygems-update selenium-client term-ansicolor treetop uuidtools vlad nokogiri fastercsv webrat rest-client simple-rss test-spec camping fcgi machinist faker $GEM_OPTS
 
 gem sources -a http://gems.github.com
 gem install mislav-will_paginate spicycode-rcov $GEM_OPTS
