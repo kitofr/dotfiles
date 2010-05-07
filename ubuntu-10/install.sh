@@ -68,3 +68,4 @@ echo "</VirtualHost>" >> $CONF_FILE
 
 # kill apache default site
 a2dissite default
+/etc/init.d/apache2 restart
