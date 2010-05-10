@@ -32,7 +32,7 @@ gem install cucumber -v=0.6.4 $GEM_OPTS
 gem install rack -v=1.0.1 $GEM_OPTS
 gem install open4 -v=0.9.0 $GEM_OPTS
 gem install gherkin $GEM_OPTS 
-gem install actionmailer actionpack activerecord activeresource activesupport acts_as_audited authlogic builder cgi_multipart_eof_fix cucumber-rails daemons database_cleaner diff-lcs fastthread gem_plugin haml jrails json_pure memcache-client mocha mongrel mysql polyglot rack-test rails rake rspec rspec-rails rubygems-update selenium-client term-ansicolor treetop uuidtools vlad nokogiri fastercsv webrat rest-client simple-rss test-spec camping fcgi machinist faker $GEM_OPTS
+gem install actionmailer actionpack activerecord activeresource activesupport acts_as_audited authlogic builder cgi_multipart_eof_fix cucumber-rails daemons database_cleaner diff-lcs fastthread gem_plugin haml jrails json_pure money memcache-client mocha mongrel mysql polyglot rack-test rails rake rspec rspec-rails rubygems-update selenium-client term-ansicolor treetop uuidtools vlad nokogiri fastercsv webrat rest-client simple-rss test-spec camping fcgi machinist syntax faker $GEM_OPTS
 
 gem sources -a http://gems.github.com
 gem install mislav-will_paginate spicycode-rcov $GEM_OPTS
