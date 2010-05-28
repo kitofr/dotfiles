@@ -1,0 +1,6 @@
+#!/bin/bash
+
+route delete defualt
+route add default gw gw2.stockholm.cint.com
+route add -net 10.23.96.0 netmask 255.255.248.0 gw 192.168.121.3
+

@@ -13,4 +13,3 @@ compiler ruby         " Enable compiler support for ruby
 set nobackup
 set nowrap
 set guioptions-=T     " Disable toolbars by default
-autocmd BufNewFile,BufRead *.rb source ~/.vim/scripts/rubysnippets.vim 
