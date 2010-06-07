@@ -6,4 +6,5 @@ task :install do
   sh "rm -rf ~/.*vim*"
   sh "ln -s ~/dotfiles/vim/vimrc ~/.vimrc"
   sh "ln -s ~/dotfiles/vim ~/.vim"
+  sh "sudo ln -s ~/dotfiles/git/git-completion.bash /etc/bash_completion.d/git-completion"
 end
