@@ -1,7 +1,8 @@
-set gfn=Monospace\ 11
-colorscheme darkspectrum
+set gfn=DejaVuSansMono\ 11
+colorscheme vividchalk
 set nu!
 set hlsearch
+set tabstop=2
 set softtabstop=2
 set shiftwidth=2
 set nocompatible      " We're running Vim, not Vi!

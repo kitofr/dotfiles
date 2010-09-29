@@ -28,6 +28,7 @@ apt-get install ruby rake rails rubygems libdbd-mysql-ruby1.8 libxslt1-dev irb r
 
 # install gems
 GEM_OPTS="-q --backtrace --no-ri --no-rdoc"
+gem update rubygems
 gem install cucumber -v=0.6.4 $GEM_OPTS
 gem install rack -v=1.0.1 $GEM_OPTS
 gem install open4 -v=0.9.0 $GEM_OPTS
@@ -37,12 +38,8 @@ gem install actionmailer actionpack activerecord activeresource activesupport ac
 gem sources -a http://gems.github.com
 gem install mislav-will_paginate spicycode-rcov $GEM_OPTS
 
-# trollop - extra gem... 
-# haml upgrade 2.2.23 -> 2.2.24
-# json-pure upgrade 1.2.4 -> 1.4.2
-
 # add gem/bin to path
-PATH=$PATH:/var/lib/gems/1.8/bin:/home/dev/.gem/ruby/1.8/bin
+PATH=$PATH:/var/lib/gems/1.8/bin:/home/kristoffer/.gem/ruby/1.8/bin
 
 #setup passenger
 gem install passenger -v=2.2.11 $GEM_OPTS
