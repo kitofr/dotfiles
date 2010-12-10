@@ -14,22 +14,6 @@ if [[ -n "$PS1" ]]; then
 	export RAILS_ENV=development
   export EDITOR=vim
 
-	CLASSPATH=/usr/local/lib/ruby/gems/1.8/gems/jruby-openssl-0.5.2/lib/bcprov-jdk14-139.jar
-	CLASSPATH=$CLASSPATH:/usr/local/lib/ruby/gems/1.8/gems/jruby-openssl-0.5.2/lib/bcprov-jdk14-139.jar
-	CLASSPATH=$CLASSPATH:/usr/local/lib/ruby/gems/1.8/gems/jruby-openssl-0.5.2/lib/bcmail-jdk14-139.jar
-	CLASSPATH=$CLASSPATH:/usr/local/lib/ruby/gems/1.8/gems/jruby-openssl-0.5.2/lib/jopenssl.jar
-	CLASSPATH=$CLASSPATH:/usr/local/lib/ruby/gems/1.8/gems/mongrel-1.1.5-java/lib/http11.jar
-	CLASSPATH=$CLASSPATH:/usr/local/lib/ruby/gems/1.8/gems/activerecord-jdbc-adapter-0.9.2/lib/jdbc_adapter/jdbc_adapter_internal.jar
-	CLASSPATH=$CLASSPATH:/usr/local/lib/ruby/gems/1.8/gems/webrat-0.5.3/vendor/selenium-server.jar
-	CLASSPATH=$CLASSPATH:/usr/local/lib/ruby/gems/1.8/gems/warbler-0.9.14/lib/jruby-rack-0.9.5.jar
-	CLASSPATH=$CLASSPATH:/usr/local/lib/ruby/gems/1.8/gems/jruby-jars-1.3.1/lib/jruby-stdlib-1.3.1.jar
-	CLASSPATH=$CLASSPATH:/usr/local/lib/ruby/gems/1.8/gems/jruby-jars-1.3.1/lib/jruby-core-1.3.1.jar
-	CLASSPATH=$CLASSPATH:/usr/local/lib/ruby/gems/1.8/gems/jdbc-mysql-5.0.4/lib/mysql-connector-java-5.0.4-bin.jar
-	CLASSPATH=$CLASSPATH:/usr/local/lib/ruby/site_ruby/shared/yecht.jar:/usr/local/lib/profile.jar
-	export CLASSPATH
-
-	export TRACKER_API_TOKEN=911c459576a40d9da1141439f0c59b8c
-
 	# append to the history file, don't overwrite it
 	shopt -s histappend
 
@@ -119,8 +103,6 @@ if [[ -n "$PS1" ]]; then
 	alias h=history
 	alias hc='history -c'
 	alias sudo='sudo env PATH=$PATH'
-
-	alias jrake='jruby -S rake'
 
 	# enable programmable completion features (you don't need to enable
 	# this, if it's already enabled in /etc/bash.bashrc and /etc/profile
