@@ -12,6 +12,7 @@ if [[ -n "$PS1" ]]; then
 	export HISTCONTROL=ignoreboth
 
 	export RAILS_ENV=development
+  export EDITOR=vim
 
 	CLASSPATH=/usr/local/lib/ruby/gems/1.8/gems/jruby-openssl-0.5.2/lib/bcprov-jdk14-139.jar
 	CLASSPATH=$CLASSPATH:/usr/local/lib/ruby/gems/1.8/gems/jruby-openssl-0.5.2/lib/bcprov-jdk14-139.jar
