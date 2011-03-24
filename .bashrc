@@ -103,6 +103,8 @@ if [[ -n "$PS1" ]]; then
 	alias h=history
 	alias hc='history -c'
 	alias sudo='sudo env PATH=$PATH'
+  alias fsi='mono ~/Downloads/FSharp-2.0.0.0/bin/fsi.exe'
+  alias fsc='mono ~/Downloads/FSharp-2.0.0.0/bin/fsc.exe'
 
 	# enable programmable completion features (you don't need to enable
 	# this, if it's already enabled in /etc/bash.bashrc and /etc/profile
