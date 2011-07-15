@@ -1,3 +1,4 @@
+#TODO switch mklink/ln betwen environments
 desc "Removes old .bashrc/.vimrc and .vim files/folders in favour of links towards this folder"
 task :install do
   sh "rm -f ~/.bashrc"
@@ -7,4 +8,12 @@ task :install do
   sh "ln -s ~/dotfiles/vim/vimrc ~/.vimrc"
   sh "ln -s ~/dotfiles/vim ~/.vim"
   sh "sudo ln -s ~/dotfiles/git/git-completion.bash /etc/bash_completion.d/git-completion"
+end
+
+namespace :irb do
+  desc "Links irbrc to ~/.irbrc"
+  task :install do
+    sh "del ~/.irbrc" if File.exists? "~/.irbrc"
+    sh "mklink \".irbrc\" \"~/.irbrc\""
+  end
 end
