@@ -3,8 +3,8 @@ call pathogen#runtime_append_all_bundles()
 if has("gui_gtk2")
   set guifont=Monaco\ 11
 elseif has("gui_win32")
-  "source $VIMRUNTIME/mswin.vim
-  "behave mswin
+  source $VIMRUNTIME/mswin.vim
+  behave mswin
   set guifont=Monaco:h11:cANSI
 endif
 
