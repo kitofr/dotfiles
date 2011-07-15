@@ -26,4 +26,6 @@ Set-Alias l ls
 Set-Alias .. cd..
 
 function trunk { cd "c:\Work\Cint\main" }
+function sampling { cd "c:\Work\Cint\main\src\Cint.Sampling" }
+function scripts { cd "c:\Work\Cint\main\src\Cint.Sampling\scripts\" }
 function kitofr { cd "c:\Work\kitofr" }

@@ -1,4 +1,11 @@
-set gfn=DejaVuSansMono\ 11
+call pathogen#runtime_append_all_bundles()
+
+if has("gui_gtk2")
+  set guifont=Monaco\ 11
+elseif has("gui_win32")
+  set guifont=Monaco:h11:cANSI
+endif
+
 colorscheme vividchalk
 set nu!
 set hlsearch
@@ -16,3 +23,4 @@ set nobackup
 set nowrap
 set guioptions-=T     " Disable toolbars by default
 let mapleader = ","
+let g:calendar_monday = 1
