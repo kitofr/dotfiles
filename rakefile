@@ -4,10 +4,15 @@ task :install do
   sh "rm -f ~/.bashrc"
   sh "ln -s ~/dotfiles/.bashrc ~/.bashrc"
 
+  #vim
   sh "rm -rf ~/.*vim*"
   sh "ln -s ~/dotfiles/vim/vimrc ~/.vimrc"
   sh "ln -s ~/dotfiles/vim ~/.vim"
   sh "sudo ln -s ~/dotfiles/git/git-completion.bash /etc/bash_completion.d/git-completion"
+
+  #fonts
+  sh "rm -rf ~/.fonts"
+  sh "sudo ln -s ~/dotfiles/fonts ~/.fonts"
 end
 
 namespace :irb do
