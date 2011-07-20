@@ -3,6 +3,8 @@ desc "Removes old .bashrc/.vimrc and .vim files/folders in favour of links towar
 task :install do
   sh "rm -f ~/.bashrc"
   sh "ln -s ~/dotfiles/.bashrc ~/.bashrc"
+  sh "rm -f ~/.inputrc"
+  sh "ln -s ~/dotfiles/.inputrc ~/.inputrc"
 
   #vim
   sh "rm -rf ~/.*vim*"
