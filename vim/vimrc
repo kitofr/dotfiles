@@ -1,4 +1,5 @@
-call pathogen#runtime_append_all_bundles()
+call pathogen#infect()
+
 
 if has("gui_gtk2")
   set guifont=Monaco\ 11
@@ -8,8 +9,12 @@ elseif has("gui_win32")
   set guifont=Monaco:h11:cANSI
 endif
 
-
-colorscheme vividchalk
+if has('gui_running')
+    set background=light
+else
+    set background=dark
+endif
+colorscheme solarized
 set bs=2
 set nu!
 set hlsearch

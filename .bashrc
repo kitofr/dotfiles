@@ -58,7 +58,7 @@ if [[ -n "$PS1" ]]; then
 		PS1='${debian_chroot:+($debian_chroot)}\u@\h:\w\$ '
 	fi
 
-  PS1="\$(~/.rvm/bin/rvm-prompt) $PS1" 
+  PS1="\[\033[35;40m\](\$(~/.rvm/bin/rvm-prompt v))\[\033[00m\]$PS1" 
 
 	unset color_prompt force_color_prompt
 

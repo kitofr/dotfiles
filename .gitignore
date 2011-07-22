@@ -1,3 +1,3 @@
-.swp
-.netrwhist
+*.swp
+vim/.netrwhist
 .VimballRecord
