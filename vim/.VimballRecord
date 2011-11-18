@@ -1,1 +1,2 @@
 Align.vba: call delete('/home/kristoffer/.vim/plugin/AlignPlugin.vim')|call delete('/home/kristoffer/.vim/plugin/AlignMapsPlugin.vim')|call delete('/home/kristoffer/.vim/plugin/cecutil.vim')|call delete('/home/kristoffer/.vim/doc/Align.txt')|call delete('/home/kristoffer/.vim/autoload/Align.vim')|call delete('/home/kristoffer/.vim/autoload/AlignMaps.vim')
+screen.vba: call delete('/home/kitofr/.vim/autoload/screen.vim')|call delete('/home/kitofr/.vim/doc/screen.txt')|call delete('/home/kitofr/.vim/plugin/screen.vim')
