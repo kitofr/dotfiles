@@ -7,7 +7,7 @@ rem which can be changed in the securiy policy.
 set VIMRC_SOURCE=%~dp0vimrc
 set VIMRC_TARGET=%HOMEDRIVE%%HOMEPATH%\_vimrc
 set VIMFILES_SOURCE=%~dp0
-set VIMFILES_TARGET=%HOMEDRIVE%%HOMEPATH%\vimfiles
+set VIMFILES_TARGET=%HOMEDRIVE%%HOMEPATH%\.vim
 
 if exist %VIMRC_TARGET% (
 	echo warning: '%VIMRC_TARGET%' file already exists, please delete manually and try again.

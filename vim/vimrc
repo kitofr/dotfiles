@@ -1,5 +1,29 @@
-call pathogen#infect()
+set nocompatible
 
+filetype off
+set rtp+=~/.vim/bundle/vundle
+
+call vundle#rc()
+Bundle 'gmarik/vundle'
+
+" original repos on github
+Bundle 'tpope/vim-fugitive'
+Bundle 'kitofr/vim-functions'
+Bundle 'neochrome/todo.vim'
+Bundle 'scrooloose/nerdtree'
+Bundle 'Gist.vim'
+Bundle 'Align'
+Bundle 'VimClojure'
+Bundle 'surround.vim'
+Bundle 'Gist.vim'
+Bundle 'screen.vim'
+
+" vim-scripts repos
+" Bundle 'L9'
+" Bundle 'FuzzyFinder'
+" non github repos
+" Bundle 'git://git.wincent.com/command-t.git'
+filetype plugin indent on
 
 if has("gui_gtk2")
   set guifont=Monaco\ 11
@@ -30,8 +54,6 @@ let classpath = join(
    \ vimfiles."/lib/*"
    \],
    \ sep)
-"let vimclojure#HighlightBuiltins = 1      " Highlight Clojure's builtins
-" let vimclojure#ParenRainbow = 1           " Rainbow parentheses'!
 
 " Settings for VimClojure
 let vimclojureRoot = vimfiles."/bundle/vimclojure"
@@ -39,20 +61,8 @@ let vimclojure#HighlightBuiltins=1
 let vimclojure#HighlightContrib=1
 let vimclojure#DynamicHighlighting=1
 let vimclojure#ParenRainbow=1
-"let vimclojure#WantNailgun = 0
-"let vimclojure#NailgunClient = vimclojureRoot."/lib/nailgun/ng"
-"if windows
-    " In stupid windows, no forward slashes, and tack on .exe
-"    let vimclojure#NailgunClient = substitute(vimclojure#NailgunClient, "/", "\\", "g") . ".exe"
-"endif
 
-" Start vimclojure nailgun server (uses screen.vim to manage lifetime)
-"nmap <silent> <Leader>sc :execute "ScreenShell java -cp \"" . classpath . sep . vimclojureRoot . "/lib/*" . "\" vimclojure.nailgun.NGServer 127.0.0.1" <cr>
-" Start a generic Clojure repl (uses screen.vim)
-"nmap <silent> <Leader>sC :execute "ScreenShell java -cp \"" . classpath . "\" clojure.main" <cr>
-
-set background=dark
-colorscheme solarized
+colorscheme darkblue
 set bs=2
 set nu!
 set hlsearch
@@ -62,7 +72,7 @@ set softtabstop=2
 set shiftwidth=2
 set nocompatible      " We're running Vim, not Vi!
 syntax on             " Enable syntax highlighting
-filetype on           " Enable filetype detection
+"filetype on           " Enable filetype detection
 filetype indent on    " Enable filetype-specific indenting
 filetype plugin on    " Enable filetype-specific plugins
 compiler ruby         " Enable compiler support for ruby
