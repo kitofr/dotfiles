@@ -17,6 +17,7 @@ Bundle 'VimClojure'
 Bundle 'surround.vim'
 Bundle 'Gist.vim'
 Bundle 'screen.vim'
+Bundle 'vimwiki'
 
 " vim-scripts repos
 " Bundle 'L9'
