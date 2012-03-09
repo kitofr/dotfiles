@@ -16,7 +16,7 @@ Bundle 'Align'
 Bundle 'VimClojure'
 Bundle 'surround.vim'
 Bundle 'Gist.vim'
-Bundle 'screen.vim'
+Bundle 'Screen-vim---gnu-screentmux'
 Bundle 'vimwiki'
 
 " vim-scripts repos
