@@ -1,5 +1,4 @@
-$psProfileHome = [System.IO.Path]::GetDirectoryName($profile.CurrentUserAllHosts)
-. "$($psProfileHome)\ssh-agent-utils.ps1"
+$psProfileHome = [System.IO.Path]::GetDirectoryName($profile.AllUsersCurrentHost)
 
 function prompt {	
 	$machine = ([System.Environment]::MachineName.ToLower())
