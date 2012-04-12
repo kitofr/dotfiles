@@ -1,23 +1,32 @@
+$psProfileHome = [System.IO.Path]::GetDirectoryName($profile.CurrentUserAllHosts)
+. "$($psProfileHome)\ssh-agent-utils.ps1"
+
 function prompt {	
 	$machine = ([System.Environment]::MachineName.ToLower())
 	$username = ([System.Environment]::UserName.ToLower())
 	$who = "$($username)@$($machine) "
 	$location = "$(convert-path $pwd)"
 	$gitBranch = ""
-	git branch | foreach {
-		if ($_ -match "^\*(.*)"){
-			$gitBranch = $matches[1]
+	$color = "yellow"
+	git branch -v --no-color | foreach {
+		if ($_ -match "^\* (\(no branch\)|\S+)(?:.*\[ahead (\d+)\])?"){
+			$gitBranch = " " + $matches[1]
+			if($matches[2]){
+				$gitBranch += "(+$($matches[2]))"
+			}
+			if((git status --porcelain)) {
+				$color = "red"
+			}
 		}
 	}
 
 	Write-Host ("[") -nonewline
-	Write-Host ($who) -nonewline -foregroundcolor yellow
+	Write-Host ($who) -nonewline
 	Write-Host ($location) -nonewline
 	if($gitBranch) {
-		Write-Host ($gitBranch) -nonewline -foregroundcolor green
+		Write-Host ($gitBranch) -nonewline -foregroundcolor $color
 	}
-	Write-Host ("] @ ") -nonewline
-	Write-Host (Get-Date)
+	Write-Host ("]")
 	Write-Host (">") -nonewline
 	return " "
 }
@@ -25,7 +34,5 @@ function prompt {
 Set-Alias l ls
 Set-Alias .. cd..
 
-function trunk { cd "c:\Work\Cint\main" }
-function sampling { cd "c:\Work\Cint\main\src\Cint.Sampling" }
-function scripts { cd "c:\Work\Cint\main\src\Cint.Sampling\scripts\" }
-function kitofr { cd "c:\Work\kitofr" }
+function trunk { cd "c:\code\work\main" }
+function kitofr { cd "c:\code\kitofr" }
