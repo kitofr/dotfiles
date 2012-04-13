@@ -65,6 +65,7 @@ let vimclojure#ParenRainbow=1
 
 colorscheme darkblue
 set bs=2
+set vb
 set nu!
 set hlsearch
 set expandtab					" tabs to spaces, just do :retab

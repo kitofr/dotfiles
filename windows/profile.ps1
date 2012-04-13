@@ -35,3 +35,4 @@ Set-Alias .. cd..
 
 function trunk { cd "c:\code\work\main" }
 function kitofr { cd "c:\code\kitofr" }
+function csa { cd "c:\code\work\main\src\web.cpx.csa\content" }
