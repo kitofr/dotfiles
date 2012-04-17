@@ -18,6 +18,7 @@ Bundle 'surround.vim'
 Bundle 'Gist.vim'
 Bundle 'Screen-vim---gnu-screentmux'
 Bundle 'vimwiki'
+Bundle 'vim-coffee-script'
 
 " vim-scripts repos
 " Bundle 'L9'
