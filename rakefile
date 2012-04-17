@@ -1,20 +1,28 @@
 #TODO switch mklink/ln betwen environments
 desc "Removes old .bashrc/.vimrc and .vim files/folders in favour of links towards this folder"
-task :install do
+task :install => [:bash_rc,:vim,:fonts]
+
+def pwd 
+  @pwd = `pwd` unless @pwd
+end
+
+task :bash_rc do
   sh "rm -f ~/.bashrc"
-  sh "ln -s ~/dotfiles/.bashrc ~/.bashrc"
+  sh "ln -s #{pwd}/.bashrc ~/.bashrc"
   sh "rm -f ~/.inputrc"
-  sh "ln -s ~/dotfiles/.inputrc ~/.inputrc"
+  sh "ln -s #{pwd}/.inputrc ~/.inputrc"
+end
 
-  #vim
+task :vim do
   sh "rm -rf ~/.*vim*"
-  sh "ln -s ~/dotfiles/vim/vimrc ~/.vimrc"
-  sh "ln -s ~/dotfiles/vim ~/.vim"
-  sh "sudo ln -s ~/dotfiles/git/git-completion.bash /etc/bash_completion.d/git-completion"
+  sh "ln -s #{pwd}/vim/vimrc ~/.vimrc"
+  sh "ln -s #{pwd}/vim ~/.vim"
+  sh "sudo ln -s #{pwd}/git/git-completion.bash /etc/bash_completion.d/git-completion"
+end
 
-  #fonts
+task :fonts do
   sh "rm -rf ~/.fonts"
-  sh "sudo ln -s ~/dotfiles/fonts ~/.fonts"
+  sh "sudo ln -s #{pwd}/fonts ~/.fonts"
 end
 
 namespace :irb do
