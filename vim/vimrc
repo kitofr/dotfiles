@@ -11,15 +11,23 @@ Bundle 'tpope/vim-fugitive'
 Bundle 'kitofr/vim-functions'
 Bundle 'neochrome/todo.vim'
 Bundle 'scrooloose/nerdtree'
+Bundle 'wgibbs/vim-irblack'
 Bundle 'Gist.vim'
 Bundle 'Align'
 Bundle 'VimClojure'
 Bundle 'surround.vim'
 Bundle 'Gist.vim'
-Bundle 'Screen-vim---gnu-screentmux'
+"Bundle 'Screen-vim---gnu-screentmux'
 Bundle 'vimwiki'
+"Bundle 'jpalardy/vim-slime'
 Bundle 'vim-coffee-script'
+" snipmate deps
+Bundle "MarcWeber/vim-addon-mw-utils"
+Bundle "tomtom/tlib_vim"
+Bundle "honza/snipmate-snippets"
+Bundle "garbas/vim-snipmate"
 
+"let g:slime_target = "tmux"
 " vim-scripts repos
 " Bundle 'L9'
 " Bundle 'FuzzyFinder'
@@ -64,7 +72,7 @@ let vimclojure#HighlightContrib=1
 let vimclojure#DynamicHighlighting=1
 let vimclojure#ParenRainbow=1
 
-colorscheme darkblue
+colorscheme ir_black
 set bs=2
 set vb
 set nu!
@@ -85,3 +93,8 @@ set guioptions-=T     " Disable toolbars by default
 let mapleader = ","
 let g:calendar_monday = 1
 vnoremap <C-r> "hy:%s/<C-r>h//gc<left><left><left>
+noremap <Up> <Nop>
+noremap <Down> <Nop>
+noremap <Left> <Nop>
+noremap <Right> <Nop>
+runtime macros/matchit.vim
