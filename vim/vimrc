@@ -7,24 +7,35 @@ call vundle#rc()
 Bundle 'gmarik/vundle'
 
 " original repos on github
-Bundle 'tpope/vim-fugitive'
+Bundle 'fugitive.vim'
+Bundle 'git.zip'
 Bundle 'kitofr/vim-functions'
 Bundle 'neochrome/todo.vim'
 Bundle 'scrooloose/nerdtree'
-Bundle 'wgibbs/vim-irblack'
 Bundle 'Align'
 Bundle 'VimClojure'
 Bundle 'surround.vim'
-Bundle 'Gist.vim'
-"Bundle 'Screen-vim---gnu-screentmux'
+" Bundle 'Gist.vim'
 Bundle 'vimwiki'
-"Bundle 'jpalardy/vim-slime'
 Bundle 'vim-coffee-script'
+Bundle 'vim-ruby/vim-ruby'
+Bundle 'syntaxGemfile.vim'
+"Bundle 'jpalardy/vim-slime'
+"Bundle 'Screen-vim---gnu-screentmux'
+
 " snipmate deps
 Bundle "MarcWeber/vim-addon-mw-utils"
 Bundle "tomtom/tlib_vim"
-Bundle "honza/snipmate-snippets"
+Bundle 'Jasmine-snippets-for-snipMate'
+Bundle 'better-snipmate-snippet'
 Bundle "garbas/vim-snipmate"
+
+" Themes
+Bundle 'wgibbs/vim-irblack'
+Bundle "Sorcerer"
+Bundle "railscasts"
+Bundle "github-theme"
+Bundle "Solarized"
 
 "let g:slime_target = "tmux"
 " vim-scripts repos
@@ -71,7 +82,7 @@ let vimclojure#HighlightContrib=1
 let vimclojure#DynamicHighlighting=1
 let vimclojure#ParenRainbow=1
 
-colorscheme ir_black
+colorscheme Solarized
 set bs=2
 set vb
 set nu!
@@ -89,7 +100,6 @@ compiler ruby         " Enable compiler support for ruby
 set nobackup
 set nowrap
 set guioptions-=T     " Disable toolbars by default
-let mapleader = ","
 let g:calendar_monday = 1
 vnoremap <C-r> "hy:%s/<C-r>h//gc<left><left><left>
 noremap <Up> <Nop>
