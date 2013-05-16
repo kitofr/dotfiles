@@ -20,6 +20,7 @@ Bundle 'vimwiki'
 Bundle 'vim-coffee-script'
 Bundle 'vim-ruby/vim-ruby'
 Bundle 'syntaxGemfile.vim'
+Bundle 'Conque-Shell'
 "Bundle 'jpalardy/vim-slime'
 "Bundle 'Screen-vim---gnu-screentmux'
 
@@ -35,75 +36,77 @@ Bundle 'wgibbs/vim-irblack'
 Bundle "Sorcerer"
 Bundle "railscasts"
 Bundle "github-theme"
-Bundle "Solarized"
+  Bundle "Solarized"
 
-"let g:slime_target = "tmux"
-" vim-scripts repos
-" Bundle 'L9'
-" Bundle 'FuzzyFinder'
-" non github repos
-" Bundle 'git://git.wincent.com/command-t.git'
-filetype plugin indent on
+  "let g:slime_target = "tmux"
+  " vim-scripts repos
+  " Bundle 'L9'
+  " Bundle 'FuzzyFinder'
+  " non github repos
+  " Bundle 'git://git.wincent.com/command-t.git'
+  filetype plugin indent on
 
-if has("gui_gtk2")
-  set guifont=Monaco\ 11
-elseif has("gui_win32")
-  source $VIMRUNTIME/mswin.vim
-  behave mswin
-  set guifont=Monaco:h11:cANSI
-endif
+  if has("gui_gtk2")
+    set guifont=Monaco\ 11
+  elseif has("gui_win32")
+    source $VIMRUNTIME/mswin.vim
+    behave mswin
+    set guifont=Monaco:h11:cANSI
+  endif
 
-" Let's remember some things, like where the .vim folder is.
-if has("win32") || has("win64")
-    let windows=1
-    let vimfiles=$HOME . "/vimfiles"
-    let sep=";"
-else
-    let windows=0
-    let vimfiles=$HOME . "/.vim"
-    let sep=":"
-endif
+  " Let's remember some things, like where the .vim folder is.
+  if has("win32") || has("win64")
+      let windows=1
+      let vimfiles=$HOME . "/vimfiles"
+      let sep=";"
+  else
+      let windows=0
+      let vimfiles=$HOME . "/.vim"
+      let sep=":"
+  endif
 
-let classpath = join(
-   \[".",
-   \ "src", "src/main/clojure", "src/main/resources",
-   \ "test", "src/test/clojure", "src/test/resources",
-   \ "classes", "target/classes",
-   \ "lib/*", "lib/dev/*",
-   \ "bin",
-   \ vimfiles."/lib/*"
-   \],
-   \ sep)
+  let classpath = join(
+     \[".",
+     \ "src", "src/main/clojure", "src/main/resources",
+     \ "test", "src/test/clojure", "src/test/resources",
+     \ "classes", "target/classes",
+     \ "lib/*", "lib/dev/*",
+     \ "bin",
+     \ vimfiles."/lib/*"
+     \],
+     \ sep)
 
-" Settings for VimClojure
-let vimclojureRoot = vimfiles."/bundle/vimclojure"
-let vimclojure#HighlightBuiltins=1
-let vimclojure#HighlightContrib=1
-let vimclojure#DynamicHighlighting=1
-let vimclojure#ParenRainbow=1
+  " Settings for VimClojure
+  let vimclojureRoot = vimfiles."/bundle/vimclojure"
+  let vimclojure#HighlightBuiltins=1
+  let vimclojure#HighlightContrib=1
+  let vimclojure#DynamicHighlighting=1
+  let vimclojure#ParenRainbow=1
 
-colorscheme Solarized
-set bs=2
-set vb
-set nu!
-set hlsearch
-set expandtab					" tabs to spaces, just do :retab
-set tabstop=2
-set softtabstop=2
-set shiftwidth=2
-set nocompatible      " We're running Vim, not Vi!
-syntax on             " Enable syntax highlighting
-"filetype on           " Enable filetype detection
-filetype indent on    " Enable filetype-specific indenting
-filetype plugin on    " Enable filetype-specific plugins
-compiler ruby         " Enable compiler support for ruby
-set nobackup
-set nowrap
-set guioptions-=T     " Disable toolbars by default
-let g:calendar_monday = 1
-vnoremap <C-r> "hy:%s/<C-r>h//gc<left><left><left>
-noremap <Up> <Nop>
-noremap <Down> <Nop>
-noremap <Left> <Nop>
-noremap <Right> <Nop>
-runtime macros/matchit.vim
+  colorscheme Solarized
+  set bs=2
+  set vb
+  set nu!
+  set hlsearch
+  set expandtab					" tabs to spaces, just do :retab
+  set tabstop=2
+  set softtabstop=2
+  set shiftwidth=2
+  set nocompatible      " We're running Vim, not Vi!
+  syntax on             " Enable syntax highlighting
+  "filetype on           " Enable filetype detection
+  filetype indent on    " Enable filetype-specific indenting
+  filetype plugin on    " Enable filetype-specific plugins
+  compiler ruby         " Enable compiler support for ruby
+  set nobackup
+  set nowrap
+  set guioptions-=T     " Disable toolbars by default
+  let g:calendar_monday = 1
+  vnoremap <C-r> "hy:%s/<C-r>h//gc<left><left><left>
+  noremap <Up> <Nop>
+  noremap <Down> <Nop>
+  noremap <Left> <Nop>
+  noremap <Right> <Nop>
+  runtime macros/matchit.vim
+let mapleader=','
+" set statusline += %{fugitive#statusline()}
