@@ -7,106 +7,108 @@ call vundle#rc()
 Bundle 'gmarik/vundle'
 
 " original repos on github
-Bundle 'fugitive.vim'
-Bundle 'git.zip'
+Bundle 'tpope/vim-fugitive'
 Bundle 'kitofr/vim-functions'
 Bundle 'neochrome/todo.vim'
 Bundle 'scrooloose/nerdtree'
+Bundle 'wgibbs/vim-irblack'
 Bundle 'Align'
 Bundle 'VimClojure'
 Bundle 'surround.vim'
-" Bundle 'Gist.vim'
-Bundle 'vimwiki'
-Bundle 'vim-coffee-script'
-Bundle 'vim-ruby/vim-ruby'
-Bundle 'syntaxGemfile.vim'
-Bundle 'Conque-Shell'
-"Bundle 'jpalardy/vim-slime'
+"Bundle 'Gist.vim'
 "Bundle 'Screen-vim---gnu-screentmux'
-
+Bundle 'vimwiki'
+"Bundle 'jpalardy/vim-slime'
+Bundle 'vim-coffee-script'
 " snipmate deps
 Bundle "MarcWeber/vim-addon-mw-utils"
 Bundle "tomtom/tlib_vim"
-Bundle 'Jasmine-snippets-for-snipMate'
-Bundle 'better-snipmate-snippet'
+Bundle "honza/vim-snippets"
 Bundle "garbas/vim-snipmate"
+Bundle 'elixir-lang/vim-elixir'
+Bundle 'carlosgaldino/elixir-snippets'
+Bundle 'oceandeep'
 
-" Themes
-Bundle 'wgibbs/vim-irblack'
-Bundle "Sorcerer"
-Bundle "railscasts"
-Bundle "github-theme"
-  Bundle "Solarized"
+"let g:slime_target = "tmux"
+" vim-scripts repos
+" Bundle 'L9'
+" Bundle 'FuzzyFinder'
+" non github repos
+" Bundle 'git://git.wincent.com/command-t.git'
+filetype plugin indent on
 
-  "let g:slime_target = "tmux"
-  " vim-scripts repos
-  " Bundle 'L9'
-  " Bundle 'FuzzyFinder'
-  " non github repos
-  " Bundle 'git://git.wincent.com/command-t.git'
-  filetype plugin indent on
+if has("gui_gtk2")
+  set guifont=Monaco\ 11
+elseif has("gui_win32")
+  source $VIMRUNTIME/mswin.vim
+  behave mswin
+  set guifont=Monaco:h11:cANSI
+endif
 
-  if has("gui_gtk2")
-    set guifont=Monaco\ 11
-  elseif has("gui_win32")
-    source $VIMRUNTIME/mswin.vim
-    behave mswin
-    set guifont=Monaco:h11:cANSI
-  endif
+" Let's remember some things, like where the .vim folder is.
+if has("win32") || has("win64")
+    let windows=1
+    let vimfiles=$HOME . "/vimfiles"
+    let sep=";"
+else
+    let windows=0
+    let vimfiles=$HOME . "/.vim"
+    let sep=":"
+endif
 
-  " Let's remember some things, like where the .vim folder is.
-  if has("win32") || has("win64")
-      let windows=1
-      let vimfiles=$HOME . "/vimfiles"
-      let sep=";"
-  else
-      let windows=0
-      let vimfiles=$HOME . "/.vim"
-      let sep=":"
-  endif
+let classpath = join(
+   \[".",
+   \ "src", "src/main/clojure", "src/main/resources",
+   \ "test", "src/test/clojure", "src/test/resources",
+   \ "classes", "target/classes",
+   \ "lib/*", "lib/dev/*",
+   \ "bin",
+   \ vimfiles."/lib/*"
+   \],
+   \ sep)
 
-  let classpath = join(
-     \[".",
-     \ "src", "src/main/clojure", "src/main/resources",
-     \ "test", "src/test/clojure", "src/test/resources",
-     \ "classes", "target/classes",
-     \ "lib/*", "lib/dev/*",
-     \ "bin",
-     \ vimfiles."/lib/*"
-     \],
-     \ sep)
+" Settings for VimClojure
+let vimclojureRoot = vimfiles."/bundle/vimclojure"
+let vimclojure#HighlightBuiltins=1
+let vimclojure#HighlightContrib=1
+let vimclojure#DynamicHighlighting=1
+let vimclojure#ParenRainbow=1
 
-  " Settings for VimClojure
-  let vimclojureRoot = vimfiles."/bundle/vimclojure"
-  let vimclojure#HighlightBuiltins=1
-  let vimclojure#HighlightContrib=1
-  let vimclojure#DynamicHighlighting=1
-  let vimclojure#ParenRainbow=1
+colorscheme ir_black
+set bs=2
+set vb
+set nu!
+set hlsearch
+set expandtab					" tabs to spaces, just do :retab
+set tabstop=2
+set softtabstop=2
+set shiftwidth=2
+set nocompatible      " We're running Vim, not Vi!
+syntax on             " Enable syntax highlighting
+filetype indent on    " Enable filetype-specific indenting
+filetype plugin on    " Enable filetype-specific plugins
+let g:ruby_path = "C:\Ruby193\bin"
+compiler ruby         " Enable compiler support for ruby
+set nobackup
+set nowrap
+let mapleader = ","
+let g:calendar_monday = 1
+vnoremap <C-r> "hy:%s/<C-r>h//gc<left><left><left>
+noremap <Up> <Nop>
+noremap <Down> <Nop>
+noremap <Left> <Nop>
+noremap <Right> <Nop>
+runtime macros/matchit.vim
+filetype on           " Enable filetype detection
 
-  colorscheme Solarized
-  set bs=2
-  set vb
-  set nu!
-  set hlsearch
-  set expandtab					" tabs to spaces, just do :retab
-  set tabstop=2
-  set softtabstop=2
-  set shiftwidth=2
-  set nocompatible      " We're running Vim, not Vi!
-  syntax on             " Enable syntax highlighting
-  "filetype on           " Enable filetype detection
-  filetype indent on    " Enable filetype-specific indenting
-  filetype plugin on    " Enable filetype-specific plugins
-  compiler ruby         " Enable compiler support for ruby
-  set nobackup
-  set nowrap
-  set guioptions-=T     " Disable toolbars by default
-  let g:calendar_monday = 1
-  vnoremap <C-r> "hy:%s/<C-r>h//gc<left><left><left>
-  noremap <Up> <Nop>
-  noremap <Down> <Nop>
-  noremap <Left> <Nop>
-  noremap <Right> <Nop>
-  runtime macros/matchit.vim
-let mapleader=','
-" set statusline += %{fugitive#statusline()}
+command CsaBuild execute "!pik 187 && rake csa:build:debug"
+command Csabake execute "!pik 187 && rake csa:half_bake"
+command CsaT4 execute "!pik 187 && rake csa:build:t4"
+" remove scrollers... 
+setglobal guioptions-=T     " Disable toolbars by default
+setglobal guioptions-=L
+setglobal guioptions-=l
+setglobal guioptions-=R
+setglobal guioptions-=r
+setglobal guioptions-=b
+setglobal guioptions-=h
