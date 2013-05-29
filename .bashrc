@@ -126,3 +126,4 @@ fi
 export PATH=$HOME/local/bin:$PATH
 
 PATH=$PATH:$HOME/.rvm/bin # Add RVM to PATH for scripting
+PATH=$PATH:$HOME/code/elixir/v0.9.0/bin
