@@ -23,8 +23,12 @@ Bundle 'vim-coffee-script'
 " snipmate deps
 Bundle "MarcWeber/vim-addon-mw-utils"
 Bundle "tomtom/tlib_vim"
-Bundle "honza/snipmate-snippets"
+Bundle "better-snipmate-snippets"
 Bundle "garbas/vim-snipmate"
+
+"Bundle "tpope/vim-classpath"
+Bundle "tpope/vim-dispatch"
+Bundle "tpope/vim-fireplace"
 
 "let g:slime_target = "tmux"
 " vim-scripts repos
