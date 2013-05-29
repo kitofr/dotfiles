@@ -15,7 +15,7 @@ Bundle 'wgibbs/vim-irblack'
 Bundle 'Align'
 Bundle 'VimClojure'
 Bundle 'surround.vim'
-Bundle 'Gist.vim'
+"Bundle 'Gist.vim'
 "Bundle 'Screen-vim---gnu-screentmux'
 Bundle 'vimwiki'
 "Bundle 'jpalardy/vim-slime'
@@ -23,8 +23,11 @@ Bundle 'vim-coffee-script'
 " snipmate deps
 Bundle "MarcWeber/vim-addon-mw-utils"
 Bundle "tomtom/tlib_vim"
-Bundle "better-snipmate-snippets"
+Bundle "honza/vim-snippets"
 Bundle "garbas/vim-snipmate"
+Bundle 'elixir-lang/vim-elixir'
+Bundle 'carlosgaldino/elixir-snippets'
+Bundle 'oceandeep'
 
 "Bundle "tpope/vim-classpath"
 Bundle "tpope/vim-dispatch"
@@ -86,13 +89,12 @@ set softtabstop=2
 set shiftwidth=2
 set nocompatible      " We're running Vim, not Vi!
 syntax on             " Enable syntax highlighting
-"filetype on           " Enable filetype detection
 filetype indent on    " Enable filetype-specific indenting
 filetype plugin on    " Enable filetype-specific plugins
+let g:ruby_path = "C:\Ruby193\bin"
 compiler ruby         " Enable compiler support for ruby
 set nobackup
 set nowrap
-set guioptions-=T     " Disable toolbars by default
 let mapleader = ","
 let g:calendar_monday = 1
 vnoremap <C-r> "hy:%s/<C-r>h//gc<left><left><left>
@@ -101,3 +103,16 @@ noremap <Down> <Nop>
 noremap <Left> <Nop>
 noremap <Right> <Nop>
 runtime macros/matchit.vim
+filetype on           " Enable filetype detection
+
+command CsaBuild execute "!pik 187 && rake csa:build:debug"
+command Csabake execute "!pik 187 && rake csa:half_bake"
+command CsaT4 execute "!pik 187 && rake csa:build:t4"
+" remove scrollers... 
+setglobal guioptions-=T     " Disable toolbars by default
+setglobal guioptions-=L
+setglobal guioptions-=l
+setglobal guioptions-=R
+setglobal guioptions-=r
+setglobal guioptions-=b
+setglobal guioptions-=h

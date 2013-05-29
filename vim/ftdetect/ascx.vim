@@ -1,1 +1,1 @@
-au BufRead,BufNewFile *.aspx    set filetype=html
+au BufRead,BufNewFile *.ascx    set filetype=html
