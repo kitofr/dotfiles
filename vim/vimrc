@@ -47,6 +47,9 @@ filetype off
     Bundle "tpope/vim-dispatch"
     Bundle "tpope/vim-fireplace"
 
+    "My snippets
+    Bundle 'kitofr/kitofr-snippets'
+
     "...All your other bundles...
     if iCanHazVundle == 0
         echo "Installing Bundles, please ignore key map error messages"
@@ -130,6 +133,8 @@ filetype on           " Enable filetype detection
 command CsaBuild execute "!pik 187 && rake csa:build:debug"
 command Csabake execute "!pik 187 && rake csa:half_bake"
 command CsaT4 execute "!pik 187 && rake csa:build:t4"
+command CsaPath execute "set path+=..\**"
+command ExpandSplit execute "vertical resize 800"
 " remove scrollers... 
 setglobal guioptions-=T     " Disable toolbars by default
 setglobal guioptions-=L
