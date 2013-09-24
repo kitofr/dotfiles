@@ -1,6 +1,6 @@
 #TODO switch mklink/ln betwen environments
 desc "Removes old .bashrc/.vimrc and .vim files/folders in favour of links towards this folder"
-task :install => [:bash_rc,:vim,:fonts]
+task :install => [:bash_rc,:vim,:fonts,:tmux]
 
 def pwd 
   @pwd = `pwd` unless @pwd
@@ -20,9 +20,18 @@ task :vim do
   sh "sudo ln -s #{pwd}/git/git-completion.bash /etc/bash_completion.d/git-completion"
 end
 
+task :tmux do
+  sh "ln -s #{pwd}/tmux.conf ~/.tmux.conf"
+end
+
 task :fonts do
   sh "rm -rf ~/.fonts"
   sh "sudo ln -s #{pwd}/fonts ~/.fonts"
+end
+
+task :clojure do
+  sh "export PATH=~/dotfiles/clojure/clj:$PATH"
+  sh "sudo ln -s #{pwd}/clojure/completions.clj ~/.completions"
 end
 
 namespace :irb do

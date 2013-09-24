@@ -108,6 +108,7 @@ if [[ -n "$PS1" ]]; then
 	alias sudo='sudo env PATH=$PATH'
   alias fsi='mono ~/Downloads/FSharp-2.0.0.0/bin/fsi.exe'
   alias fsc='mono ~/Downloads/FSharp-2.0.0.0/bin/fsc.exe'
+  alias brepl='rlwrap lein trampoline cljsbuild repl-listen'
 
 	# enable programmable completion features (you don't need to enable
 	# this, if it's already enabled in /etc/bash.bashrc and /etc/profile
@@ -126,4 +127,6 @@ fi
 export PATH=$HOME/local/bin:$PATH
 
 PATH=$PATH:$HOME/.rvm/bin # Add RVM to PATH for scripting
-PATH=$PATH:$HOME/code/elixir/v0.9.0/bin
+PATH=$PATH:$HOME/bin/elixir/bin
+
+[ -z "$TMUX" ] && export TERM=xterm-256color
