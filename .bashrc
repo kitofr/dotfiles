@@ -53,7 +53,7 @@ if [[ -n "$PS1" ]]; then
 	fi
 
 	if [ "$color_prompt" = yes ]; then
-		PS1='${debian_chroot:+($debian_chroot)}\[\033[01;32m\]\u@\h\[\033[00m\]:\[\033[01;34m\]\w\[\033[00m\]\[\033[01;32m\] $(__git_ps1 "[%s]")\[\033[00m\]λ '
+		PS1='\[\033[01;34m\]\w\[\033[00m\]\[\033[01;32m\] $(__git_ps1 "[%s]")\[\033[00m\]λ '
 	else
 		PS1='${debian_chroot:+($debian_chroot)}\u@\h:\w\λ '
 	fi
@@ -123,6 +123,8 @@ fi
 
 # This is a good place to source rvm v v v
 [[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm"  # This loads RVM into a shell session.
+
+[ -z "$TMUX" ] && export TERM=xterm-256color
 
 export PATH=$HOME/local/bin:$PATH
 
