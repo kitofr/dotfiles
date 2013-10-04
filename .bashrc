@@ -55,7 +55,7 @@ if [[ -n "$PS1" ]]; then
 	if [ "$color_prompt" = yes ]; then
 		PS1='\[\033[01;34m\]\w\[\033[00m\]\[\033[01;32m\] $(__git_ps1 "[%s]")\[\033[00m\]λ '
 	else
-		PS1='${debian_chroot:+($debian_chroot)}\u@\h:\w\λ '
+		PS1='\w\λ '
 	fi
 
   #  PS1="\[\033[35;40m\](\$(~/.rvm/bin/rvm-prompt v))\[\033[00m\]$PS1" 
