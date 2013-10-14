@@ -57,6 +57,10 @@ filetype off
         :BundleInstall
     endif
 
+" syntax for razor
+Bundle "adamclerk/vim-razor"
+
+Bundle "https://github.com/othree/javascript-libraries-syntax.vim.git"
 
 "let g:slime_target = "tmux"
 " vim-scripts repos
@@ -108,7 +112,7 @@ set bs=2
 set vb
 set nu!
 set hlsearch
-set expandtab					" tabs to spaces, just do :retab
+"set expandtab					" tabs to spaces, just do :retab
 set tabstop=2
 set softtabstop=2
 set shiftwidth=2
@@ -130,11 +134,14 @@ noremap <Right> <Nop>
 runtime macros/matchit.vim
 filetype on           " Enable filetype detection
 
-command CsaBuild execute "!pik 187 && rake csa:build:debug"
-command Csabake execute "!pik 187 && rake csa:half_bake"
-command CsaT4 execute "!pik 187 && rake csa:build:t4"
+command CsaBuild execute "!rake csa:build:debug"
+command Csabake execute "!rake csa:half_bake"
+command CsaT4 execute "!rake csa:build:t4"
 command CsaPath execute "set path+=..\**"
 command ExpandSplit execute "vertical resize 800"
+nmap <leader>§ :!rake engage:quick<CR>
+
+
 " remove scrollers... 
 setglobal guioptions-=T     " Disable toolbars by default
 setglobal guioptions-=L
@@ -143,3 +150,17 @@ setglobal guioptions-=R
 setglobal guioptions-=r
 setglobal guioptions-=b
 setglobal guioptions-=h
+
+"vimdiff settings
+map <silent> <leader>2 :diffget 2<CR> :diffupdate<CR>
+map <silent> <leader>3 :diffget 3<CR> :diffupdate<CR>
+map <silent> <leader>4 :diffget 4<CR> :diffupdate<CR>
+
+"show/hide invisibles
+nmap <leader>l :set list!<CR>
+set listchars=tab:»\ ,eol:¬
+
+
+"Invisible character colors
+highlight NonText guifg=#4a4a59
+highlight SpecialKey guifg=#4a4a59
