@@ -25,12 +25,9 @@ filetype off
     " Bundle 'kitofr/vim-functions'
     Bundle 'neochrome/todo.vim'
     Bundle 'scrooloose/nerdtree'
-    Bundle 'wgibbs/vim-irblack'
     Bundle 'Align'
     Bundle 'VimClojure'
     Bundle 'surround.vim'
-    "Bundle 'Gist.vim'
-    "Bundle 'Screen-vim---gnu-screentmux'
     Bundle 'vimwiki'
     "Bundle 'jpalardy/vim-slime'
     Bundle 'vim-coffee-script'
@@ -41,7 +38,12 @@ filetype off
     Bundle "garbas/vim-snipmate"
     Bundle 'elixir-lang/vim-elixir'
     Bundle 'carlosgaldino/elixir-snippets'
+
+    " colorschemes
+    Bundle 'Solarized'
+    Bundle 'wgibbs/vim-irblack'
     Bundle 'oceandeep'
+    Bundle 'rdark'
     
     "Bundle "tpope/vim-classpath"
     Bundle "tpope/vim-dispatch"
@@ -62,7 +64,6 @@ Bundle "adamclerk/vim-razor"
 
 Bundle "https://github.com/othree/javascript-libraries-syntax.vim.git"
 
-"let g:slime_target = "tmux"
 " vim-scripts repos
 " Bundle 'L9'
 " Bundle 'FuzzyFinder'
