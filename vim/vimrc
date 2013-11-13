@@ -18,7 +18,6 @@ filetype off
     "Add your bundles here
     Bundle 'Syntastic' 
     Bundle 'altercation/vim-colors-solarized' 
-    Bundle 'https://github.com/tpope/vim-fugitive' 
     Bundle 'wincent/Command-T'
     " original repos on github
     Bundle 'tpope/vim-fugitive'
@@ -45,6 +44,9 @@ filetype off
     Bundle 'oceandeep'
     Bundle 'rdark'
     
+		Bundle "DrTom/fsharp-vim"
+
+    Bundle "tpope/vim-fugitive"
     "Bundle "tpope/vim-classpath"
     Bundle "tpope/vim-dispatch"
     Bundle "tpope/vim-fireplace"
