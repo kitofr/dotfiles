@@ -1,4 +1,5 @@
 set nocompatible
+set shell=/bin/bash
 
 filetype off
 "
@@ -142,12 +143,7 @@ noremap <Right> <Nop>
 runtime macros/matchit.vim
 filetype on           " Enable filetype detection
 
-command CsaBuild execute "!rake csa:build:debug"
-command Csabake execute "!rake csa:half_bake"
-command CsaT4 execute "!rake csa:build:t4"
-command CsaPath execute "set path+=..\**"
 command ExpandSplit execute "vertical resize 800"
-nmap <leader>§ :!rake engage:quick<CR>
 
 
 " remove scrollers... 
