@@ -164,6 +164,8 @@ map <silent> <leader>4 :diffget 4<CR> :diffupdate<CR>
 nmap <leader>l :set list!<CR>
 set listchars=tab:»\ ,eol:¬
 
+"Vim masterclass
+xnoremap . :norm.<CR>
 
 "Invisible character colors
 highlight NonText guifg=#4a4a59
