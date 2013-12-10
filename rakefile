@@ -20,6 +20,10 @@ task :vim do
   sh "sudo ln -s #{pwd}/git/git-completion.bash /etc/bash_completion.d/git-completion"
 end
 
+task :fish do
+  sh "ln -s #{pwd}/fish ~/.config/fish"
+end
+
 task :tmux do
   sh "ln -s #{pwd}/tmux.conf ~/.tmux.conf"
 end
