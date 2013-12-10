@@ -54,7 +54,10 @@ filetype off
     Bundle "tpope/vim-fireplace"
 
 		"status line
-		Bundle "Lokaltog/powerline"
+		" Bundle "Lokaltog/powerline"
+		Bundle "bling/vim-airline"
+		"let g:airline_powerline_fonts = 1
+		
 
     "My snippets
     Bundle 'kitofr/kitofr-snippets'
@@ -79,11 +82,11 @@ Bundle "https://github.com/othree/javascript-libraries-syntax.vim.git"
 filetype plugin indent on
 
 if has("gui_gtk2")
-  set guifont=Monaco\ 11
+  set guifont=Ubuntu\ 11
 elseif has("gui_win32")
   source $VIMRUNTIME/mswin.vim
   behave mswin
-  set guifont=Monaco:h11:cANSI
+  set guifont=Ubuntu:h11:cANSI
 endif
 
 " Let's remember some things, like where the .vim folder is.
