@@ -56,8 +56,15 @@ filetype off
 		"status line
 		" Bundle "Lokaltog/powerline"
 		Bundle "bling/vim-airline"
+		let g:airline#extensions#tabline#enabled = 1
+		"let g:airline#extensions#tabline#left_sep = ' '
+		"let g:airline#extensions#tabline#left_alt_sep = '|'
 		"let g:airline_powerline_fonts = 1
 		
+		if !exists('g:airline_symbols')
+			let g:airline_symbols = {}
+		endif
+		let g:airline_symbols.space = "\ua0"
 
     "My snippets
     Bundle 'kitofr/kitofr-snippets'
@@ -82,11 +89,12 @@ Bundle "https://github.com/othree/javascript-libraries-syntax.vim.git"
 filetype plugin indent on
 
 if has("gui_gtk2")
-  set guifont=Ubuntu\ 11
+  set guifont=DejaVu_Sans_Mono_for_Powerline\ 11
 elseif has("gui_win32")
   source $VIMRUNTIME/mswin.vim
   behave mswin
-  set guifont=Ubuntu:h11:cANSI
+	set guifont=DejaVu_Sans_Mono_for_Powerline:h11:cANSI
+  "  DejaVu_Sans_Mono_for_Powerline
 endif
 
 " Let's remember some things, like where the .vim folder is.
