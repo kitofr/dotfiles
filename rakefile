@@ -20,39 +20,36 @@ end
 
 task :bash_rc do
   sh "rm -f ~/.bashrc"
-  sh "ln -s #{pwd}/.bashrc ~/.bashrc"
+  sh "ln -s #{current_dir}/.bashrc ~/.bashrc"
   sh "rm -f ~/.inputrc"
-  sh "ln -s #{pwd}/.inputrc ~/.inputrc"
+  sh "ln -s #{current_dir}/.inputrc ~/.inputrc"
 end
 
-task :pwd do
-  puts pwd
-end
 
 desc "Setup vim"
 task :vim do
   sh "rm -rf ~/.*vim*"
   sh "ln -s #{current_dir}/vim/vimrc ~/.vimrc"
   sh "ln -s #{current_dir}/vim ~/.vim"
-  sh "sudo ln -s #{pwd}/git/git-completion.bash /etc/bash_completion.d/git-completion"
+  sh "sudo ln -s #{current_dir}/git/git-completion.bash /etc/bash_completion.d/git-completion"
 end
 
 task :fish do
-  sh "ln -s #{pwd}/fish ~/.config/fish"
+  sh "ln -s #{current_dir}/fish ~/.config/fish"
 end
 
 task :tmux do
-  sh "ln -s #{pwd}/tmux.conf ~/.tmux.conf"
+  sh "ln -s #{current_dir}/tmux.conf ~/.tmux.conf"
 end
 
 task :fonts do
   sh "rm -rf ~/.fonts"
-  sh "sudo ln -s #{pwd}/fonts ~/.fonts"
+  sh "sudo ln -s #{current_dir}/fonts ~/.fonts"
 end
 
 task :clojure do
   sh "export PATH=~/dotfiles/clojure/clj:$PATH"
-  sh "sudo ln -s #{pwd}/clojure/completions.clj ~/.completions"
+  sh "sudo ln -s #{current_dir}/clojure/completions.clj ~/.completions"
 end
 
 namespace :irb do
