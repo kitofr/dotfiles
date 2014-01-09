@@ -1,18 +1,21 @@
+require 'pry'
+
+
 #TODO switch mklink/ln betwen environments
 desc "Removes old .bashrc/.vimrc and .vim files/folders in favour of links towards this folder"
 task :install => [:bash_rc,:vim,:fonts,:tmux]
 
 def on_windows?
-  RUBY_PLATFORM =~ /mswin/
+  RUBY_PLATFORM =~ /mingw/
 end
 
 def fix_path(s)
   #c:/Users... => /c/Users...
-  s.gsub(/c:/, "/c/") if on_windows?
+  s.gsub(/c:/, "/c") if on_windows?
 end
 
-def pwd 
-  @pwd = fix_path(Dir.pwd) unless @pwd
+def current_dir 
+  fix_path(Dir.pwd)
 end
 
 task :bash_rc do
@@ -22,10 +25,15 @@ task :bash_rc do
   sh "ln -s #{pwd}/.inputrc ~/.inputrc"
 end
 
+task :pwd do
+  puts pwd
+end
+
+desc "Setup vim"
 task :vim do
   sh "rm -rf ~/.*vim*"
-  sh "ln -s #{pwd}/vim/vimrc ~/.vimrc"
-  sh "ln -s #{pwd}/vim ~/.vim"
+  sh "ln -s #{current_dir}/vim/vimrc ~/.vimrc"
+  sh "ln -s #{current_dir}/vim ~/.vim"
   sh "sudo ln -s #{pwd}/git/git-completion.bash /etc/bash_completion.d/git-completion"
 end
 
