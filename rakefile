@@ -2,8 +2,17 @@
 desc "Removes old .bashrc/.vimrc and .vim files/folders in favour of links towards this folder"
 task :install => [:bash_rc,:vim,:fonts,:tmux]
 
+def on_windows?
+  RUBY_PLATFORM =~ /mswin/
+end
+
+def fix_path(s)
+  #c:/Users... => /c/Users...
+  s.gsub(/c:/, "/c/") if on_windows?
+end
+
 def pwd 
-  @pwd = `pwd` unless @pwd
+  @pwd = fix_path(Dir.pwd) unless @pwd
 end
 
 task :bash_rc do
