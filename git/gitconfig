@@ -1,0 +1,11 @@
+[user]
+	name = Kristoffer Roupé
+	email = kitofr@gmail.com
+[push]
+	default = simple
+[color]
+	ui = true
+[alias]
+	log = log --color --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit
+	s = status
+	pr = pull -rebase
