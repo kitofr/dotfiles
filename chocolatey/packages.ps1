@@ -15,3 +15,7 @@ cinst EthanBrown.ConEmuConfig -force
 cinst GoogleChrome -force
 cinst 7zip -force
 cinst sysinternals -force
+cinst VirtualCloneDrive -force
+
+#graphics
+cinst InkScape -force
