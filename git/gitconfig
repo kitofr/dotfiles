@@ -1,6 +1,6 @@
 [user]
 	name = Kristoffer Roupé
-	email = kitofr@gmail.com
+	email = kristoffer.roupe@intelliplan.se
 [push]
 	default = simple
 [color]
@@ -10,6 +10,7 @@
 	g = grep --line-number --ignore-case
 	s = status
 	pr = pull -rebase
+	st = status
+	br = branch
 [core]
-	autocrlf = true
 	editor = /usr/bin/vim
