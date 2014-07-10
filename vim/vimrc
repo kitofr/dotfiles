@@ -38,6 +38,9 @@ filetype off
     Bundle "garbas/vim-snipmate"
     Bundle 'elixir-lang/vim-elixir'
     Bundle 'carlosgaldino/elixir-snippets'
+    Bundle 'Puppet-Syntax-Highlighting'
+
+    Bundle 'epeli/slimux'
 
     " colorschemes
     Bundle 'Solarized'
