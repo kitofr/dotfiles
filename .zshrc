@@ -20,7 +20,7 @@ alias clickonce='cd ~/code/work/ClickOnce/'
 alias cmdb='cd ~/code/work/CMDB/'
 alias cls='clear'
 alias rake='noglob bundle exec rake'
-alias cat="pygmentize -f terminal256 -O style=native -g"
+alias pcat="pygmentize -f terminal256 -O style=native -g"
 
 # Set to this to use case-sensitive completion
 # CASE_SENSITIVE="true"
@@ -62,7 +62,7 @@ source $ZSH/oh-my-zsh.sh
 
 # User configuration
 
-export PATH="/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/bin:~/.rbenv/bin:~/bin"
+export PATH="/usr/local/bin:/usr/local/sbin:/usr/bin:/bin:/usr/sbin:/sbin:~/.rbenv/bin:~/bin"
 # export MANPATH="/usr/local/man:$MANPATH"
 
 # # Preferred editor for local and remote sessions
