@@ -21,7 +21,6 @@ filetype off
     Bundle 'altercation/vim-colors-solarized' 
     Bundle 'wincent/Command-T'
     " original repos on github
-    Bundle 'tpope/vim-fugitive'
     " Bundle 'kitofr/vim-functions'
     Bundle 'neochrome/todo.vim'
     Bundle 'scrooloose/nerdtree'
@@ -48,6 +47,7 @@ filetype off
     Bundle 'oceandeep'
     Bundle 'rdark'
 		Bundle 'peaksea'
+    Bundle 'wombat256' 
     
 		Bundle "DrTom/fsharp-vim"
 
@@ -57,9 +57,9 @@ filetype off
     Bundle "tpope/vim-fireplace"
 
 		"status line
-		Bundle "Lokaltog/powerline"
-		set rtp+=~/.vim/bundle/powerline/powerline/bindings/vim
-		" Bundle "bling/vim-airline"
+		" Bundle "Lokaltog/powerline"
+		" set rtp+=~/.vim/bundle/powerline/powerline/bindings/vim
+		Bundle "bling/vim-airline"
     "My snippets
     Bundle 'kitofr/kitofr-snippets'
 
