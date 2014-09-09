@@ -19,7 +19,7 @@ filetype off
     "Add your bundles here
     Bundle 'Syntastic' 
     Bundle 'altercation/vim-colors-solarized' 
-    Bundle 'wincent/Command-T'
+    Bundle 'kien/ctrlp.vim'
     " original repos on github
     " Bundle 'kitofr/vim-functions'
     Bundle 'neochrome/todo.vim'
@@ -47,7 +47,7 @@ filetype off
     Bundle 'oceandeep'
     Bundle 'rdark'
 		Bundle 'peaksea'
-    Bundle 'wombat256' 
+    Bundle 'wombat256.vim' 
     
 		Bundle "DrTom/fsharp-vim"
 
@@ -120,11 +120,12 @@ let vimclojure#HighlightContrib=1
 let vimclojure#DynamicHighlighting=1
 let vimclojure#ParenRainbow=1
 
-colorscheme ir_black 
+colorscheme wombat256mod
 set bs=2
 set vb
 set nu!
 set cursorline
+set cursorcolumn
 set hlsearch
 set expandtab					" tabs to spaces, just do :retab
 set tabstop=2
