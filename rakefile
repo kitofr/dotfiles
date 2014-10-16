@@ -14,42 +14,38 @@ def fix_path(s)
   s.gsub(/c:/, "/c") if on_windows?
 end
 
-def current_dir 
-  fix_path(Dir.pwd)
-end
-
 task :bash_rc do
   sh "rm -f ~/.bashrc"
-  sh "ln -s #{current_dir}/.bashrc ~/.bashrc"
+  sh "ln -s #{pwd}/.bashrc ~/.bashrc"
   sh "rm -f ~/.inputrc"
-  sh "ln -s #{current_dir}/.inputrc ~/.inputrc"
+  sh "ln -s #{pwd}/.inputrc ~/.inputrc"
 end
 
 
 desc "Setup vim"
 task :vim do
   sh "rm -rf ~/.*vim*"
-  sh "ln -s #{current_dir}/vim/vimrc ~/.vimrc"
-  sh "ln -s #{current_dir}/vim ~/.vim"
-  sh "sudo ln -s #{current_dir}/git/git-completion.bash /etc/bash_completion.d/git-completion"
+  sh "ln -s #{pwd}/vim/vimrc ~/.vimrc"
+  sh "ln -s #{pwd}/vim ~/.vim"
+  sh "sudo ln -s #{pwd}/git/git-completion.bash /etc/bash_completion.d/git-completion"
 end
 
-task :fish do
-  sh "ln -s #{current_dir}/fish ~/.config/fish"
+task :zsh do
+  sh "ln -s #{pwd}/zsh-themes/kitofr.zsh-theme ~/.oh-my-zsh/themes/kitofr.zsh-theme"
 end
 
 task :tmux do
-  sh "ln -s #{current_dir}/tmux.conf ~/.tmux.conf"
+  sh "ln -s #{pwd}/tmux.conf ~/.tmux.conf"
 end
 
 task :fonts do
   sh "rm -rf ~/.fonts"
-  sh "sudo ln -s #{current_dir}/fonts ~/.fonts"
+  sh "sudo ln -s #{pwd}/fonts ~/.fonts"
 end
 
 task :clojure do
   sh "export PATH=~/dotfiles/clojure/clj:$PATH"
-  sh "sudo ln -s #{current_dir}/clojure/completions.clj ~/.completions"
+  sh "sudo ln -s #{pwd}/clojure/completions.clj ~/.completions"
 end
 
 namespace :irb do

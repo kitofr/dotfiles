@@ -41,6 +41,10 @@ GEM
     method_source (0.8.2)
     mime-types (1.16)
     polyglot (0.3.1)
+    pry (0.9.12.4)
+      coderay (~> 1.0)
+      method_source (~> 0.8)
+      slop (~> 3.4)
     pry (0.9.12.4-x86-mingw32)
       coderay (~> 1.0)
       method_source (~> 0.8)
@@ -51,6 +55,7 @@ GEM
       rack (>= 1.0.0)
     rack-test (0.5.7)
       rack (>= 1.0)
+    rake (10.3.2)
     rest-client (1.6.3)
       mime-types (>= 1.16)
     sendln (0.0.3)
@@ -71,12 +76,14 @@ GEM
     xml-simple (1.1.0)
 
 PLATFORMS
+  ruby
   x86-mingw32
 
 DEPENDENCIES
   gemit
   interactive_editor
   pry
+  rake
   sendln
   tc-client
   utility_belt
