@@ -63,6 +63,8 @@ filetype off
     "My snippets
     Bundle 'kitofr/kitofr-snippets'
 
+    Plugin 'editorconfig-vim'
+
     "...All your other bundles...
     if iCanHazVundle == 0
         echo "Installing Bundles, please ignore key map error messages"
@@ -138,6 +140,7 @@ filetype plugin on    " Enable filetype-specific plugins
 compiler ruby         " Enable compiler support for ruby
 set nobackup
 set nowrap
+set mouse=a
 let mapleader = ","
 let g:calendar_monday = 1
 vnoremap <C-r> "hy:%s/<C-r>h//gc<left><left><left>
