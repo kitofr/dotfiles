@@ -127,7 +127,7 @@ set bs=2
 set vb
 set nu!
 set cursorline
-set cursorcolumn
+" set cursorcolumn
 set hlsearch
 set expandtab					" tabs to spaces, just do :retab
 set tabstop=2
@@ -150,6 +150,9 @@ noremap <Left> <Nop>
 noremap <Right> <Nop>
 runtime macros/matchit.vim
 filetype on           " Enable filetype detection
+
+set incsearch ignorecase hlsearch
+nnoremap <silent> <Space> :silent noh<Bar>echo<CR>
 
 command ExpandSplit execute "vertical resize 800"
 
@@ -205,4 +208,3 @@ if has("autocmd")
   autocmd bufwritepost .vimrc source $MYVIMRC
 endif
 nmap <leader>v :tabedit $MYVIMRC<CR>
-
