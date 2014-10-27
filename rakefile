@@ -37,6 +37,7 @@ def soft_link(source, dst)
 end
 
 task :zsh do
+  soft_link "#{pwd}/zshrc", "~/.zshrc"
   soft_link "#{pwd}/zsh-themes/kitofr.zsh-theme", "~/.oh-my-zsh/themes/kitofr.zsh-theme"
 end
 
