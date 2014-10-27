@@ -1,5 +1,6 @@
 require 'pry'
 
+task :default => [:tmux,:vim,:fonts,:zsh]
 
 #TODO switch mklink/ln betwen environments
 desc "Removes old .bashrc/.vimrc and .vim files/folders in favour of links towards this folder"
@@ -27,20 +28,24 @@ task :vim do
   sh "rm -rf ~/.*vim*"
   sh "ln -s #{pwd}/vim/vimrc ~/.vimrc"
   sh "ln -s #{pwd}/vim ~/.vim"
-  sh "sudo ln -s #{pwd}/git/git-completion.bash /etc/bash_completion.d/git-completion"
+  #sh "sudo ln -s #{pwd}/git/git-completion.bash /etc/bash_completion.d/git-completion"
+end
+
+def soft_link(source, dst)
+  sh "rm -fr #{dst}" 
+  sh "ln -s #{source} #{dst}"
 end
 
 task :zsh do
-  sh "ln -s #{pwd}/zsh-themes/kitofr.zsh-theme ~/.oh-my-zsh/themes/kitofr.zsh-theme"
+  soft_link "#{pwd}/zsh-themes/kitofr.zsh-theme", "~/.oh-my-zsh/themes/kitofr.zsh-theme"
 end
 
 task :tmux do
-  sh "ln -s #{pwd}/tmux.conf ~/.tmux.conf"
+  soft_link "#{pwd}/tmux.conf", "~/.tmux.conf"
 end
 
 task :fonts do
-  sh "rm -rf ~/.fonts"
-  sh "sudo ln -s #{pwd}/fonts ~/.fonts"
+  soft_link "#{pwd}/fonts", "~/.fonts"
 end
 
 task :clojure do
