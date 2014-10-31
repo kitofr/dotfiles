@@ -23,7 +23,8 @@ task :bash_rc do
 end
 
 task :ssh do
-  soft_link "#{pwd}/Dropbox/Private/ssh/", "~/.ssh"
+  soft_link "#{pwd}/Dropbox/Private/ssh/github_rsa", "~/.ssh/github_rsa"
+  soft_link "#{pwd}/Dropbox/Private/ssh/id_rsa", "~/.ssh/id_rsa"
 end
 
 desc "Setup vim"
@@ -32,10 +33,6 @@ task :vim do
   sh "ln -s #{pwd}/vim/vimrc ~/.vimrc"
   sh "ln -s #{pwd}/vim ~/.vim"
   #sh "sudo ln -s #{pwd}/git/git-completion.bash /etc/bash_completion.d/git-completion"
-end
-
-task :ssh do
-  soft_link "#{pwd}/../Dropbox/Private/ssh", "~/.ssh"
 end
 
 def soft_link(source, dst)
