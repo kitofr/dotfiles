@@ -27,6 +27,7 @@ alias cls='clear'
 alias rake='noglob bundle exec rake'
 alias pcat="pygmentize -f terminal256 -O style=native -g"
 alias gpr="git pull -v -n --rebase"
+#vim `gst --porcelain | awk '{ print $2 }'` 
 
 # Set to this to use case-sensitive completion
 # CASE_SENSITIVE="true"
