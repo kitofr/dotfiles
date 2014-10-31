@@ -4,7 +4,7 @@ task :default => [:tmux,:vim,:fonts,:zsh]
 
 #TODO switch mklink/ln betwen environments
 desc "Removes old .bashrc/.vimrc and .vim files/folders in favour of links towards this folder"
-task :install => [:bash_rc,:vim,:fonts,:tmux]
+task :install => [:ssh,:bash_rc,:vim,:fonts,:tmux]
 
 def on_windows?
   RUBY_PLATFORM =~ /mingw/
@@ -29,6 +29,10 @@ task :vim do
   sh "ln -s #{pwd}/vim/vimrc ~/.vimrc"
   sh "ln -s #{pwd}/vim ~/.vim"
   #sh "sudo ln -s #{pwd}/git/git-completion.bash /etc/bash_completion.d/git-completion"
+end
+
+task :ssh do
+  soft_link "#{pwd}/../Dropbox/Private/ssh", "~/.ssh"
 end
 
 def soft_link(source, dst)
