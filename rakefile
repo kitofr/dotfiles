@@ -22,6 +22,9 @@ task :bash_rc do
   sh "ln -s #{pwd}/.inputrc ~/.inputrc"
 end
 
+task :ssh do
+  soft_link "#{pwd}/Dropbox/Private/ssh/", "~/.ssh"
+end
 
 desc "Setup vim"
 task :vim do
