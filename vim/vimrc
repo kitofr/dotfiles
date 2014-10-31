@@ -57,9 +57,9 @@ filetype off
     Bundle "tpope/vim-fireplace"
 
 		"status line
-		" Bundle "Lokaltog/powerline"
+		Bundle "Lokaltog/powerline", { 'rtp': 'powerline/bindings/vim' }
 		" set rtp+=~/.vim/bundle/powerline/powerline/bindings/vim
-		Bundle "bling/vim-airline"
+		" Bundle "bling/vim-airline"
     "My snippets
     Bundle 'kitofr/kitofr-snippets'
 
