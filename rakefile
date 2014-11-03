@@ -23,10 +23,10 @@ task :bash_rc do
 end
 
 task :ssh do
-  soft_link "#{pwd}/Dropbox/Private/ssh/github_rsa", "~/.ssh/github_rsa"
-  soft_link "#{pwd}/Dropbox/Private/ssh/github_rsa.pub", "~/.ssh/github_rsa.pub"
-  soft_link "#{pwd}/Dropbox/Private/ssh/id_rsa", "~/.ssh/id_rsa"
-  soft_link "#{pwd}/Dropbox/Private/ssh/id_rsa.pub", "~/.ssh/id_rsa.pub"
+  soft_link "$HOME/Dropbox/Private/ssh/github_rsa", "~/.ssh/github_rsa"
+  soft_link "$HOME/Dropbox/Private/ssh/github_rsa.pub", "~/.ssh/github_rsa.pub"
+  soft_link "$HOME/Dropbox/Private/ssh/id_rsa", "~/.ssh/id_rsa"
+  soft_link "$HOME/Dropbox/Private/ssh/id_rsa.pub", "~/.ssh/id_rsa.pub"
 end
 
 desc "Setup vim"
