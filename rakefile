@@ -23,10 +23,12 @@ task :bash_rc do
 end
 
 task :aws do
+  Dir.mkdir "#{Dir.home}/.aws" unless Dir.exists? "#{Dir.home}/.aws" 
   soft_link "$HOME/Dropbox/Private/aws/config", "~/.aws/config"
 end
 
 task :ssh do
+  soft_link "$HOME/Dropbox/Private/ssh/config", "~/.ssh/config"
   soft_link "$HOME/Dropbox/Private/ssh/github_rsa", "~/.ssh/github_rsa"
   soft_link "$HOME/Dropbox/Private/ssh/github_rsa.pub", "~/.ssh/github_rsa.pub"
   soft_link "$HOME/Dropbox/Private/ssh/id_rsa", "~/.ssh/id_rsa"
