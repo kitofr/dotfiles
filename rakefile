@@ -22,6 +22,10 @@ task :bash_rc do
   sh "ln -s #{pwd}/.inputrc ~/.inputrc"
 end
 
+task :aws do
+  soft_link "$HOME/Dropbox/Private/aws/config", "~/.aws/config"
+end
+
 task :ssh do
   soft_link "$HOME/Dropbox/Private/ssh/github_rsa", "~/.ssh/github_rsa"
   soft_link "$HOME/Dropbox/Private/ssh/github_rsa.pub", "~/.ssh/github_rsa.pub"
