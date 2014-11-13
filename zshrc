@@ -69,7 +69,7 @@ source $ZSH/oh-my-zsh.sh
 
 # User configuration
 
-export PATH="/usr/local/bin:/usr/local/sbin:/usr/bin:/bin:/usr/sbin:/sbin:~/.rbenv/bin:~/bin:/Users/krirou/Applications/Firefox.app/Contents/MacOS"
+export PATH="/usr/local/bin:/usr/local/sbin:/bin:/usr/sbin:/sbin:~/.rbenv/bin:~/bin:/Users/krirou/Applications/Firefox.app/Contents/MacOS:$PATH"
 # export MANPATH="/usr/local/man:$MANPATH"
 
 # # Preferred editor for local and remote sessions
