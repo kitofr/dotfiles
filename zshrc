@@ -18,11 +18,10 @@ ZSH_THEME="kitofr"
 # done
 
 # Work related aliases
-alias winclient='cd ~/code/work/WinClient/'
 alias backend='cd ~/code/work/Backend/'
 alias provision='cd ~/code/work/Provision/'
-alias clickonce='cd ~/code/work/ClickOnce/'
 alias cmdb='cd ~/code/work/CMDB/'
+alias staffing='cd ~/code/work/Backend/src/Intelliplan.Backend.Web/staffing-availability/'
 alias cls='clear'
 alias rake='noglob bundle exec rake'
 alias pcat="pygmentize -f terminal256 -O style=native -g"
@@ -69,7 +68,7 @@ source $ZSH/oh-my-zsh.sh
 
 # User configuration
 
-export PATH="/usr/local/bin:/usr/local/sbin:/bin:/usr/sbin:/sbin:~/.rbenv/bin:~/bin:/Users/krirou/Applications/Firefox.app/Contents/MacOS:$PATH"
+export PATH="/~/.rbenv/bin:usr/local/bin:/usr/local/sbin:/bin:/usr/sbin:/sbin:~/bin:/Users/krirou/Applications/Firefox.app/Contents/MacOS:$PATH"
 # export MANPATH="/usr/local/man:$MANPATH"
 
 # # Preferred editor for local and remote sessions
