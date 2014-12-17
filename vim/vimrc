@@ -122,7 +122,6 @@ let vimclojure#HighlightContrib=1
 let vimclojure#DynamicHighlighting=1
 let vimclojure#ParenRainbow=1
 
-colorscheme wombat256mod
 set bs=2
 set vb
 set nu!
@@ -206,7 +205,12 @@ command CleanCR execute "%s/\\r\\(\\n\\)/\\1/g"
 
 if has("autocmd")
   autocmd bufwritepost .vimrc source $MYVIMRC
+  autocmd BufNewFile,BufReadPost Gemfile setfiletype ruby
   autocmd BufNewFile,BufReadPost *.cljx setfiletype clojure
   autocmd BufNewFile,BufReadPost *.json setfiletype javascript
+  autocmd BufNewFile,BufReadPost *.md set filetype=markdown
+  autocmd ColorScheme * hi clear SpellBad
+      \| hi SpellBad cterm=underline,bold ctermfg=red 
 endif
 nmap <leader>v :tabedit $MYVIMRC<CR>
+colorscheme wombat256mod
