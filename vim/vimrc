@@ -206,6 +206,7 @@ command CleanCR execute "%s/\\r\\(\\n\\)/\\1/g"
 if has("autocmd")
   autocmd bufwritepost .vimrc source $MYVIMRC
   autocmd BufNewFile,BufReadPost Gemfile setfiletype ruby
+  autocmd BufNewFile,BufReadPost Guardfile setfiletype ruby
   autocmd BufNewFile,BufReadPost *.cljx setfiletype clojure
   autocmd BufNewFile,BufReadPost *.json setfiletype javascript
   autocmd BufNewFile,BufReadPost *.md set filetype=markdown
