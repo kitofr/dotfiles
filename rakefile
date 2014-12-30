@@ -53,6 +53,10 @@ task :zsh do
   soft_link "#{pwd}/zsh-themes/kitofr.zsh-theme", "~/.oh-my-zsh/themes/kitofr.zsh-theme"
 end
 
+task :mutt do
+  soft_link "#{pwd}/.muttrc", "~/.muttrc"
+end
+
 task :tmux do
   soft_link "#{pwd}/tmux.conf", "~/.tmux.conf"
 end
