@@ -1,0 +1,19 @@
+set realname = "Kristoffer Roupé"
+set imap_user = "kitofr@gmail.com"
+
+set smtp_url = "smtp://kitofr@smtp.gmail.com:587/"
+set from = "kitofr@gmail.com"
+
+set folder = "imaps://imap.gmail.com:993"
+set spoolfile = "imaps://imap.gmail.com:993/INBOX"
+set postponed="+[Gmail]/Drafts"
+
+set header_cache=~/.mutt/cache/headers
+set message_cachedir=~/.mutt/cache/bodies
+set certificate_file=~/.mutt/certificates
+
+set move = no
+
+set sort=threads
+set sort_aux=last-date-received
+set editor="vim -c 'set spell spelllang=sv,en'"
