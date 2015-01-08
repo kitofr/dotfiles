@@ -70,6 +70,10 @@ task :clojure do
   sh "sudo ln -s #{pwd}/clojure/completions.clj ~/.completions"
 end
 
+task :inputrc do
+  soft_link "#{pwd}/inputrc", "~/.inputrc"
+end
+ 
 namespace :irb do
   desc "Links irbrc to ~/.irbrc"
   task :install do
