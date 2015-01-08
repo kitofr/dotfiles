@@ -1,12 +1,8 @@
 #!/bin/bash
  
 BREAK_CHARS="(){}[],^%$#@\"\";:''|\\"
-CLOJURE_DIR=/usr/share/java/
-#CLOJURE_DIR=~/code/clojure/clojure-1.2.1/
-CLOJURE_JAR=$CLOJURE_DIR/clojure.jar
 if [ $# -eq 0 ]; then 
-     rlwrap --remember -c -b $BREAK_CHARS -f $HOME/.completions \
-     java -cp $CLOJURE_JAR clojure.main
+  rlwrap --remember -c -b $BREAK_CHARS -f $HOME/dotfiles/clojure/completions.clj lein repl
 else
-     java -cp $CLOJURE_JAR clojure.main $1 -- $@
+  lein repl $1 -- $@
 fi
