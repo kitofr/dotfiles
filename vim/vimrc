@@ -209,7 +209,7 @@ if has("autocmd")
   autocmd BufNewFile,BufReadPost Guardfile setfiletype ruby
   autocmd BufNewFile,BufReadPost *.cljx setfiletype clojure
   autocmd BufNewFile,BufReadPost *.json setfiletype javascript
-  autocmd BufNewFile,BufReadPost *.md set filetype=markdown
+  autocmd BufNewFile,BufReadPost *.md setfiletype markdown
   autocmd ColorScheme * hi clear SpellBad
       \| hi SpellBad cterm=underline,bold ctermfg=red 
 endif
