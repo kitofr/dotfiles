@@ -18,6 +18,7 @@ ZSH_THEME="kitofr"
 # done
 
 # Work related aliases
+alias lla='ll -a'
 alias backend='cd ~/code/work/Backend/'
 alias provision='cd ~/code/work/Provision/'
 alias cmdb='cd ~/code/work/CMDB/'
