@@ -29,6 +29,8 @@ end
 
 task :ssh do
   soft_link "$HOME/Dropbox/Private/ssh/config", "~/.ssh/config"
+  soft_link "$HOME/Dropbox/Private/ssh/heroku", "~/.ssh/heroku"
+  soft_link "$HOME/Dropbox/Private/ssh/heroku.pub", "~/.ssh/heroku.pub"
   soft_link "$HOME/Dropbox/Private/ssh/github_rsa", "~/.ssh/github_rsa"
   soft_link "$HOME/Dropbox/Private/ssh/github_rsa.pub", "~/.ssh/github_rsa.pub"
   soft_link "$HOME/Dropbox/Private/ssh/id_rsa", "~/.ssh/id_rsa"

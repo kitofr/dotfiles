@@ -19,10 +19,7 @@ ZSH_THEME="kitofr"
 
 # Work related aliases
 alias lla='ll -a'
-alias backend='cd ~/code/work/Backend/'
-alias provision='cd ~/code/work/Provision/'
-alias cmdb='cd ~/code/work/CMDB/'
-alias staffing='cd ~/code/work/Backend/src/Intelliplan.Backend.Web/staffing-availability/'
+alias work='cd ~/code/work/'
 alias cls='clear'
 alias rake='noglob bundle exec rake'
 alias pcat="pygmentize -f terminal256 -O style=native -g"
