@@ -22,6 +22,7 @@ alias lla='ll -a'
 alias work='cd ~/code/work/'
 alias cls='clear'
 alias rake='noglob bundle exec rake'
+alias guard='noglob bundle exec guard'
 alias pcat="pygmentize -f terminal256 -O style=native -g"
 alias gpr="git pull -v -n --rebase"
 alias clj="~/dotfiles/clojure/clj"
