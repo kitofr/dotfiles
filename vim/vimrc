@@ -28,7 +28,6 @@ filetype off
     Bundle 'VimClojure'
     Bundle 'surround.vim'
     Bundle 'vimwiki'
-    "Bundle 'jpalardy/vim-slime'
     Bundle 'vim-coffee-script'
     " snipmate deps
     Bundle "MarcWeber/vim-addon-mw-utils"
@@ -57,9 +56,7 @@ filetype off
     Bundle "tpope/vim-fireplace"
 
 		"status line
-    "Bundle "Lokaltog/powerline", { 'rtp': 'powerline/bindings/vim' }
-		" set rtp+=~/.vim/bundle/powerline/powerline/bindings/vim
-		Bundle "bling/vim-airline"
+    Bundle "Lokaltog/powerline", { 'rtp': 'powerline/bindings/vim' }
     "My snippets
     Bundle 'kitofr/kitofr-snippets'
 
@@ -84,14 +81,13 @@ Bundle "https://github.com/othree/javascript-libraries-syntax.vim.git"
 " Bundle 'git://git.wincent.com/command-t.git'
 filetype plugin indent on
 
-if has("gui_gtk2")
-  set guifont=Monaco\ 11
-elseif has("gui_win32")
-  source $VIMRUNTIME/mswin.vim
-  behave mswin
-	set guifont=Monaco:h11:cANSI
-  "  DejaVu_Sans_Mono_for_Powerline
-endif
+set guifont=Inconsolata\ for\ Powerline:h15
+let g:Powerline_symbols = 'fancy'
+set encoding=utf-8
+set t_Co=256
+set fillchars+=stl:\ ,stlnc:\
+set term=xterm-256color
+set termencoding=utf-8
 
 " Let's remember some things, like where the .vim folder is.
 if has("win32") || has("win64")
