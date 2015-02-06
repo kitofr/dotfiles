@@ -59,6 +59,10 @@ task :mutt do
   soft_link "#{pwd}/.muttrc", "~/.muttrc"
 end
 
+task :git do
+  soft_link "#{pwd}/git/gitconfig", "~/.gitconfig"
+end
+
 task :tmux do
   soft_link "#{pwd}/tmux.conf", "~/.tmux.conf"
 end
