@@ -19,6 +19,7 @@ ZSH_THEME="kitofr"
 
 # Work related aliases
 alias lla='ll -a'
+alias my='cd ~/code/my/'
 alias work='cd ~/code/work/'
 alias cls='clear'
 alias rake='noglob bundle exec rake'
