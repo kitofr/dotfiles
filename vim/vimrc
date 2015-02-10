@@ -210,4 +210,4 @@ if has("autocmd")
       \| hi SpellBad cterm=underline,bold ctermfg=red 
 endif
 nmap <leader>v :tabedit $MYVIMRC<CR>
-colorscheme wombat256mod
+colorscheme solarized "wombat256mod
