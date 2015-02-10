@@ -211,3 +211,6 @@ if has("autocmd")
 endif
 nmap <leader>v :tabedit $MYVIMRC<CR>
 colorscheme solarized "wombat256mod
+" Global backup dir
+set backupdir=~/.vim/swp
+set directory=~/.vim/swp
