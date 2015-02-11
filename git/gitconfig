@@ -14,3 +14,7 @@
 	br = branch
 [core]
 	editor = /usr/bin/vim
+[branch "master"]
+	mergeoptions = --squash
+[help]
+  autocorrect = 1
