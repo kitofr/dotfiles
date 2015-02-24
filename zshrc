@@ -23,6 +23,7 @@ alias my='cd ~/code/my/'
 alias work='cd ~/code/work/'
 alias cls='clear'
 alias rake='noglob bundle exec rake'
+alias rspec='noglob bundle exec rspec'
 alias guard='noglob bundle exec guard'
 alias pcat="pygmentize -f terminal256 -O style=native -g"
 alias gpr="git pull -v -n --rebase"

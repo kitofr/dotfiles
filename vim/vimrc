@@ -54,6 +54,8 @@ filetype off
     "Bundle "tpope/vim-classpath"
     Bundle "tpope/vim-dispatch"
     Bundle "tpope/vim-fireplace"
+    Bundle "tpope/vim-rails"
+    Bundle "tpope/vim-bundler"
 
 		"status line
     Bundle "Lokaltog/powerline", { 'rtp': 'powerline/bindings/vim' }
@@ -139,10 +141,10 @@ set mouse=a
 let mapleader = ","
 let g:calendar_monday = 1
 vnoremap <C-r> "hy:%s/<C-r>h//gc<left><left><left>
-noremap <Up> <Nop>
-noremap <Down> <Nop>
-noremap <Left> <Nop>
-noremap <Right> <Nop>
+" noremap <Up> <Nop>
+" noremap <Down> <Nop>
+" noremap <Left> <Nop>
+" noremap <Right> <Nop>
 runtime macros/matchit.vim
 filetype on           " Enable filetype detection
 
