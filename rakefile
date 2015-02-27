@@ -42,7 +42,10 @@ task :vim do
   sh "rm -rf ~/.*vim*"
   sh "ln -s #{pwd}/vim/vimrc ~/.vimrc"
   sh "ln -s #{pwd}/vim ~/.vim"
-  #sh "sudo ln -s #{pwd}/git/git-completion.bash /etc/bash_completion.d/git-completion"
+end
+
+task :vimwiki do
+  sh "ln -s ~/Dropbox/Private/vimwiki ~/vimwiki"
 end
 
 def soft_link(source, dst)
