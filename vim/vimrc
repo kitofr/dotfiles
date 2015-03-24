@@ -212,7 +212,9 @@ if has("autocmd")
       \| hi SpellBad cterm=underline,bold ctermfg=red 
 endif
 nmap <leader>v :tabedit $MYVIMRC<CR>
-colorscheme wombat256mod " "solarized "
+nmap <leader>e :Eval<CR>
+
+colorscheme wombat256mod 
 " Global backup dir
 set backupdir=~/.vim/swp
 set directory=~/.vim/swp
