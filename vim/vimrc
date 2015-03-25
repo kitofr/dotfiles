@@ -44,6 +44,7 @@ filetype off
     Bundle 'Solarized'
     Bundle 'wgibbs/vim-irblack'
     Bundle 'oceandeep'
+    Bundle 'badwolf'
     Bundle 'rdark'
 		Bundle 'peaksea'
     Bundle 'wombat256.vim' 
@@ -214,7 +215,7 @@ endif
 nmap <leader>v :tabedit $MYVIMRC<CR>
 nmap <leader>e :Eval<CR>
 
-colorscheme wombat256mod 
+colorscheme badwolf 
 " Global backup dir
 set backupdir=~/.vim/swp
 set directory=~/.vim/swp
