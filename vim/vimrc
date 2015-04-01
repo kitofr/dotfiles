@@ -209,6 +209,8 @@ if has("autocmd")
   autocmd BufNewFile,BufReadPost *.cljx setfiletype clojure
   autocmd BufNewFile,BufReadPost *.json setfiletype javascript
   autocmd BufNewFile,BufReadPost *.md setfiletype markdown
+  autocmd BufWritePre *.rb :%s/\s\+$//e
+  autocmd BufWritePre *.ex :%s/\s\+$//e
   autocmd ColorScheme * hi clear SpellBad
       \| hi SpellBad cterm=underline,bold ctermfg=red 
 endif
