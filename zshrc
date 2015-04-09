@@ -28,6 +28,7 @@ alias guard='noglob bundle exec guard'
 alias pcat="pygmentize -f terminal256 -O style=native -g"
 alias gpr="git pull -v -n --rebase"
 alias clj="~/dotfiles/clojure/clj"
+alias mex="iex -S mix"
 alias docker_clear="docker ps -a | grep 'hours ago' | awk '{print $1}' | xargs docker rm"
 
 #vim `gst --porcelain | awk '{ print $2 }'` 
