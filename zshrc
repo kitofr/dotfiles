@@ -28,6 +28,7 @@ alias guard='noglob bundle exec guard'
 alias pcat="pygmentize -f terminal256 -O style=native -g"
 alias gpr="git pull -v -n --rebase"
 alias clj="~/dotfiles/clojure/clj"
+alias docker_clear="docker ps -a | grep 'hours ago' | awk '{print $1}' | xargs docker rm"
 
 #vim `gst --porcelain | awk '{ print $2 }'` 
 
@@ -95,6 +96,9 @@ eval "$(rbenv init -)"
 ### Added by the Heroku Toolbelt
 export PATH="/usr/local/heroku/bin:$PATH"
 
+export DOCKER_HOST=tcp://192.168.59.103:2376
+export DOCKER_CERT_PATH=/Users/kitofr/.boot2docker/certs/boot2docker-vm
+export DOCKER_TLS_VERIFY=1
 
 bindkey -e
 bindkey '^[[1;9C' forward-word
