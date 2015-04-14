@@ -44,6 +44,12 @@ task :vim do
   sh "ln -s #{pwd}/vim ~/.vim"
 end
 
+desc "Setup emacs"
+task :emacs do
+  sh "rm -rf ~/.emacs*"
+  sh "ln -s #{pwd}/emacs.d ~/.emacs.d"
+end
+
 task :vimwiki do
   sh "ln -s ~/Dropbox/Private/vimwiki ~/vimwiki"
 end
