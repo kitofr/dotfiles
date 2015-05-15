@@ -218,7 +218,7 @@ endif
 nmap <leader>v :tabedit $MYVIMRC<CR>
 nmap <leader>e :Eval<CR>
 
-colorscheme badwolf 
+colorscheme badwolf "solarized 
 " Global backup dir
 set backupdir=~/.vim/swp
 set directory=~/.vim/swp
