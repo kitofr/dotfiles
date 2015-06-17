@@ -20,16 +20,20 @@ ZSH_THEME="kitofr"
 # Work related aliases
 alias lla='ll -a'
 alias my='cd ~/code/my/'
-alias work='cd ~/code/work/'
+alias work='cd ~/code/youple/'
 alias cls='clear'
-alias rake='noglob bundle exec rake'
+alias brake='noglob bundle exec rake'
 alias rspec='noglob bundle exec rspec'
 alias guard='noglob bundle exec guard'
 alias pcat="pygmentize -f terminal256 -O style=native -g"
 alias gpr="git pull -v -n --rebase"
 alias clj="~/dotfiles/clojure/clj"
 alias mex="iex -S mix"
-alias docker_clear="docker ps -a | grep 'hours ago' | awk '{print $1}' | xargs docker rm"
+alias docker_kill_ps="docker ps -aq | awk '{print $1}' | xargs docker rm -f"
+alias docker_kill_images="docker images -aq | awk '{print $1}' | xargs docker rmi -f"
+alias tls="tmux ls"
+alias tat="tmux attach -t"
+alias tns="tmux new -s"
 
 #vim `gst --porcelain | awk '{ print $2 }'` 
 

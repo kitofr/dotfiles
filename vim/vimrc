@@ -203,6 +203,7 @@ endfunction
 command CleanCR execute "%s/\\r\\(\\n\\)/\\1/g"
 
 if has("autocmd")
+  autocmd!
   autocmd bufwritepost .vimrc source $MYVIMRC
   autocmd BufNewFile,BufReadPost Gemfile setfiletype ruby
   autocmd BufNewFile,BufReadPost Guardfile setfiletype ruby
@@ -218,7 +219,12 @@ endif
 nmap <leader>v :tabedit $MYVIMRC<CR>
 nmap <leader>e :Eval<CR>
 
-colorscheme badwolf "solarized 
+" --------------
+" color
+:set t_Co=256 " 256 colors
+:set background=light
+:color solarized "badwolf
+
 " Global backup dir
 set backupdir=~/.vim/swp
 set directory=~/.vim/swp
