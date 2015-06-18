@@ -2,75 +2,75 @@ set nocompatible
 set shell=/bin/bash
 
 filetype off
-"
 " Setting up Vundle - the vim plugin bundler
-    let iCanHazVundle=1
-    let vundle_readme=expand('~/.vim/bundle/vundle/README.md')
-    if !filereadable(vundle_readme)
-        echo "Installing Vundle.."
-        echo ""
-        silent !mkdir -p ~/.vim/bundle
-        silent !git clone https://github.com/gmarik/vundle ~/.vim/bundle/vundle
-        let iCanHazVundle=0
-    endif
-    set rtp+=~/.vim/bundle/vundle/
-    call vundle#rc()
-    Bundle 'gmarik/vundle'
-    "Add your bundles here
-    Bundle 'Syntastic' 
-    Bundle 'altercation/vim-colors-solarized' 
-    Bundle 'kien/ctrlp.vim'
-    " original repos on github
-    " Bundle 'kitofr/vim-functions'
-    Bundle 'neochrome/todo.vim'
-    Bundle 'scrooloose/nerdtree'
-    Bundle 'Align'
-    Bundle 'VimClojure'
-    Bundle 'surround.vim'
-    Bundle 'vimwiki'
-    Bundle 'vim-coffee-script'
-    " snipmate deps
-    Bundle "MarcWeber/vim-addon-mw-utils"
-    Bundle "tomtom/tlib_vim"
-    Bundle "honza/vim-snippets"
-    Bundle "garbas/vim-snipmate"
-    Bundle 'elixir-lang/vim-elixir'
-    Bundle 'carlosgaldino/elixir-snippets'
-    Bundle 'Puppet-Syntax-Highlighting'
+let iCanHazVundle=1
+let vundle_readme=expand('~/.vim/bundle/vundle/README.md')
+if !filereadable(vundle_readme)
+    echo "Installing Vundle.."
+    echo ""
+    silent !mkdir -p ~/.vim/bundle
+    silent !git clone https://github.com/gmarik/vundle ~/.vim/bundle/vundle
+    let iCanHazVundle=0
+endif
+set rtp+=~/.vim/bundle/vundle/
+call vundle#rc()
+Bundle 'gmarik/vundle'
 
-    Bundle 'epeli/slimux'
+"Add your bundles here
+Bundle 'Syntastic' 
+Bundle 'altercation/vim-colors-solarized' 
+Bundle 'kien/ctrlp.vim'
+" original repos on github
+" Bundle 'kitofr/vim-functions'
+Bundle 'neochrome/todo.vim'
+Bundle 'scrooloose/nerdtree'
+Bundle 'Align'
+Bundle 'VimClojure'
+Bundle 'surround.vim'
+Bundle 'vimwiki'
+Bundle 'vim-coffee-script'
+" snipmate deps
+Bundle "MarcWeber/vim-addon-mw-utils"
+Bundle "tomtom/tlib_vim"
+Bundle "honza/vim-snippets"
+Bundle "garbas/vim-snipmate"
+Bundle 'elixir-lang/vim-elixir'
+Bundle 'carlosgaldino/elixir-snippets'
+Bundle 'Puppet-Syntax-Highlighting'
 
-    " colorschemes
-    Bundle 'Solarized'
-    Bundle 'wgibbs/vim-irblack'
-    Bundle 'oceandeep'
-    Bundle 'badwolf'
-    Bundle 'rdark'
-		Bundle 'peaksea'
-    Bundle 'wombat256.vim' 
-    
-		Bundle "DrTom/fsharp-vim"
+Bundle 'epeli/slimux'
 
-    Bundle "tpope/vim-fugitive"
-    "Bundle "tpope/vim-classpath"
-    Bundle "tpope/vim-dispatch"
-    Bundle "tpope/vim-fireplace"
-    Bundle "tpope/vim-rails"
-    Bundle "tpope/vim-bundler"
+" colorschemes
+Bundle 'Solarized'
+Bundle 'wgibbs/vim-irblack'
+Bundle 'oceandeep'
+Bundle 'badwolf'
+Bundle 'rdark'
+Bundle 'peaksea'
+Bundle 'wombat256.vim' 
 
-		"status line
-    Bundle "Lokaltog/powerline", { 'rtp': 'powerline/bindings/vim' }
-    "My snippets
-    Bundle 'kitofr/kitofr-snippets'
+Bundle "DrTom/fsharp-vim"
 
-    Plugin 'editorconfig-vim'
+Bundle "tpope/vim-fugitive"
+Bundle "tpope/vim-classpath"
+Bundle "tpope/vim-dispatch"
+Bundle "tpope/vim-fireplace"
+Bundle "tpope/vim-rails"
+Bundle "tpope/vim-bundler"
 
-    "...All your other bundles...
-    if iCanHazVundle == 0
-        echo "Installing Bundles, please ignore key map error messages"
-        echo ""
-        :BundleInstall
-    endif
+"status line
+Bundle "Lokaltog/powerline", { 'rtp': 'powerline/bindings/vim' }
+"My snippets
+Bundle 'kitofr/kitofr-snippets'
+
+Plugin 'editorconfig-vim'
+
+"...All your other bundles...
+if iCanHazVundle == 0
+    echo "Installing Bundles, please ignore key map error messages"
+    echo ""
+    :BundleInstall
+endif
 
 " syntax for razor
 Bundle "adamclerk/vim-razor"
@@ -87,9 +87,7 @@ filetype plugin indent on
 set guifont=Inconsolata\ for\ Powerline:h15
 let g:Powerline_symbols = 'fancy'
 set encoding=utf-8
-set t_Co=256
 set fillchars+=stl:\ ,stlnc:\
-set term=xterm-256color
 set termencoding=utf-8
 
 " Let's remember some things, like where the .vim folder is.
@@ -131,7 +129,6 @@ set expandtab					" tabs to spaces, just do :retab
 set tabstop=2
 set softtabstop=2
 set shiftwidth=2
-set nocompatible      " We're running Vim, not Vi!
 syntax on             " Enable syntax highlighting
 filetype indent on    " Enable filetype-specific indenting
 filetype plugin on    " Enable filetype-specific plugins
@@ -147,14 +144,13 @@ vnoremap <C-r> "hy:%s/<C-r>h//gc<left><left><left>
 " noremap <Left> <Nop>
 " noremap <Right> <Nop>
 runtime macros/matchit.vim
-filetype on           " Enable filetype detection
 
 set incsearch ignorecase hlsearch
 nnoremap <silent> <Space> :silent noh<Bar>echo<CR>
 
 command ExpandSplit execute "vertical resize 800"
 
-
+filetype on           " Enable filetype detection
 " remove scrollers... 
 setglobal guioptions-=T     " Disable toolbars by default
 setglobal guioptions-=L
@@ -203,7 +199,6 @@ endfunction
 command CleanCR execute "%s/\\r\\(\\n\\)/\\1/g"
 
 if has("autocmd")
-  autocmd!
   autocmd bufwritepost .vimrc source $MYVIMRC
   autocmd BufNewFile,BufReadPost Gemfile setfiletype ruby
   autocmd BufNewFile,BufReadPost Guardfile setfiletype ruby
@@ -221,9 +216,13 @@ nmap <leader>e :Eval<CR>
 
 " --------------
 " color
-:set t_Co=256 " 256 colors
-:set background=light
-:color solarized "badwolf
+set t_Co=256 " 256 colors
+set term=xterm-256color
+let g:solarized_termcolors=16 "256
+let g:solarized_visibility = "high"
+let g:solarized_contrast = "high"
+set background=dark
+colorscheme solarized
 
 " Global backup dir
 set backupdir=~/.vim/swp
