@@ -222,7 +222,7 @@ let g:solarized_termcolors=16 "256
 let g:solarized_visibility = "high"
 let g:solarized_contrast = "high"
 set background=dark
-colorscheme solarized
+colorscheme ir_black
 
 " Global backup dir
 set backupdir=~/.vim/swp
