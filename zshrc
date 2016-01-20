@@ -20,17 +20,22 @@ ZSH_THEME="kitofr"
 # Work related aliases
 alias lla='ll -a'
 alias my='cd ~/code/my/'
-alias work='cd ~/code/youple/'
+alias work='cd ~/code/work/'
+alias agical='cd ~/code/work/agical/'
 alias cls='clear'
+
+# Ruby
 alias brake='noglob bundle exec rake'
 alias rspec='noglob bundle exec rspec'
 alias guard='noglob bundle exec guard'
 alias pcat="pygmentize -f terminal256 -O style=native -g"
-alias gpr="git pull -v -n --rebase"
-alias clj="~/dotfiles/clojure/clj"
 alias mex="iex -S mix"
 alias docker_kill_ps="docker ps -aq | awk '{print $1}' | xargs docker rm -f"
 alias docker_kill_images="docker images -aq | awk '{print $1}' | xargs docker rmi -f"
+
+#git
+alias gpr="git pull -v -n --rebase"
+# tmux
 alias tls="tmux ls"
 alias tat="tmux attach -t"
 alias tns="tmux new -s"
@@ -104,6 +109,12 @@ export PATH="/usr/local/heroku/bin:$PATH"
 export DOCKER_HOST=tcp://192.168.59.103:2376
 export DOCKER_CERT_PATH=/Users/kitofr/.boot2docker/certs/boot2docker-vm
 export DOCKER_TLS_VERIFY=1
+
+### MAGPLUS
+export DEFAULT_REDIRECT_URL=http://publish.magplus.dev
+export LOGIN_COOKIE_SECRET=0000000000000000000000000000000000000000
+export LOGIN_COOKIE_NAME=magplus_session
+export LOGIN_COOKIE_DOMAIN=.magplus.dev
 
 bindkey -e
 bindkey '^[[1;9C' forward-word
