@@ -20,6 +20,8 @@ Bundle 'gmarik/vundle'
 Bundle 'Syntastic' 
 Bundle 'altercation/vim-colors-solarized' 
 Bundle 'kien/ctrlp.vim'
+Bundle 'guicolorscheme.vim'
+
 " original repos on github
 " Bundle 'kitofr/vim-functions'
 Bundle 'neochrome/todo.vim'
@@ -49,6 +51,7 @@ Bundle 'badwolf'
 Bundle 'rdark'
 Bundle 'peaksea'
 Bundle 'wombat256.vim' 
+Bundle 'molokai' 
 
 Bundle "DrTom/fsharp-vim"
 
@@ -227,17 +230,21 @@ au FileType elm nmap <leader>d <Plug>(elm-show-docs)
 au FileType elm nmap <leader>w <Plug>(elm-browse-docs)
 
 
-
 " --------------
 " color
 set t_Co=256 " 256 colors
 set term=xterm-256color
-let g:solarized_termcolors=16 "256
+let g:solarized_termcolors=256
 let g:solarized_visibility = "high"
 let g:solarized_contrast = "high"
 set background=dark
-colorscheme ir_black
+colorscheme molokai
+let g:molokai_original = 1
+let g:rehash256 = 1
 
 " Global backup dir
 set backupdir=~/.vim/swp
 set directory=~/.vim/swp
+
+" CTRLP ignore
+let g:ctrp_custom_ignore = 'elm-stuff\|DS_Store\|git'
