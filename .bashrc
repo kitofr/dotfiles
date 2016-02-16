@@ -126,11 +126,9 @@ fi
 # This is a good place to source rvm v v v
 [[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm"  # This loads RVM into a shell session.
 
-[ -z "$TMUX" ] && export TERM=xterm-256color
+# [ -z "$TMUX" ] && export TERM=xterm-256color
 
 export PATH=$HOME/local/bin:$PATH
 
 PATH=$PATH:$HOME/.rbenv/bin # Add RVM to PATH for scripting
 PATH=$PATH:$HOME/bin/elixir/bin
-
-[ -z "$TMUX" ] && export TERM=xterm-256color

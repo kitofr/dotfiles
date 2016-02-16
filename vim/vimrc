@@ -233,12 +233,12 @@ au FileType elm nmap <leader>w <Plug>(elm-browse-docs)
 " --------------
 " color
 set t_Co=256 " 256 colors
-set term=xterm-256color
+set term=screen-256color
 let g:solarized_termcolors=256
 let g:solarized_visibility = "high"
 let g:solarized_contrast = "high"
 set background=dark
-colorscheme molokai
+colorscheme solarized " molokai
 let g:molokai_original = 1
 let g:rehash256 = 1
 
@@ -248,3 +248,6 @@ set directory=~/.vim/swp
 
 " CTRLP ignore
 let g:ctrp_custom_ignore = 'elm-stuff\|DS_Store\|git'
+
+" Spell
+nmap <Leader>s :setlocal spell! spelllang=en_us<CR>
