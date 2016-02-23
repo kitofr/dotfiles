@@ -238,7 +238,7 @@ let g:solarized_termcolors=256
 let g:solarized_visibility = "high"
 let g:solarized_contrast = "high"
 set background=dark
-colorscheme solarized " molokai
+colorscheme molokai " solarized 
 let g:molokai_original = 1
 let g:rehash256 = 1
 
