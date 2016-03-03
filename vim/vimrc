@@ -31,6 +31,7 @@ Bundle 'VimClojure'
 Bundle 'surround.vim'
 Bundle 'vimwiki'
 Bundle 'vim-coffee-script'
+Bundle 'linediff.vim'
 " snipmate deps
 Bundle "MarcWeber/vim-addon-mw-utils"
 Bundle "tomtom/tlib_vim"
@@ -39,6 +40,7 @@ Bundle "garbas/vim-snipmate"
 Bundle 'elixir-lang/vim-elixir'
 Bundle 'carlosgaldino/elixir-snippets'
 Bundle 'Puppet-Syntax-Highlighting'
+Bundle 'slim-template/vim-slim.git'
 
 Plugin 'elmcast/elm-vim'
 Bundle 'epeli/slimux'
@@ -210,7 +212,7 @@ if has("autocmd")
   autocmd BufNewFile,BufReadPost *.cljx setfiletype clojure
   autocmd BufNewFile,BufReadPost *.json setfiletype javascript
   autocmd BufNewFile,BufReadPost *.md setfiletype markdown
-  autocmd BufNewFile,BufReadPost *.slim setfiletype haml
+  autocmd BufNewFile,BufReadPost *.slim setfiletype slim
   autocmd BufWritePre *.rb :%s/\s\+$//e
   autocmd BufWritePre *.ex :%s/\s\+$//e
   autocmd ColorScheme * hi clear SpellBad
