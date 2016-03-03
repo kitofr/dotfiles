@@ -48,6 +48,8 @@ desc "Setup emacs"
 task :emacs do
   sh "rm -rf ~/.emacs*"
   sh "ln -s #{pwd}/emacs.d ~/.emacs.d"
+  sh "rm -f ~/.spacemacs"
+  sh "ln -s #{pwd}/spacemacs ~/.spacemacs"
 end
 
 task :vimwiki do
