@@ -232,6 +232,8 @@ au FileType elm nmap <leader>e <Plug>(elm-error-detail)
 au FileType elm nmap <leader>d <Plug>(elm-show-docs)
 au FileType elm nmap <leader>w <Plug>(elm-browse-docs)
 
+map <Leader>bg :let &background = ( &background == "dark"? "light" : "dark" )<CR>
+
 
 " --------------
 " color

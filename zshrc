@@ -23,6 +23,7 @@ alias my='cd ~/code/my/'
 alias work='cd ~/code/work/'
 alias agical='cd ~/code/work/agical/'
 alias cls='clear'
+alias rcop='rubocop -c ~/Projects/style-guide/rubocop.yml'
 
 # Ruby
 alias brake='noglob bundle exec rake'
