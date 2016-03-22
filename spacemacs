@@ -33,13 +33,20 @@ values."
      markdown
      elm
      org
+     yaml
+     html
+     javascript
+     ruby-on-rails
+     ruby
      ;; (shell :variables
      ;;        shell-default-height 30
      ;;        shell-default-position 'bottom)
      spell-checking
      syntax-checking
      version-control
+     (osx :variables osx-use-option-as-meta nil)
      )
+   truncate-lines 1
    ;; List of additional packages that will be installed without being
    ;; wrapped in a layer. If you need some configuration for these
    ;; packages, then consider creating a layer. You can also put the
@@ -235,6 +242,10 @@ values."
    ;; delete only whitespace for changed lines or `nil' to disable cleanup.
    ;; (default nil)
    dotspacemacs-whitespace-cleanup 'trailing
+
+   ;; I guess this removes the comment inserted into .rb-files
+   ;; # coding: utf-8
+   ruby-insert-encoding-magic-comment nil
    ))
 
 (defun dotspacemacs/user-init ()

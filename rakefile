@@ -74,6 +74,7 @@ end
 
 task :git do
   soft_link "#{pwd}/git/gitconfig", "~/.gitconfig"
+  soft_link "#{pwd}/gitignore", "~/.gitignore"
 end
 
 task :tmux do

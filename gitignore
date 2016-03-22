@@ -1,0 +1,8 @@
+*.swp
+*~
+vim/bundle
+vim/.netrwhist
+.VimballRecord
+fish/fish_history
+vim/
+.#*
