@@ -6,3 +6,4 @@ vim/.netrwhist
 fish/fish_history
 vim/
 .#*
+.rubocop.yml
