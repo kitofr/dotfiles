@@ -32,6 +32,7 @@ Bundle 'surround.vim'
 Bundle 'vimwiki'
 Bundle 'vim-coffee-script'
 Bundle 'linediff.vim'
+Bundle 'ag.vim'
 " snipmate deps
 Bundle "MarcWeber/vim-addon-mw-utils"
 Bundle "tomtom/tlib_vim"
