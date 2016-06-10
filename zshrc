@@ -26,6 +26,7 @@ alias cls='clear'
 alias rcop='rubocop -c ~/Projects/style-guide/rubocop.yml'
 
 # Ruby
+alias be='noglob bundle exec'
 alias brake='noglob bundle exec rake'
 alias rspec='noglob bundle exec rspec'
 alias guard='noglob bundle exec guard'
@@ -107,15 +108,6 @@ eval "$(rbenv init -)"
 ### Added by the Heroku Toolbelt
 export PATH="/usr/local/heroku/bin:$PATH"
 
-export DOCKER_HOST=tcp://192.168.59.103:2376
-export DOCKER_CERT_PATH=/Users/kitofr/.boot2docker/certs/boot2docker-vm
-export DOCKER_TLS_VERIFY=1
-
-### MAGPLUS
-export DEFAULT_REDIRECT_URL=http://publish.magplus.dev
-export LOGIN_COOKIE_SECRET=0000000000000000000000000000000000000000
-export LOGIN_COOKIE_NAME=magplus_session
-export LOGIN_COOKIE_DOMAIN=.magplus.dev
 
 bindkey -e
 bindkey '^[[1;9C' forward-word
