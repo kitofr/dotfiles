@@ -7,3 +7,4 @@ fish/fish_history
 vim/
 .#*
 .rubocop.yml
+.tern-port
