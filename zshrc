@@ -24,6 +24,9 @@ alias work='cd ~/code/work/'
 alias agical='cd ~/code/work/agical/'
 alias cls='clear'
 alias rcop='rubocop -c ~/Projects/style-guide/rubocop.yml'
+alias dcu='docker-compose up'
+alias dcl='docker-compose logs'
+alias dcb='docker-compose build'
 
 # Ruby
 alias be='noglob bundle exec'
