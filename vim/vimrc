@@ -55,6 +55,7 @@ Bundle 'rdark'
 Bundle 'peaksea'
 Bundle 'wombat256.vim' 
 Bundle 'molokai' 
+Bundle 'ekalinin/Dockerfile.vim'
 
 Bundle "DrTom/fsharp-vim"
 
@@ -172,7 +173,7 @@ map <silent> <leader>4 :diffget 4<CR> :diffupdate<CR>
 
 "show/hide invisibles
 nmap <leader>l :set list!<CR>
-set listchars=tab:»\ ,eol:¬
+set listchars=tab:»\ ,trail:·
 
 "Vim masterclass
 xnoremap . :norm.<CR>
