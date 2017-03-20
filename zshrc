@@ -19,6 +19,7 @@ ZSH_THEME="agnoster"
 
 # Work related aliases
 alias lla='ll -a'
+alias lll='ll -a | lolcat'
 alias my='cd ~/code/my/'
 alias work='cd ~/code/work/'
 alias agical='cd ~/code/work/agical/'
@@ -27,9 +28,12 @@ alias rcop='rubocop -c ~/Projects/style-guide/rubocop.yml'
 alias dcu='docker-compose up'
 alias dcl='docker-compose logs'
 alias dcb='docker-compose build'
+alias dcr='docker-compose run'
+alias myip='ifconfig | grep -e "inet\s"'
 
 # Ruby
 alias be='noglob bundle exec'
+alias rake='noglob rake'
 alias brake='noglob bundle exec rake'
 alias rspec='noglob bundle exec rspec'
 alias guard='noglob bundle exec guard'
