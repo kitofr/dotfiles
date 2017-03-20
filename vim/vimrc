@@ -271,3 +271,7 @@ let g:ctrlp_custom_ignore = {
 
 " Spell
 nmap <Leader>s :setlocal spell! spelllang=en_us<CR>
+
+" NERDTREE
+map <leader>nt :NERDTree%<cr>
+
