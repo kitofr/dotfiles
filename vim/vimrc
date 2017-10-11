@@ -17,8 +17,8 @@ call vundle#rc()
 Bundle 'gmarik/vundle'
 
 "Add your bundles here
-Bundle 'Syntastic' 
-Bundle 'altercation/vim-colors-solarized' 
+Bundle 'Syntastic'
+Bundle 'altercation/vim-colors-solarized'
 Bundle 'kien/ctrlp.vim'
 Bundle 'guicolorscheme.vim'
 
@@ -53,9 +53,10 @@ Bundle 'oceandeep'
 Bundle 'badwolf'
 Bundle 'rdark'
 Bundle 'peaksea'
-Bundle 'wombat256.vim' 
-Bundle 'molokai' 
+Bundle 'wombat256.vim'
+Bundle 'molokai'
 Bundle 'ekalinin/Dockerfile.vim'
+Bundle 'acarapetis/vim-colors-github'
 
 Bundle "DrTom/fsharp-vim"
 
@@ -65,6 +66,7 @@ Bundle "tpope/vim-dispatch"
 Bundle "tpope/vim-fireplace"
 Bundle "tpope/vim-rails"
 Bundle "tpope/vim-bundler"
+Plugin 'jparise/vim-graphql' 
 
 "status line
 Bundle "Lokaltog/powerline", { 'rtp': 'powerline/bindings/vim' }
@@ -133,7 +135,7 @@ set nu!
 set cursorline
 " set cursorcolumn
 set hlsearch
-set expandtab					" tabs to spaces, just do :retab
+set expandtab         " tabs to spaces, just do :retab
 set tabstop=2
 set softtabstop=2
 set shiftwidth=2
@@ -157,7 +159,7 @@ set incsearch ignorecase hlsearch
 nnoremap <silent> <Space> :silent noh<Bar>echo<CR>
 
 filetype on           " Enable filetype detection
-" remove scrollers... 
+" remove scrollers...
 setglobal guioptions-=T     " Disable toolbars by default
 setglobal guioptions-=L
 setglobal guioptions-=l
@@ -217,7 +219,7 @@ if has("autocmd")
   autocmd BufWritePre *.rb :%s/\s\+$//e
   autocmd BufWritePre *.ex :%s/\s\+$//e
   autocmd ColorScheme * hi clear SpellBad
-      \| hi SpellBad cterm=underline,bold ctermfg=red 
+      \| hi SpellBad cterm=underline,bold ctermfg=red
 endif
 nmap <leader>v :tabedit $MYVIMRC<CR>
 
@@ -244,7 +246,7 @@ let g:solarized_termcolors=256
 let g:solarized_visibility = "high"
 let g:solarized_contrast = "high"
 set background=dark
-colorscheme solarized 
+colorscheme solarized
 let g:molokai_original = 1
 let g:rehash256 = 1
 
@@ -266,7 +268,7 @@ set directory=~/.vim/swp
 
 " CTRLP ignore
 let g:ctrlp_custom_ignore = {
-    \ 'dir': '\.git$\|\.hg$\|\.svn$\|bower_components$\|dist$\|node_modules$\|project_files$\|elm-stuff$',
+    \ 'dir': '\.git$\|\.hg$\|\.svn$\|bower_components$\|dist$\|node_modules$\|project_files$\|assets$\|webpack$\|elm-stuff$\|_build$',
     \ 'file': '\.exe$\|\.so$\|\.dll$\|\.pyc$' }
 
 " Spell
