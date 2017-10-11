@@ -1,6 +1,11 @@
 set nocompatible
 set shell=/bin/bash
 
+set path+=**
+set wildmenu
+
+command! MakeTags !ctags --recurse .
+
 filetype off
 " Setting up Vundle - the vim plugin bundler
 let iCanHazVundle=1
