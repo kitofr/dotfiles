@@ -1,5 +1,3 @@
-require 'pry'
-
 task :default => [:tmux,:vim,:fonts,:zsh]
 
 #TODO switch mklink/ln betwen environments
