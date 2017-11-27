@@ -9,3 +9,4 @@ vim/
 .rubocop.yml
 .tern-port
 .agignore
+tags
