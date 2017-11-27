@@ -6,7 +6,9 @@ ZSH=$HOME/.oh-my-zsh
 # Optionally, if you set this to "random", it'll load a random theme each
 # time that oh-my-zsh is loaded.
 # ZSH_THEME="robbyrussell"
-ZSH_THEME="agnoster"
+ZSH_THEME="refined"
+autoload -U promptinit; promptinit
+prompt pure
 
 # Example aliases
 # alias zshconfig="mate ~/.zshrc"
@@ -22,6 +24,8 @@ alias lla='ll -a'
 alias lll='ll -a | lolcat'
 alias my='cd ~/code/my/'
 alias work='cd ~/code/work/'
+alias projects='cd ~/code/klarna/team-panda/Projects'
+alias panda='cd ~/code/klarna/team-panda'
 alias agical='cd ~/code/work/agical/'
 alias cls='clear'
 alias rcop='rubocop -c ~/Projects/style-guide/rubocop.yml'
@@ -30,6 +34,7 @@ alias dcl='docker-compose logs'
 alias dcb='docker-compose build'
 alias dcr='docker-compose run'
 alias myip='ifconfig | grep -e "inet\s"'
+alias weather='curl wttr.in/~Stockholm'
 
 # Ruby
 alias be='noglob bundle exec'
@@ -121,3 +126,25 @@ bindkey '^[[1;9C' forward-word
 bindkey '^[[1;9D' backward-word
 source /usr/local/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 
+. /usr/local/etc/profile.d/z.sh
+
+
+# Klarna export
+#
+
+# pip zsh completion start
+function _pip_completion {
+  local words cword
+  read -Ac words
+  read -cn cword
+  reply=( $( COMP_WORDS="$words[*]" \
+             COMP_CWORD=$(( cword-1 )) \
+             PIP_AUTO_COMPLETE=1 $words[1] ) )
+}
+compctl -K _pip_completion pip
+# pip zsh completion end
+
+export PATH="/usr/local/heroku/bin:/Users/kristoffer.roupe/.rbenv/shims:/~/.rbenv/bin:usr/local/bin:/usr/local/sbin:/bin:/usr/sbin:/sbin:~/bin:/Users/krirou/Applications/Firefox.app/Contents/MacOS:/usr/local/heroku/bin:/Users/kristoffer.roupe/.rbenv/shims:/~/.rbenv/bin:usr/local/bin:/usr/local/sbin:/bin:/usr/sbin:/sbin:~/bin:/Users/krirou/Applications/Firefox.app/Contents/MacOS:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/MacGPG2/bin:/Users/kristoffer.roupe/go/bin:/usr/local/lib/python2.7/site-packages:$PATH"
+export GOPATH=/Users/kristoffer.roupe/go
+export AWS_PROFILE=panda@klarna-non-production
+export TEAM=panda
