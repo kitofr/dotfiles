@@ -25,14 +25,30 @@ task :aws do
   soft_link "$HOME/Dropbox/Private/aws/config", "~/.aws/config"
 end
 
+def chmod400(source)
+  sh "chmod 400 #{source}"
+end
+
 task :ssh do
   soft_link "$HOME/Dropbox/Private/ssh/config", "~/.ssh/config"
+
   soft_link "$HOME/Dropbox/Private/ssh/heroku", "~/.ssh/heroku"
   soft_link "$HOME/Dropbox/Private/ssh/heroku.pub", "~/.ssh/heroku.pub"
+
   soft_link "$HOME/Dropbox/Private/ssh/github_rsa", "~/.ssh/github_rsa"
   soft_link "$HOME/Dropbox/Private/ssh/github_rsa.pub", "~/.ssh/github_rsa.pub"
+
   soft_link "$HOME/Dropbox/Private/ssh/id_rsa", "~/.ssh/id_rsa"
   soft_link "$HOME/Dropbox/Private/ssh/id_rsa.pub", "~/.ssh/id_rsa.pub"
+
+  soft_link "$HOME/Dropbox/Private/ssh/klarna_id_rsa", "~/.ssh/klarna_id_rsa"
+  soft_link "$HOME/Dropbox/Private/ssh/klarna_id_rsa.pub", "~/.ssh/klarna_id_rsa.pub"
+  # chmod to 400 on privates
+
+  %W(id_rsa github_rsa klarna_id_rsa).each do |file|
+    chmod400 "~/.ssh/#{file}"
+  end
+
 end
 
 desc "Setup vim"
