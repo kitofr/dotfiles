@@ -8,7 +8,12 @@ ZSH=$HOME/.oh-my-zsh
 # ZSH_THEME="robbyrussell"
 ZSH_THEME="powerlevel9k/powerlevel9k"
 
-POWERLEVEL9K_LEFT_PROMPT_ELEMENTS=(dir rbenv vcs)
+# POWERLEVEL9K_MODE='awesome-patched'
+POWERLEVEL9K_SHORTEN_DIR_LENGTH=2
+POWERLEVEL9K_SHORTEN_STRATEGY="trunkate_left"
+POWERLEVEL9K_LEFT_PROMPT_ELEMENTS=(dir vcs)
+POWERLEVEL9K_RIGHT_PROMPT_ELEMENTS=(status rbenv)
+
 
 # Example aliases
 # alias zshconfig="mate ~/.zshrc"
@@ -20,6 +25,8 @@ POWERLEVEL9K_LEFT_PROMPT_ELEMENTS=(dir rbenv vcs)
 # done
 
 # Work related aliases
+alias vi='/usr/local/bin/vim'
+alias vim='/usr/local/bin/vim' #use vim8 from brew
 alias lla='ll -a'
 alias lll='ll -a | lolcat'
 alias my='cd ~/code/my/'
@@ -35,6 +42,7 @@ alias dcb='docker-compose build'
 alias dcr='docker-compose run'
 alias myip='ifconfig | grep -e "inet\s"'
 alias weather='curl wttr.in/~Stockholm'
+alias less='less -N'
 
 # Ruby
 alias be='noglob bundle exec'
