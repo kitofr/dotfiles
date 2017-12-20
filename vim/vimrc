@@ -27,7 +27,8 @@ call minpac#add('joshdick/onedark.vim')
 call minpac#add('jparise/vim-graphql')
 call minpac#add('junegunn/fzf')
 call minpac#add('k-takata/minpac', {'type': 'opt'})
-call minpac#add('lokaltog/powerline')
+call minpac#add('vim-airline/vim-airline')
+call minpac#add('vim-airline/vim-airline-themes')
 call minpac#add('rking/ag.vim')
 call minpac#add('scrooloose/nerdtree')
 call minpac#add('thoughtbot/vim-rspec')
@@ -246,6 +247,9 @@ let g:syntastic_auto_loc_list = 1
 " let g:syntastic_check_on_open = 1
 " let g:syntastic_check_on_wq = 0
 " let g:syntastic_debug = 3
+
+let g:airline#extensions#tabline#enabled = 1
+let g:airline_powerline_fonts = 1
 
 " Global backup dir
 set backupdir=~/.vim/swp
