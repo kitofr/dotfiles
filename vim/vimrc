@@ -221,17 +221,17 @@ au FileType elm nmap <leader>e <Plug>(elm-error-detail)
 au FileType elm nmap <leader>d <Plug>(elm-show-docs)
 au FileType elm nmap <leader>w <Plug>(elm-browse-docs)
 
-map <Leader>bg :let &background = ( &background == "dark"? "light" : "dark" )<CR>
+map <Leader>bg :let &background=( &background == "dark"? "light" : "dark" )<CR>
 
 " --------------
 " color
 set t_Co=256 " 256 colors
 set term=screen-256color
-"let g:solarized_termcolors=256
-"let g:solarized_visibility = "high"
-"let g:solarized_contrast = "high"
-set background=dark
+let g:solarized_termcolors=256
+let g:solarized_visibility = "high"
+let g:solarized_contrast = "high"
 colorscheme solarized
+set background=dark
 "let g:molokai_original = 1
 let g:rehash256 = 1
 
