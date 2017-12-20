@@ -15,8 +15,6 @@
 [core]
 	editor = /usr/bin/vim
   excludesfile = ~/.gitignore
-[branch "master"]
-	mergeoptions = --squash
 [help]
   autocorrect = 1
 [filter "lfs"]
