@@ -43,7 +43,6 @@ call minpac#add('vim-airline/vim-airline-themes')
 call minpac#add('vim-scripts/VimClojure')
 call minpac#add('vim-scripts/align')
 call minpac#add('vim-syntastic/syntastic')
-
 " 
 " Bundle "MarcWeber/vim-addon-mw-utils"
 " Bundle "garbas/vim-snipmate"
@@ -249,6 +248,7 @@ let g:syntastic_auto_loc_list = 1
 
 let g:airline#extensions#tabline#enabled = 1
 let g:airline_powerline_fonts = 1
+let g:airline_theme='solarized'
 
 " Global backup dir
 set backupdir=~/.vim/swp
