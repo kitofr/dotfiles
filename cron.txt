@@ -1,1 +1,0 @@
-0 0 * * * ruby /home/kristoffer/code/kitofr/svn_scripts/differ.rb http://repo.dev.cint.com:8080/svn/rcint/trunk/rails_apps/cds /home/kristoffer/diffs/cds
