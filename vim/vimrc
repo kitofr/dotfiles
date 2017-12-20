@@ -11,16 +11,26 @@ set wildmenu
 command! PackUpdate call minpac#update()
 command! PackClean call minpac#clean()
 command! CTags !ctags --recurse .
+command! ExpandSplit execute "vertical resize 800"
+command! CleanCR execute "%s/\\r\\(\\n\\)/\\1/g"
 
 filetype off
 
 "Add your bundles here
 call minpac#add('altercation/vim-colors-solarized')
 call minpac#add('andrewradev/linediff.vim')
+call minpac#add('editorconfig/editorconfig-vim')
+call minpac#add('ekalinin/Dockerfile.vim')
+call minpac#add('elixir-lang/vim-elixir')
+call minpac#add('elmcast/elm-vim')
 call minpac#add('joshdick/onedark.vim')
+call minpac#add('jparise/vim-graphql')
+call minpac#add('junegunn/fzf')
 call minpac#add('k-takata/minpac', {'type': 'opt'})
+call minpac#add('lokaltog/powerline')
 call minpac#add('rking/ag.vim')
 call minpac#add('scrooloose/nerdtree')
+call minpac#add('thoughtbot/vim-rspec')
 call minpac#add('tpope/vim-bundler')
 call minpac#add('tpope/vim-classpath')
 call minpac#add('tpope/vim-dispatch')
@@ -32,26 +42,17 @@ call minpac#add('tpope/vim-unimpaired')
 call minpac#add('vim-scripts/VimClojure')
 call minpac#add('vim-scripts/align')
 call minpac#add('vim-syntastic/syntastic')
-call minpac#add('lokaltog/powerline')
-call minpac#add('thoughtbot/vim-rspec')
-call minpac#add('junegunn/fzf')
+
 
 " 
-" Bundle "DrTom/fsharp-vim"
-" Bundle "Lokaltog/powerline", { 'rtp': 'powerline/bindings/vim' }
 " Bundle "MarcWeber/vim-addon-mw-utils"
 " Bundle "garbas/vim-snipmate"
 " Bundle "honza/vim-snippets"
-" Bundle "thoughtbot/vim-rspec"
 " Bundle "tomtom/tlib_vim"
 " Bundle 'Puppet-Syntax-Highlighting'
-" Bundle 'Solarized'
-" Bundle 'VimClojure'
 " Bundle 'acarapetis/vim-colors-github'
 " Bundle 'badwolf'
 " Bundle 'carlosgaldino/elixir-snippets'
-" Bundle 'ekalinin/Dockerfile.vim'
-" Bundle 'elixir-lang/vim-elixir'
 " Bundle 'epeli/slimux'
 " Bundle 'kitofr/vim-functions'
 " Bundle 'molokai'
@@ -64,13 +65,8 @@ call minpac#add('junegunn/fzf')
 " Bundle 'vimwiki'
 " Bundle 'wgibbs/vim-irblack'
 " Bundle 'wombat256.vim'
-" Plugin 'elmcast/elm-vim'
-" Plugin 'jparise/vim-graphql' 
-" "My snippets
 " Bundle 'kitofr/kitofr-snippets'
 " 
-" Plugin 'editorconfig-vim'
-
 "...All your other bundles...
 " if iCanHazVundle == 0
 "     echo "Installing Bundles, please ignore key map error messages"
@@ -195,9 +191,6 @@ function! HasPaste()
     en
     return ''
 endfunction
-
-command! ExpandSplit execute "vertical resize 800"
-command! CleanCR execute "%s/\\r\\(\\n\\)/\\1/g"
 
 if has("autocmd")
   autocmd bufwritepost .vimrc source $MYVIMRC
