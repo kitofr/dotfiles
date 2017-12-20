@@ -1,97 +1,87 @@
 set nocompatible
 set shell=/bin/bash
+packadd minpac
+
+call minpac#init()
+
 
 set path+=**
 set wildmenu
 
+command! PackUpdate call minpac#update()
+command! PackClean call minpac#clean()
 command! CTags !ctags --recurse .
 
 filetype off
-" Setting up Vundle - the vim plugin bundler
-let iCanHazVundle=1
-let vundle_readme=expand('~/.vim/bundle/vundle/README.md')
-if !filereadable(vundle_readme)
-    echo "Installing Vundle.."
-    echo ""
-    silent !mkdir -p ~/.vim/bundle
-    silent !git clone https://github.com/gmarik/vundle ~/.vim/bundle/vundle
-    let iCanHazVundle=0
-endif
-set rtp+=~/.vim/bundle/vundle/
-call vundle#rc()
-Bundle 'gmarik/vundle'
 
 "Add your bundles here
-Bundle 'Syntastic'
-Bundle 'altercation/vim-colors-solarized'
-Bundle 'kien/ctrlp.vim'
-Bundle 'guicolorscheme.vim'
+call minpac#add('altercation/vim-colors-solarized')
+call minpac#add('andrewradev/linediff.vim')
+call minpac#add('joshdick/onedark.vim')
+call minpac#add('k-takata/minpac', {'type': 'opt'})
+call minpac#add('rking/ag.vim')
+call minpac#add('scrooloose/nerdtree')
+call minpac#add('tpope/vim-bundler')
+call minpac#add('tpope/vim-classpath')
+call minpac#add('tpope/vim-dispatch')
+call minpac#add('tpope/vim-fireplace')
+call minpac#add('tpope/vim-fugitive')
+call minpac#add('tpope/vim-rails')
+call minpac#add('tpope/vim-surround')
+call minpac#add('tpope/vim-unimpaired')
+call minpac#add('vim-scripts/VimClojure')
+call minpac#add('vim-scripts/align')
+call minpac#add('vim-syntastic/syntastic')
+call minpac#add('lokaltog/powerline')
+call minpac#add('thoughtbot/vim-rspec')
+call minpac#add('junegunn/fzf')
 
-" original repos on github
+" 
+" Bundle "DrTom/fsharp-vim"
+" Bundle "Lokaltog/powerline", { 'rtp': 'powerline/bindings/vim' }
+" Bundle "MarcWeber/vim-addon-mw-utils"
+" Bundle "garbas/vim-snipmate"
+" Bundle "honza/vim-snippets"
+" Bundle "thoughtbot/vim-rspec"
+" Bundle "tomtom/tlib_vim"
+" Bundle 'Puppet-Syntax-Highlighting'
+" Bundle 'Solarized'
+" Bundle 'VimClojure'
+" Bundle 'acarapetis/vim-colors-github'
+" Bundle 'badwolf'
+" Bundle 'carlosgaldino/elixir-snippets'
+" Bundle 'ekalinin/Dockerfile.vim'
+" Bundle 'elixir-lang/vim-elixir'
+" Bundle 'epeli/slimux'
 " Bundle 'kitofr/vim-functions'
-Bundle 'neochrome/todo.vim'
-Bundle 'scrooloose/nerdtree'
-Bundle 'Align'
-Bundle 'VimClojure'
-Bundle 'surround.vim'
-Bundle 'vimwiki'
-Bundle 'vim-coffee-script'
-Bundle 'linediff.vim'
-Bundle 'ag.vim'
-" snipmate deps
-Bundle "MarcWeber/vim-addon-mw-utils"
-Bundle "tomtom/tlib_vim"
-Bundle "honza/vim-snippets"
-Bundle "garbas/vim-snipmate"
-Bundle 'elixir-lang/vim-elixir'
-Bundle 'carlosgaldino/elixir-snippets'
-Bundle 'Puppet-Syntax-Highlighting'
-Bundle 'slim-template/vim-slim.git'
-
-Plugin 'elmcast/elm-vim'
-Bundle 'epeli/slimux'
-
-" colorschemes
-Bundle 'Solarized'
-Bundle 'wgibbs/vim-irblack'
-Bundle 'oceandeep'
-Bundle 'badwolf'
-Bundle 'rdark'
-Bundle 'peaksea'
-Bundle 'wombat256.vim'
-Bundle 'molokai'
-Bundle 'ekalinin/Dockerfile.vim'
-Bundle 'acarapetis/vim-colors-github'
-
-Bundle "DrTom/fsharp-vim"
-
-Bundle "tpope/vim-fugitive"
-Bundle "tpope/vim-classpath"
-Bundle "tpope/vim-dispatch"
-Bundle "tpope/vim-fireplace"
-Bundle "tpope/vim-rails"
-Bundle "thoughtbot/vim-rspec"
-Bundle "tpope/vim-bundler"
-Plugin 'jparise/vim-graphql' 
-
-"status line
-Bundle "Lokaltog/powerline", { 'rtp': 'powerline/bindings/vim' }
-"My snippets
-Bundle 'kitofr/kitofr-snippets'
-
-Plugin 'editorconfig-vim'
+" Bundle 'molokai'
+" Bundle 'neochrome/todo.vim'
+" Bundle 'oceandeep'
+" Bundle 'peaksea'
+" Bundle 'rdark'
+" Bundle 'slim-template/vim-slim.git'
+" Bundle 'vim-coffee-script'
+" Bundle 'vimwiki'
+" Bundle 'wgibbs/vim-irblack'
+" Bundle 'wombat256.vim'
+" Plugin 'elmcast/elm-vim'
+" Plugin 'jparise/vim-graphql' 
+" "My snippets
+" Bundle 'kitofr/kitofr-snippets'
+" 
+" Plugin 'editorconfig-vim'
 
 "...All your other bundles...
-if iCanHazVundle == 0
-    echo "Installing Bundles, please ignore key map error messages"
-    echo ""
-    :BundleInstall
-endif
+" if iCanHazVundle == 0
+"     echo "Installing Bundles, please ignore key map error messages"
+"     echo ""
+"     :BundleInstall
+" endif
 
 " syntax for razor
-Bundle "adamclerk/vim-razor"
-
-Bundle "https://github.com/othree/javascript-libraries-syntax.vim.git"
+" Bundle "adamclerk/vim-razor"
+" 
+" Bundle "https://github.com/othree/javascript-libraries-syntax.vim.git"
 
 " vim-scripts repos
 " Bundle 'L9'
@@ -154,14 +144,11 @@ set mouse=a
 let mapleader = ","
 let g:calendar_monday = 1
 vnoremap <C-r> "hy:%s/<C-r>h//gc<left><left><left>
-" noremap <Up> <Nop>
-" noremap <Down> <Nop>
-" noremap <Left> <Nop>
-" noremap <Right> <Nop>
 runtime macros/matchit.vim
 
 set incsearch ignorecase hlsearch
 nnoremap <silent> <Space> :silent noh<Bar>echo<CR>
+nnoremap <C-p> :<C-u>FZF<CR>
 
 filetype on           " Enable filetype detection
 " remove scrollers...
@@ -247,9 +234,9 @@ map <Leader>bg :let &background = ( &background == "dark"? "light" : "dark" )<CR
 " color
 set t_Co=256 " 256 colors
 set term=screen-256color
-let g:solarized_termcolors=256
-let g:solarized_visibility = "high"
-let g:solarized_contrast = "high"
+"let g:solarized_termcolors=256
+"let g:solarized_visibility = "high"
+"let g:solarized_contrast = "high"
 set background=dark
 colorscheme solarized
 "let g:molokai_original = 1
@@ -272,9 +259,9 @@ set backupdir=~/.vim/swp
 set directory=~/.vim/swp
 
 " CTRLP ignore
-let g:ctrlp_custom_ignore = {
-    \ 'dir': '\.git$\|\.hg$\|\.svn$\|bower_components$\|dist$\|node_modules$\|project_files$\|assets$\|webpack$\|elm-stuff$\|_build$',
-    \ 'file': '\.exe$\|\.so$\|\.dll$\|\.pyc$' }
+" let g:ctrlp_custom_ignore = {
+"     \ 'dir': '\.git$\|\.hg$\|\.svn$\|bower_components$\|dist$\|node_modules$\|project_files$\|assets$\|webpack$\|elm-stuff$\|_build$',
+"     \ 'file': '\.exe$\|\.so$\|\.dll$\|\.pyc$' }
 
 " Spell
 nmap <Leader>s :setlocal spell! spelllang=en_us<CR>
