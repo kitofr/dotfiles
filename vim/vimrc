@@ -4,7 +4,6 @@ packadd minpac
 
 call minpac#init()
 
-
 set path+=**
 set wildmenu
 
@@ -14,7 +13,7 @@ command! CTags !ctags --recurse .
 command! ExpandSplit execute "vertical resize 800"
 command! CleanCR execute "%s/\\r\\(\\n\\)/\\1/g"
 
-filetype off
+filetype on
 
 "Add your bundles here
 call minpac#add('altercation/vim-colors-solarized')
@@ -23,12 +22,11 @@ call minpac#add('editorconfig/editorconfig-vim')
 call minpac#add('ekalinin/Dockerfile.vim')
 call minpac#add('elixir-lang/vim-elixir')
 call minpac#add('elmcast/elm-vim')
+call minpac#add('jelera/vim-javascript-syntax')
 call minpac#add('joshdick/onedark.vim')
 call minpac#add('jparise/vim-graphql')
 call minpac#add('junegunn/fzf')
 call minpac#add('k-takata/minpac', {'type': 'opt'})
-call minpac#add('vim-airline/vim-airline')
-call minpac#add('vim-airline/vim-airline-themes')
 call minpac#add('rking/ag.vim')
 call minpac#add('scrooloose/nerdtree')
 call minpac#add('thoughtbot/vim-rspec')
@@ -40,10 +38,11 @@ call minpac#add('tpope/vim-fugitive')
 call minpac#add('tpope/vim-rails')
 call minpac#add('tpope/vim-surround')
 call minpac#add('tpope/vim-unimpaired')
+call minpac#add('vim-airline/vim-airline')
+call minpac#add('vim-airline/vim-airline-themes')
 call minpac#add('vim-scripts/VimClojure')
 call minpac#add('vim-scripts/align')
 call minpac#add('vim-syntastic/syntastic')
-
 
 " 
 " Bundle "MarcWeber/vim-addon-mw-utils"
