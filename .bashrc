@@ -132,3 +132,6 @@ export PATH=$HOME/local/bin:$PATH
 
 PATH=$PATH:$HOME/.rbenv/bin # Add RVM to PATH for scripting
 PATH=$PATH:$HOME/bin/elixir/bin
+
+# added by travis gem
+[ -f /Users/kitofr/.travis/travis.sh ] && source /Users/kitofr/.travis/travis.sh

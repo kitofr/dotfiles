@@ -159,3 +159,6 @@ export PATH="/usr/local/heroku/bin:/Users/kristoffer.roupe/.rbenv/shims:/~/.rben
 export GOPATH=/Users/kristoffer.roupe/go
 export AWS_PROFILE=panda@klarna-non-production
 export TEAM=panda
+
+# added by travis gem
+[ -f /Users/kitofr/.travis/travis.sh ] && source /Users/kitofr/.travis/travis.sh

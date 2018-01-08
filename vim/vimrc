@@ -255,9 +255,9 @@ set backupdir=~/.vim/swp
 set directory=~/.vim/swp
 
 " CTRLP ignore
-" let g:ctrlp_custom_ignore = {
-"     \ 'dir': '\.git$\|\.hg$\|\.svn$\|bower_components$\|dist$\|node_modules$\|project_files$\|assets$\|webpack$\|elm-stuff$\|_build$',
-"     \ 'file': '\.exe$\|\.so$\|\.dll$\|\.pyc$' }
+let g:ctrlp_custom_ignore = {
+    \ 'dir': '\.git$\|\.hg$\|\.svn$\|bower_components$\|dist$\|node_modules$\|project_files$\|public$\|tmp$\|webpack$\|elm-stuff$\|_build$',
+    \ 'file': '\.exe$\|\.so$\|\.dll$\|\.pyc$' }
 
 " Spell
 nmap <Leader>s :setlocal spell! spelllang=en_us<CR>
