@@ -1,4 +1,5 @@
 *.swp
+.projections.json
 *~
 vim/bundle
 vim/.netrwhist
