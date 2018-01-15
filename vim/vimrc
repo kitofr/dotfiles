@@ -24,6 +24,7 @@ call minpac#add('elixir-lang/vim-elixir')
 call minpac#add('elmcast/elm-vim')
 call minpac#add('jelera/vim-javascript-syntax')
 call minpac#add('joshdick/onedark.vim')
+call minpac#add('joukevandermaas/vim-ember-hbs')
 call minpac#add('jparise/vim-graphql')
 call minpac#add('junegunn/fzf')
 call minpac#add('k-takata/minpac', {'type': 'opt'})
@@ -35,6 +36,7 @@ call minpac#add('tpope/vim-classpath')
 call minpac#add('tpope/vim-dispatch')
 call minpac#add('tpope/vim-fireplace')
 call minpac#add('tpope/vim-fugitive')
+call minpac#add('tpope/vim-projectionist')
 call minpac#add('tpope/vim-rails')
 call minpac#add('tpope/vim-surround')
 call minpac#add('tpope/vim-unimpaired')
@@ -246,7 +248,6 @@ let g:syntastic_auto_loc_list = 1
 " let g:syntastic_check_on_wq = 0
 " let g:syntastic_debug = 3
 
-let g:airline#extensions#tabline#enabled = 1
 let g:airline_powerline_fonts = 1
 let g:airline_theme='solarized'
 
