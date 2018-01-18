@@ -56,7 +56,7 @@ task :vim do
   sh "rm -rf ~/.*vim*"
   sh "ln -s #{pwd}/vim/vimrc ~/.vimrc"
   sh "ln -s #{pwd}/vim ~/.vim"
-  sh "mkdir -rf ~/.config/nvim"
+  sh "mkdir -pv ~/.config/nvim"
   sh "ln -s #{pwd}/nvim/init.vim ~/.config/nvim/"
 end
 
