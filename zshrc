@@ -1,4 +1,4 @@
-# Path to your oh-my-zsh configuration.
+#Add new vcr cassettes and remove specs. Path to your oh-my-zsh configuration.
 ZSH=$HOME/.oh-my-zsh
 
 # Set name of the theme to load.
@@ -25,14 +25,13 @@ POWERLEVEL9K_RIGHT_PROMPT_ELEMENTS=(status rbenv)
 # done
 
 # Work related aliases
-alias vi='/usr/local/bin/vim'
-alias vim='/usr/local/bin/vim' #use vim8 from brew
+alias vi='nvim'
+alias vim='nvim' #use vim8 from brew
 alias lla='ll -a'
 alias lll='ll -a | lolcat'
 alias my='cd ~/code/my/'
 alias work='cd ~/code/work/'
 alias projects='cd ~/code/klarna/team-panda/Projects'
-alias panda='cd ~/code/klarna/team-panda'
 alias pandas='cd ~/code/klarna/team-panda'
 alias agical='cd ~/code/work/agical/'
 alias cls='clear'
@@ -113,7 +112,8 @@ export PATH=$PATH:$VIMCONFIG/pack/bundle/start/fzf/bin
 
 # # Preferred editor for local and remote sessions
 # if [[ -n $SSH_CONNECTION ]]; then
-export EDITOR='vim'
+export EDITOR='nvim'
+export VISUAL='nvim'
 # else
 #   export EDITOR='mvim'
 # fi

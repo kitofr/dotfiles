@@ -16,12 +16,15 @@ command! CleanCR execute "%s/\\r\\(\\n\\)/\\1/g"
 filetype on
 
 "Add your bundles here
+call minpac#add('MarcWeber/vim-addon-mw-utils')
 call minpac#add('altercation/vim-colors-solarized')
 call minpac#add('andrewradev/linediff.vim')
 call minpac#add('editorconfig/editorconfig-vim')
 call minpac#add('ekalinin/Dockerfile.vim')
 call minpac#add('elixir-lang/vim-elixir')
 call minpac#add('elmcast/elm-vim')
+call minpac#add('garbas/vim-snipmate')
+call minpac#add('isRuslan/vim-es6')
 call minpac#add('jelera/vim-javascript-syntax')
 call minpac#add('joshdick/onedark.vim')
 call minpac#add('joukevandermaas/vim-ember-hbs')
@@ -31,6 +34,7 @@ call minpac#add('k-takata/minpac', {'type': 'opt'})
 call minpac#add('rking/ag.vim')
 call minpac#add('scrooloose/nerdtree')
 call minpac#add('thoughtbot/vim-rspec')
+call minpac#add('tomtom/tlib_vim')
 call minpac#add('tpope/vim-bundler')
 call minpac#add('tpope/vim-classpath')
 call minpac#add('tpope/vim-dispatch')
@@ -47,9 +51,7 @@ call minpac#add('vim-scripts/align')
 call minpac#add('vim-syntastic/syntastic')
 " 
 " Bundle "MarcWeber/vim-addon-mw-utils"
-" Bundle "garbas/vim-snipmate"
 " Bundle "honza/vim-snippets"
-" Bundle "tomtom/tlib_vim"
 " Bundle 'Puppet-Syntax-Highlighting'
 " Bundle 'acarapetis/vim-colors-github'
 " Bundle 'badwolf'
@@ -227,7 +229,7 @@ map <Leader>bg :let &background=( &background == "dark"? "light" : "dark" )<CR>
 " --------------
 " color
 set t_Co=256 " 256 colors
-set term=screen-256color
+" set term=screen-256color
 let g:solarized_termcolors=256
 let g:solarized_visibility = "high"
 let g:solarized_contrast = "high"
