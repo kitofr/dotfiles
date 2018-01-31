@@ -107,7 +107,7 @@ export VIMCONFIG=~/.vim
 export VIMDATA=~/.vim
 export FZF_DEFAULT_COMMAND='rg --files'
 export PATH="/~/.rbenv/bin:usr/local/bin:/usr/local/sbin:/bin:/usr/sbin:/sbin:~/bin:/Users/krirou/Applications/Firefox.app/Contents/MacOS:$PATH"
-export PATH=$PATH:$VIMCONFIG/pack/bundle/start/fzf/bin
+export PATH=$PATH:$VIMCONFIG/pack/minpac/start/fzf/bin
 # export MANPATH="/usr/local/man:$MANPATH"
 
 # # Preferred editor for local and remote sessions
