@@ -31,6 +31,7 @@ call minpac#add('joukevandermaas/vim-ember-hbs')
 call minpac#add('jparise/vim-graphql')
 call minpac#add('junegunn/fzf')
 call minpac#add('k-takata/minpac', {'type': 'opt'})
+call minpac#add('mhartington/oceanic-next')
 call minpac#add('rking/ag.vim')
 call minpac#add('scrooloose/nerdtree')
 call minpac#add('thoughtbot/vim-rspec')
@@ -49,6 +50,7 @@ call minpac#add('vim-airline/vim-airline-themes')
 call minpac#add('vim-scripts/VimClojure')
 call minpac#add('vim-scripts/align')
 call minpac#add('vim-syntastic/syntastic')
+
 " 
 " Bundle "MarcWeber/vim-addon-mw-utils"
 " Bundle "honza/vim-snippets"
@@ -195,20 +197,24 @@ function! HasPaste()
     return ''
 endfunction
 
-if has("autocmd")
-  autocmd bufwritepost .vimrc source $MYVIMRC
-  autocmd BufNewFile,BufReadPost Gemfile setfiletype ruby
-  autocmd BufNewFile,BufReadPost Guardfile setfiletype ruby
-  autocmd BufNewFile,BufReadPost Dockerfile setfiletype config
-  autocmd BufNewFile,BufReadPost *.cljx setfiletype clojure
-  autocmd BufNewFile,BufReadPost *.json setfiletype javascript
-  autocmd BufNewFile,BufReadPost *.md setfiletype markdown
-  autocmd BufNewFile,BufReadPost *.slim setfiletype slim
-  autocmd BufWritePre *.rb :%s/\s\+$//e
-  autocmd BufWritePre *.ex :%s/\s\+$//e
-  autocmd ColorScheme * hi clear SpellBad
-      \| hi SpellBad cterm=underline,bold ctermfg=red
-endif
+augroup AutoGroup
+  if has("autocmd")
+    autocmd!
+    autocmd bufwritepost .vimrc source $MYVIMRC
+    autocmd BufNewFile,BufReadPost Gemfile setfiletype ruby
+    autocmd BufNewFile,BufReadPost Guardfile setfiletype ruby
+    autocmd BufNewFile,BufReadPost Dockerfile setfiletype config
+    autocmd BufNewFile,BufReadPost *.cljx setfiletype clojure
+    autocmd BufNewFile,BufReadPost *.json setfiletype javascript
+    autocmd BufNewFile,BufReadPost *.md setfiletype markdown
+    autocmd BufNewFile,BufReadPost *.slim setfiletype slim
+    autocmd BufWritePre *.rb :%s/\s\+$//e
+    autocmd BufWritePre *.ex :%s/\s\+$//e
+    autocmd ColorScheme * hi clear SpellBad
+        \| hi SpellBad cterm=underline,bold ctermfg=red
+  endif
+augroup end
+
 nmap <leader>v :tabedit $MYVIMRC<CR>
 
 " fireplace
@@ -229,14 +235,17 @@ map <Leader>bg :let &background=( &background == "dark"? "light" : "dark" )<CR>
 " --------------
 " color
 set t_Co=256 " 256 colors
-" set term=screen-256color
-let g:solarized_termcolors=256
-let g:solarized_visibility = "high"
-let g:solarized_contrast = "high"
-colorscheme solarized
-set background=dark
-"let g:molokai_original = 1
+let background = "dark"
 let g:rehash256 = 1
+
+if (has("termguicolors"))
+ set termguicolors
+endif
+
+" Theme
+syntax enable
+colorscheme OceanicNext
+
 
 let g:syntastic_javascript_checkers = ['eslint']
 " let g:syntastic_javascript_eslint_exec = ['/usr/local/bin/eslint']
@@ -251,7 +260,8 @@ let g:syntastic_auto_loc_list = 1
 " let g:syntastic_debug = 3
 
 let g:airline_powerline_fonts = 1
-let g:airline_theme='solarized'
+let g:airline_theme='oceanicnext'
+
 
 " Global backup dir
 set backupdir=~/.vim/swp
