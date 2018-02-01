@@ -13,7 +13,7 @@
 	st = status
 	br = branch
 [core]
-	editor = /usr/local/bin/vim
+	editor = /usr/local/bin/nvim
   excludesfile = ~/.gitignore
 [help]
   autocorrect = 1
