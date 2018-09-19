@@ -9,7 +9,7 @@ set wildmenu
 
 command! PackUpdate call minpac#update()
 command! PackClean call minpac#clean()
-command! CTags !ctags --recurse .
+command! CTags !ctags --recurse . --exclude=node_modules --exclude=elm-stuff --exclude=_build
 command! ExpandSplit execute "vertical resize 800"
 command! CleanCR execute "%s/\\r\\(\\n\\)/\\1/g"
 
@@ -31,6 +31,7 @@ call minpac#add('joukevandermaas/vim-ember-hbs')
 call minpac#add('jparise/vim-graphql')
 call minpac#add('junegunn/fzf')
 call minpac#add('k-takata/minpac', {'type': 'opt'})
+call minpac#add('majutsushi/tagbar')
 call minpac#add('mhartington/oceanic-next')
 call minpac#add('radenling/vim-dispatch-neovim')
 call minpac#add('rking/ag.vim')
@@ -174,6 +175,9 @@ set listchars=tab:»\ ,trail:·
 "Vim masterclass
 xnoremap . :norm.<CR>
 
+" Preview markdown in macdown
+map <leader>pre :w<cr>:silent! !open -a MacDown % > /dev/null &<cr>:redraw!<cr>
+
 "Invisible character colors
 highlight NonText guifg=#4a4a59
 highlight SpecialKey guifg=#4a4a59
@@ -236,7 +240,7 @@ map <Leader>bg :let &background=( &background == "dark"? "light" : "dark" )<CR>
 " --------------
 " color
 set t_Co=256 " 256 colors
-let background = "dark"
+let background ="dark"
 let g:rehash256 = 1
 
 if (has("termguicolors"))
@@ -245,7 +249,7 @@ endif
 
 " Theme
 syntax enable
-colorscheme OceanicNext
+colorscheme oceanicnext
 
 
 let g:syntastic_javascript_checkers = ['eslint']

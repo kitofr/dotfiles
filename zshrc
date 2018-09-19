@@ -1,6 +1,8 @@
 #Add new vcr cassettes and remove specs. Path to your oh-my-zsh configuration.
 ZSH=$HOME/.oh-my-zsh
 
+export TERM="xterm-256color"
+
 # Set name of the theme to load.
 # Look in ~/.oh-my-zsh/themes/
 # Optionally, if you set this to "random", it'll load a random theme each
@@ -105,7 +107,9 @@ source $ZSH/oh-my-zsh.sh
 
 export VIMCONFIG=~/.vim
 export VIMDATA=~/.vim
+export RIPGREP_CONFIG_PATH='~/.ripgreprc'
 export FZF_DEFAULT_COMMAND='rg --files'
+
 export PATH="/~/.rbenv/bin:usr/local/bin:/usr/local/sbin:/bin:/usr/sbin:/sbin:~/bin:/Users/krirou/Applications/Firefox.app/Contents/MacOS:$PATH"
 export PATH=$PATH:$VIMCONFIG/pack/minpac/start/fzf/bin
 # export MANPATH="/usr/local/man:$MANPATH"
@@ -163,3 +167,5 @@ export TEAM=panda
 
 # added by travis gem
 [ -f /Users/kitofr/.travis/travis.sh ] && source /Users/kitofr/.travis/travis.sh
+test -s "$HOME/.kiex/scripts/kiex" && source "$HOME/.kiex/scripts/kiex"
+
