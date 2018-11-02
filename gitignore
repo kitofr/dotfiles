@@ -11,3 +11,4 @@ vim/
 .tern-port
 .agignore
 tags
+elm-stuff/
