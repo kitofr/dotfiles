@@ -135,3 +135,5 @@ PATH=$PATH:$HOME/bin/elixir/bin
 
 # added by travis gem
 [ -f /Users/kitofr/.travis/travis.sh ] && source /Users/kitofr/.travis/travis.sh
+
+[ -f ~/.fzf.bash ] && source ~/.fzf.bash
