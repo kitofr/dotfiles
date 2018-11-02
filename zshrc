@@ -79,6 +79,8 @@ export VISUAL='nvim'
 eval "$(rbenv init -)"
 export LDFLAGS="-L/usr/local/opt/node@8/lib"
 export CPPFLAGS="-I/usr/local/opt/node@8/include"
+### Added by the Heroku Toolbelt
+export PATH="/usr/local/heroku/bin:$PATH"
 
 # git locale
 export LANG="en_US.UTF-8"
