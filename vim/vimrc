@@ -52,11 +52,11 @@ call minpac#add('vim-airline/vim-airline')
 call minpac#add('vim-airline/vim-airline-themes')
 call minpac#add('vim-scripts/VimClojure')
 call minpac#add('vim-scripts/align')
-call minpac#add('vim-syntastic/syntastic')
+call minpac#add('w0rp/ale')
 
 " 
-" Bundle "MarcWeber/vim-addon-mw-utils"
-" Bundle "honza/vim-snippets"
+" Bundle 'MarcWeber/vim-addon-mw-utils'
+" Bundle 'honza/vim-snippets
 " Bundle 'Puppet-Syntax-Highlighting'
 " Bundle 'acarapetis/vim-colors-github'
 " Bundle 'badwolf'
@@ -283,4 +283,3 @@ nmap <Leader>s :setlocal spell! spelllang=en_us<CR>
 
 "NERDTREE
 map <leader>nt :NERDTree%<cr>
-
