@@ -12,8 +12,6 @@ alias lla='ll -a'
 alias lll='ll -a | lolcat'
 alias my='cd ~/code/my/'
 alias work='cd ~/code/work/'
-alias projects='cd ~/code/klarna/team-panda/Projects'
-alias pandas='cd ~/code/klarna/team-panda'
 alias agical='cd ~/code/work/agical/'
 alias cls='clear'
 alias rcop='rubocop -c ~/Projects/style-guide/rubocop.yml'
@@ -48,6 +46,7 @@ alias gca='git commit -av'
 alias gco='git checkout'
 alias gst='git status'
 alias gup='git pull -v -n --rebase'
+alias gclean='git clean -f'
 
 # tmux
 alias tls="tmux ls"
