@@ -54,44 +54,12 @@ call minpac#add('vim-scripts/VimClojure')
 call minpac#add('vim-scripts/align')
 call minpac#add('w0rp/ale')
 
-" 
-" Bundle 'MarcWeber/vim-addon-mw-utils'
-" Bundle 'honza/vim-snippets
-" Bundle 'Puppet-Syntax-Highlighting'
-" Bundle 'acarapetis/vim-colors-github'
-" Bundle 'badwolf'
-" Bundle 'carlosgaldino/elixir-snippets'
-" Bundle 'epeli/slimux'
-" Bundle 'kitofr/vim-functions'
-" Bundle 'molokai'
-" Bundle 'neochrome/todo.vim'
-" Bundle 'oceandeep'
-" Bundle 'peaksea'
-" Bundle 'rdark'
-" Bundle 'slim-template/vim-slim.git'
-" Bundle 'vim-coffee-script'
-" Bundle 'vimwiki'
-" Bundle 'wgibbs/vim-irblack'
-" Bundle 'wombat256.vim'
-" Bundle 'kitofr/kitofr-snippets'
-" 
-"...All your other bundles...
-" if iCanHazVundle == 0
-"     echo "Installing Bundles, please ignore key map error messages"
-"     echo ""
-"     :BundleInstall
-" endif
 
 " syntax for razor
 " Bundle "adamclerk/vim-razor"
 " 
 " Bundle "https://github.com/othree/javascript-libraries-syntax.vim.git"
 
-" vim-scripts repos
-" Bundle 'L9'
-" Bundle 'FuzzyFinder'
-" non github repos
-" Bundle 'git://git.wincent.com/command-t.git'
 filetype plugin indent on
 
 set guifont=Inconsolata\ for\ Powerline:h15
@@ -188,9 +156,6 @@ highlight SpecialKey guifg=#4a4a59
 """"""""""""""""""""""""""""""
 " Always show the status line
 set laststatus=2
-
-" Format the status line
-"set statusline=\ %{HasPaste()}%F%m%r%h\ %w\ \ CWD:\ %r%{getcwd()}%h\ \ \ Line:\ %l
 
 " tpope's
 set statusline=[%n]\ %<%.99f\ %h%w%m%r%{exists('*CapsLockStatusline')?CapsLockStatusline():''}%y%=%-16(\ %l,%c-%v\ %)%P
