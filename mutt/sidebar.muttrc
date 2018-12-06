@@ -1,0 +1,29 @@
+set sidebar_visible
+set sidebar_format="%B%?F? [%F]?%* %?N?%N/?%S"
+set mail_check_stats
+
+# You can use any gmail imap mailboxes
+mailboxes =INBOX =[Gmail]/Sent\ Mail =[Gmail]/Drafts =[Gmail]/Spam =[Gmail]/Trash =Comsumer\ News =IT\ -\ HELP =Invitation =Releases =Risky! =RnD =Sentry =The\ Note =Vibe =Workplace =web-platform
+
+# Move the highlight to the previous mailbox
+bind index,pager \Cp sidebar-prev
+# Move the highlight to the next mailbox
+bind index,pager \Cn sidebar-next
+# Open the highlighted mailbox
+bind index,pager \Co sidebar-open
+# Move the highlight to the previous page
+# This is useful if you have a LOT of mailboxes.
+bind index,pager <F3> sidebar-page-up
+# Move the highlight to the next page
+# This is useful if you have a LOT of mailboxes.
+bind index,pager <F4> sidebar-page-down
+# Move the highlight to the previous mailbox containing new, or flagged,
+# mail.
+bind index,pager <F5> sidebar-prev-new
+# Move the highlight to the next mailbox containing new, or flagged, mail.
+bind index,pager <F6> sidebar-next-new
+# Toggle the visibility of the Sidebar.
+bind index,pager B sidebar-toggle-visible
+
+# vim: syntax=neomuttrc
+
