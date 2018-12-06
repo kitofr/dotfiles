@@ -11,7 +11,7 @@ alias vim='nvim' #use vim8 from brew
 alias lla='ll -a'
 alias lll='ll -a | lolcat'
 alias my='cd ~/code/my/'
-alias work='cd ~/code/work/'
+alias code='cd ~/code/'
 alias agical='cd ~/code/work/agical/'
 alias cls='clear'
 alias rcop='rubocop -c ~/Projects/style-guide/rubocop.yml'
@@ -19,9 +19,11 @@ alias dcu='docker-compose up'
 alias dcl='docker-compose logs'
 alias dcb='docker-compose build'
 alias dcr='docker-compose run'
+alias dcd='docker-compose down --remove-orphans --volumes'
 alias myip='ifconfig | grep -e "inet\s"'
 alias weather='curl wttr.in/~Stockholm'
 alias less='less -N'
+alias mutt='neomutt'
 
 # Ruby
 alias be='noglob bundle exec'
@@ -33,11 +35,13 @@ alias pcat="pygmentize -f terminal256 -O style=native -g"
 alias mex="iex -S mix"
 alias docker_kill_ps="docker ps -aq | awk '{print $1}' | xargs docker rm -f"
 alias docker_kill_images="docker images -aq | awk '{print $1}' | xargs docker rmi -f"
+alias docker_kill_volumes="docker volume rm $(docker volume ls -qf dangling=true)"
 
 #git
 alias g='git'
 alias ga='git add'
 alias gs='git status'
+alias gsu='git status -uno'
 alias gl='git l'
 alias gp='git push'
 alias gc='git commit -v'
@@ -46,7 +50,7 @@ alias gca='git commit -av'
 alias gco='git checkout'
 alias gst='git status'
 alias gup='git pull -v -n --rebase'
-alias gclean='git clean -f'
+alias gclean='git clean -fd'
 
 # tmux
 alias tls="tmux ls"
@@ -58,7 +62,7 @@ export VIMDATA=~/.vim
 export RIPGREP_CONFIG_PATH='~/.ripgreprc'
 export FZF_DEFAULT_COMMAND='rg --files'
 
-export PATH="/~/.rbenv/bin:usr/local/bin:/usr/local/sbin:/bin:/usr/sbin:/sbin:~/bin:/Users/krirou/Applications/Firefox.app/Contents/MacOS:/usr/local/opt/node@8/bin:$PATH"
+export PATH="./node_modules/.bin:/~/.rbenv/bin:usr/local/bin:/usr/local/sbin:/bin:/usr/sbin:/sbin:~/bin:/Users/krirou/Applications/Firefox.app/Contents/MacOS:/usr/local/opt/node@8/bin:$PATH"
 export PATH=$PATH:$VIMCONFIG/pack/minpac/start/fzf/bin
 
 # # Preferred editor for local and remote sessions
