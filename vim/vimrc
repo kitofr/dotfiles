@@ -1,58 +1,65 @@
 set nocompatible
 set shell=/bin/bash
-packadd minpac
-
-call minpac#init()
 
 set path+=**
 set wildmenu
 
-command! PackUpdate call minpac#update()
-command! PackClean call minpac#clean()
+filetype on
+
+function! PackInit() abort
+  packadd minpac
+  
+  call minpac#init()
+  call minpac#add('k-takata/minpac', {'type': 'opt'})
+
+  call minpac#add('HerringtonDarkholme/yats.vim')
+  call minpac#add('MarcWeber/vim-addon-mw-utils')
+  call minpac#add('altercation/vim-colors-solarized')
+  call minpac#add('andrewradev/linediff.vim')
+  call minpac#add('editorconfig/editorconfig-vim')
+  call minpac#add('ekalinin/Dockerfile.vim')
+  call minpac#add('elixir-lang/vim-elixir')
+  call minpac#add('elmcast/elm-vim')
+  call minpac#add('garbas/vim-snipmate')
+  call minpac#add('iamcco/markdown-preview.nvim')
+  call minpac#add('isRuslan/vim-es6')
+  call minpac#add('jelera/vim-javascript-syntax')
+  call minpac#add('joshdick/onedark.vim')
+  call minpac#add('joukevandermaas/vim-ember-hbs')
+  call minpac#add('jparise/vim-graphql')
+  call minpac#add('junegunn/fzf')
+  call minpac#add('majutsushi/tagbar')
+  call minpac#add('mhartington/oceanic-next')
+  call minpac#add('pangloss/vim-javascript')
+  call minpac#add('radenling/vim-dispatch-neovim')
+  call minpac#add('rking/ag.vim')
+  call minpac#add('scrooloose/nerdtree')
+  call minpac#add('thoughtbot/vim-rspec')
+  call minpac#add('tomtom/tlib_vim')
+  call minpac#add('tpope/vim-bundler')
+  call minpac#add('tpope/vim-classpath')
+  call minpac#add('tpope/vim-dispatch')
+  call minpac#add('tpope/vim-fireplace')
+  call minpac#add('tpope/vim-fugitive')
+  call minpac#add('tpope/vim-projectionist')
+  call minpac#add('tpope/vim-rails')
+  call minpac#add('tpope/vim-surround')
+  call minpac#add('tpope/vim-unimpaired')
+  call minpac#add('vim-airline/vim-airline')
+  call minpac#add('vim-airline/vim-airline-themes')
+  call minpac#add('vim-scripts/VimClojure')
+  call minpac#add('vim-scripts/align')
+  call minpac#add('w0rp/ale')
+
+endfunction
+
+command! PackUpdate call PackInit() | call minpac#update('', {'do': 'call minpac#status()'})
+command! PackClean  call PackInit() | call minpac#clean()
+command! PackStatus call PackInit() | call minpac#status()
+
 command! CTags !ctags --recurse . --exclude=node_modules --exclude=elm-stuff --exclude=_build
 command! ExpandSplit execute "vertical resize 800"
 command! CleanCR execute "%s/\\r\\(\\n\\)/\\1/g"
-
-filetype on
-
-"Add your bundles here
-call minpac#add('MarcWeber/vim-addon-mw-utils')
-call minpac#add('altercation/vim-colors-solarized')
-call minpac#add('andrewradev/linediff.vim')
-call minpac#add('editorconfig/editorconfig-vim')
-call minpac#add('ekalinin/Dockerfile.vim')
-call minpac#add('elixir-lang/vim-elixir')
-call minpac#add('elmcast/elm-vim')
-call minpac#add('garbas/vim-snipmate')
-call minpac#add('isRuslan/vim-es6')
-call minpac#add('jelera/vim-javascript-syntax')
-call minpac#add('joshdick/onedark.vim')
-call minpac#add('joukevandermaas/vim-ember-hbs')
-call minpac#add('jparise/vim-graphql')
-call minpac#add('junegunn/fzf')
-call minpac#add('k-takata/minpac', {'type': 'opt'})
-call minpac#add('majutsushi/tagbar')
-call minpac#add('mhartington/oceanic-next')
-call minpac#add('pangloss/vim-javascript')
-call minpac#add('radenling/vim-dispatch-neovim')
-call minpac#add('rking/ag.vim')
-call minpac#add('scrooloose/nerdtree')
-call minpac#add('thoughtbot/vim-rspec')
-call minpac#add('tomtom/tlib_vim')
-call minpac#add('tpope/vim-bundler')
-call minpac#add('tpope/vim-classpath')
-call minpac#add('tpope/vim-dispatch')
-call minpac#add('tpope/vim-fireplace')
-call minpac#add('tpope/vim-fugitive')
-call minpac#add('tpope/vim-projectionist')
-call minpac#add('tpope/vim-rails')
-call minpac#add('tpope/vim-surround')
-call minpac#add('tpope/vim-unimpaired')
-call minpac#add('vim-airline/vim-airline')
-call minpac#add('vim-airline/vim-airline-themes')
-call minpac#add('vim-scripts/VimClojure')
-call minpac#add('vim-scripts/align')
-call minpac#add('w0rp/ale')
 
 
 " syntax for razor
@@ -179,6 +186,7 @@ augroup AutoGroup
     autocmd BufNewFile,BufReadPost *.json setfiletype javascript
     autocmd BufNewFile,BufReadPost *.md setfiletype markdown
     autocmd BufNewFile,BufReadPost *.slim setfiletype slim
+    autocmd BufNewFile,BufReadPost *.jake setfiletype javascript
     autocmd BufWritePre *.rb :%s/\s\+$//e
     autocmd BufWritePre *.ex :%s/\s\+$//e
     autocmd ColorScheme * hi clear SpellBad
