@@ -73,7 +73,7 @@ task :vimwiki do
 end
 
 def soft_link(source, dst)
-  sh "rm -fr #{dst}" 
+  sh "rm -ir #{dst}" 
   sh "ln -s #{source} #{dst}"
 end
 
