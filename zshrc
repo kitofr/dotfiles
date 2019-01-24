@@ -15,6 +15,7 @@ alias code='cd ~/code/'
 alias agical='cd ~/code/work/agical/'
 alias cls='clear'
 alias rcop='rubocop -c ~/Projects/style-guide/rubocop.yml'
+alias dc='docker-compose'
 alias dcu='docker-compose up'
 alias dcl='docker-compose logs'
 alias dcb='docker-compose build'
@@ -24,6 +25,7 @@ alias myip='ifconfig | grep -e "inet\s"'
 alias weather='curl wttr.in/~Stockholm'
 alias less='less -N'
 alias mutt='neomutt'
+alias elm='./node_modules/.bin/elm'
 
 # Ruby
 alias be='noglob bundle exec'
@@ -37,6 +39,9 @@ alias docker_kill_ps="docker ps -aq | awk '{print $1}' | xargs docker rm -f"
 alias docker_kill_images="docker images -aq | awk '{print $1}' | xargs docker rmi -f"
 alias docker_kill_volumes="docker volume rm $(docker volume ls -qf dangling=true)"
 
+#javacript
+alias yarni='yarn install --prefer-offline'
+
 #git
 alias g='git'
 alias ga='git add'
@@ -48,9 +53,11 @@ alias gc='git commit -v'
 alias gd='git diff'
 alias gca='git commit -av'
 alias gco='git checkout'
+alias gcv='git commit -av --no-verify'
 alias gst='git status'
 alias gup='git pull -v -n --rebase'
 alias gclean='git clean -fd'
+alias gshowf='git show --name-only --oneline'
 
 # tmux
 alias tls="tmux ls"
@@ -82,8 +89,16 @@ if [ -f '/Users/kristofferr/google-cloud-sdk/path.zsh.inc' ]; then . '/Users/kri
 # The next line enables shell command completion for gcloud.
 if [ -f '/Users/kristofferr/google-cloud-sdk/completion.zsh.inc' ]; then . '/Users/kristofferr/google-cloud-sdk/completion.zsh.inc'; fi
 
+vim_show() {
+  vim $(git show --name-only --oneline "$1" | tail -n+2)
+}
+
 export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
 [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+
+#keix elixir
+test -s "$HOME/.kiex/scripts/kiex" && source "$HOME/.kiex/scripts/kiex"
+

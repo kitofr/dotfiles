@@ -61,7 +61,6 @@ command! CTags !ctags --recurse . --exclude=node_modules --exclude=elm-stuff --e
 command! ExpandSplit execute "vertical resize 800"
 command! CleanCR execute "%s/\\r\\(\\n\\)/\\1/g"
 
-
 " syntax for razor
 " Bundle "adamclerk/vim-razor"
 " 
@@ -187,6 +186,7 @@ augroup AutoGroup
     autocmd BufNewFile,BufReadPost *.md setfiletype markdown
     autocmd BufNewFile,BufReadPost *.slim setfiletype slim
     autocmd BufNewFile,BufReadPost *.jake setfiletype javascript
+    autocmd BufNewFile,BufReadPost *.twig setfiletype html
     autocmd BufWritePre *.rb :%s/\s\+$//e
     autocmd BufWritePre *.ex :%s/\s\+$//e
     autocmd ColorScheme * hi clear SpellBad
