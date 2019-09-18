@@ -270,3 +270,6 @@ nmap <Leader>s :setlocal spell! spelllang=en_us<CR>
 
 "NERDTREE
 map <leader>nt :NERDTree%<cr>
+
+"Ripgrep word under cursor
+map <leader>f :Rg <c-r>=expand("<cword>")<cr>
