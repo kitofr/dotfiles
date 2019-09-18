@@ -8,7 +8,7 @@ filetype on
 
 function! PackInit() abort
   packadd minpac
-  
+
   call minpac#init()
   call minpac#add('k-takata/minpac', {'type': 'opt'})
 
@@ -21,18 +21,20 @@ function! PackInit() abort
   call minpac#add('elixir-lang/vim-elixir')
   call minpac#add('elmcast/elm-vim')
   call minpac#add('garbas/vim-snipmate')
-  call minpac#add('iamcco/markdown-preview.nvim')
   call minpac#add('isRuslan/vim-es6')
   call minpac#add('jelera/vim-javascript-syntax')
   call minpac#add('joshdick/onedark.vim')
   call minpac#add('joukevandermaas/vim-ember-hbs')
   call minpac#add('jparise/vim-graphql')
   call minpac#add('junegunn/fzf')
+  call minpac#add('lumiliet/vim-twig')
   call minpac#add('majutsushi/tagbar')
+  call minpac#add('jremmen/vim-ripgrep')
   call minpac#add('mhartington/oceanic-next')
+  call minpac#add('ntpeters/vim-better-whitespace')
+  call minpac#add('othree/javascript-libraries-syntax.vim')
   call minpac#add('pangloss/vim-javascript')
   call minpac#add('radenling/vim-dispatch-neovim')
-  call minpac#add('rking/ag.vim')
   call minpac#add('scrooloose/nerdtree')
   call minpac#add('thoughtbot/vim-rspec')
   call minpac#add('tomtom/tlib_vim')
@@ -62,8 +64,6 @@ command! ExpandSplit execute "vertical resize 800"
 command! CleanCR execute "%s/\\r\\(\\n\\)/\\1/g"
 
 " syntax for razor
-" Bundle "adamclerk/vim-razor"
-" 
 " Bundle "https://github.com/othree/javascript-libraries-syntax.vim.git"
 
 filetype plugin indent on
@@ -128,6 +128,13 @@ set incsearch ignorecase hlsearch
 nnoremap <silent> <Space> :silent noh<Bar>echo<CR>
 nnoremap <C-p> :<C-u>FZF<CR>
 
+" ALE / Lintng
+" Lint only on save
+let g:ale_lint_on_text_changed = 'never'
+" You can disable this option too
+" if you don't want linters to run on opening a file
+let g:ale_lint_on_enter = 0
+
 filetype on           " Enable filetype detection
 " remove scrollers...
 setglobal guioptions-=T     " Disable toolbars by default
@@ -150,9 +157,6 @@ set listchars=tab:»\ ,trail:·
 "Vim masterclass
 xnoremap . :norm.<CR>
 
-" Preview markdown in macdown
-map <leader>pre :w<cr>:silent! !open -a MacDown % > /dev/null &<cr>:redraw!<cr>
-
 "Invisible character colors
 highlight NonText guifg=#4a4a59
 highlight SpecialKey guifg=#4a4a59
@@ -162,9 +166,6 @@ highlight SpecialKey guifg=#4a4a59
 """"""""""""""""""""""""""""""
 " Always show the status line
 set laststatus=2
-
-" tpope's
-set statusline=[%n]\ %<%.99f\ %h%w%m%r%{exists('*CapsLockStatusline')?CapsLockStatusline():''}%y%=%-16(\ %l,%c-%v\ %)%P
 
 " Returns true if paste mode is enabled
 function! HasPaste()
@@ -225,6 +226,8 @@ endif
 syntax enable
 colorscheme oceanicnext
 
+hi clear SpellBad
+hi SpellBad cterm=underline,bold ctermfg=red
 
 let g:syntastic_javascript_checkers = ['eslint']
 " let g:syntastic_javascript_eslint_exec = ['/usr/local/bin/eslint']
@@ -248,8 +251,19 @@ set directory=~/.vim/swp
 
 " CTRLP ignore
 let g:ctrlp_custom_ignore = {
-    \ 'dir': '\.git$\|\.hg$\|\.svn$\|bower_components$\|dist$\|node_modules$\|project_files$\|public$\|tmp$\|webpack$\|elm-stuff$\|_build$',
+    \ 'dir': '\.git$\|\.hg$\|\.svn$\|bower_components$\|dist$\|node_modules$\|project_files$\|public$\|tmp$\|webpack$\|elm-stuff$\|_build$\|__mocks__$',
     \ 'file': '\.exe$\|\.so$\|\.dll$\|\.pyc$' }
+
+" Search for visual with *
+" xnoremap * :<C-u>
+" call <SID>VSetSearch()<CR>/<C-R>=@/<CR><CR>
+"
+" function! s:VSetSearch()
+"   let temp = @s
+"   norm! gv"sy
+"   let @/ = '\V' . substitute(escape(@s, '/\'), '\n', '\\n', 'g')
+"   let @s = temp
+" endfunction
 
 " Spell
 nmap <Leader>s :setlocal spell! spelllang=en_us<CR>

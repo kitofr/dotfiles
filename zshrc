@@ -1,31 +1,34 @@
-#Add new vcr cassettes and remove specs. Path to your oh-my-zsh configuration.
+#zmodload zsh/zprof
+
 if [[ -s "${ZDOTDIR:-$HOME}/.zprezto/init.zsh" ]]; then
-  source "${ZDOTDIR:-$HOME}/.zprezto/init.zsh"
+   source "${ZDOTDIR:-$HOME}/.zprezto/init.zsh"
 fi
+
 
 export TERM="xterm-256color"
 
 # Work related aliases
-alias vi='nvim'
-alias vim='nvim' #use vim8 from brew
-alias lla='ll -a'
-alias lll='ll -a | lolcat'
-alias my='cd ~/code/my/'
-alias code='cd ~/code/'
 alias agical='cd ~/code/work/agical/'
 alias cls='clear'
-alias rcop='rubocop -c ~/Projects/style-guide/rubocop.yml'
+alias code='cd ~/code/'
 alias dc='docker-compose'
-alias dcu='docker-compose up'
-alias dcl='docker-compose logs'
 alias dcb='docker-compose build'
-alias dcr='docker-compose run'
 alias dcd='docker-compose down --remove-orphans --volumes'
-alias myip='ifconfig | grep -e "inet\s"'
-alias weather='curl wttr.in/~Stockholm'
-alias less='less -N'
-alias mutt='neomutt'
+alias dcl='docker-compose logs'
+alias dcr='docker-compose run'
+alias dcu='docker-compose up'
 alias elm='./node_modules/.bin/elm'
+alias less='less -N'
+alias lla='ll -a'
+alias lll='ll -a | lolcat'
+alias mutt='neomutt'
+alias my='cd ~/code/my/'
+alias myip='ifconfig | grep -e "inet\s"'
+alias rcop='rubocop -c ~/Projects/style-guide/rubocop.yml'
+alias vi='nvim'
+alias vim='nvim' #use vim8 from brew
+alias weather='curl wttr.in/~Stockholm'
+alias work='cd ~/code/spotify/client-web/open/'
 
 # Ruby
 alias be='noglob bundle exec'
@@ -50,7 +53,7 @@ alias gsu='git status -uno'
 alias gl='git l'
 alias gp='git push'
 alias gc='git commit -v'
-alias gd='git diff'
+alias gd='git diff --color=always'
 alias gca='git commit -av'
 alias gco='git checkout'
 alias gcv='git commit -av --no-verify'
@@ -63,6 +66,11 @@ alias gshowf='git show --name-only --oneline'
 alias tls="tmux ls"
 alias tat="tmux attach -t"
 alias tns="tmux new -s"
+
+#nvm
+
+# spotify
+alias spm='npm --registry https://artifactory.spotify.net/artifactory/api/npm/virtual-npm --userconfig ~/.spmrc --always-auth=true'
 
 export VIMCONFIG=~/.vim
 export VIMDATA=~/.vim
@@ -93,12 +101,17 @@ vim_show() {
   vim $(git show --name-only --oneline "$1" | tail -n+2)
 }
 
-export NVM_DIR="$HOME/.nvm"
-[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
-[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
-
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 
 #keix elixir
-test -s "$HOME/.kiex/scripts/kiex" && source "$HOME/.kiex/scripts/kiex"
+# test -s "$HOME/.kiex/scripts/kiex" && source "$HOME/.kiex/scripts/kiex"
 
+# perl and ack
+export LC_CTYPE=en_US.UTF-8
+export LC_ALL=en_US.UTF-8
+
+# fnm
+export PATH=$HOME/.fnm:$PATH
+eval "`fnm env --multi`"
+
+export PATH=/usr/local/opt/avr-gcc@7/bin:$PATH
