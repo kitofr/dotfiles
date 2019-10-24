@@ -23,6 +23,7 @@
 	pr = pull -rebase
 	st = status
 	br = branch
+  local-branches = !git branch -vv | cut -c 3- | awk '$3 !~/\\[/ { print $1 }'
 [core]
 	editor = /usr/local/bin/nvim
   excludesfile = ~/.gitignore
