@@ -14,8 +14,10 @@ function! PackInit() abort
 
   call minpac#add('HerringtonDarkholme/yats.vim')
   call minpac#add('MarcWeber/vim-addon-mw-utils')
+  call minpac#add('airblade/vim-gitgutter')
   call minpac#add('altercation/vim-colors-solarized')
   call minpac#add('andrewradev/linediff.vim')
+  call minpac#add('cormacrelf/vim-colors-github')
   call minpac#add('editorconfig/editorconfig-vim')
   call minpac#add('ekalinin/Dockerfile.vim')
   call minpac#add('elixir-lang/vim-elixir')
@@ -26,10 +28,10 @@ function! PackInit() abort
   call minpac#add('joshdick/onedark.vim')
   call minpac#add('joukevandermaas/vim-ember-hbs')
   call minpac#add('jparise/vim-graphql')
+  call minpac#add('jremmen/vim-ripgrep')
   call minpac#add('junegunn/fzf')
   call minpac#add('lumiliet/vim-twig')
   call minpac#add('majutsushi/tagbar')
-  call minpac#add('jremmen/vim-ripgrep')
   call minpac#add('mhartington/oceanic-next')
   call minpac#add('ntpeters/vim-better-whitespace')
   call minpac#add('othree/javascript-libraries-syntax.vim')
@@ -66,7 +68,8 @@ command! CleanCR execute "%s/\\r\\(\\n\\)/\\1/g"
 " syntax for razor
 " Bundle "https://github.com/othree/javascript-libraries-syntax.vim.git"
 
-filetype plugin indent on
+filetype indent on    " Enable filetype-specific indenting
+filetype plugin on    " Enable filetype-specific plugins
 
 set guifont=Inconsolata\ for\ Powerline:h15
 let g:Powerline_symbols = 'fancy'
@@ -103,19 +106,21 @@ let vimclojure#HighlightContrib=1
 let vimclojure#DynamicHighlighting=1
 let vimclojure#ParenRainbow=1
 
+" https://spotify.slack.com/archives/C06GE07RU/p1572878174102000
 set bs=2
 set vb
 set nu!
 set cursorline
-" set cursorcolumn
 set hlsearch
+set incsearch
+set smartcase
+set ignorecase
 set expandtab         " tabs to spaces, just do :retab
 set tabstop=2
 set softtabstop=2
+set shiftround
 set shiftwidth=2
 syntax on             " Enable syntax highlighting
-filetype indent on    " Enable filetype-specific indenting
-filetype plugin on    " Enable filetype-specific plugins
 compiler ruby         " Enable compiler support for ruby
 set nowrap
 set mouse=a
@@ -124,7 +129,6 @@ let g:calendar_monday = 1
 vnoremap <C-r> "hy:%s/<C-r>h//gc<left><left><left>
 runtime macros/matchit.vim
 
-set incsearch ignorecase hlsearch
 nnoremap <silent> <Space> :silent noh<Bar>echo<CR>
 nnoremap <C-p> :<C-u>FZF<CR>
 
@@ -134,14 +138,13 @@ let g:ale_lint_on_text_changed = 'never'
 " You can disable this option too
 " if you don't want linters to run on opening a file
 let g:ale_lint_on_enter = 0
-let g:ale_sign_error = '❌'
-let g:ale_sign_warning = '⚠️'
+" let g:ale_sign_error = '❌'
+" let g:ale_sign_warning = '⚠️'
 " let g:ale_fixers['javascript'] = ['eslint']
 
 " Fix files automatically on save
 let g:ale_fix_on_save = 1
 
-filetype on           " Enable filetype detection
 " remove scrollers...
 setglobal guioptions-=T     " Disable toolbars by default
 setglobal guioptions-=L
@@ -248,8 +251,11 @@ let g:syntastic_auto_loc_list = 1
 " let g:syntastic_debug = 3
 
 let g:airline_powerline_fonts = 1
-let g:airline_theme='oceanicnext'
+let g:airline_theme='aurora'
 
+let g:airline_section_a='%{toupper(mode())}'
+let g:airline_section_x=''
+let g:airline_section_y=''
 
 " Global backup dir
 set backupdir=~/.vim/swp
@@ -279,3 +285,4 @@ map <leader>nt :NERDTree%<cr>
 
 "Ripgrep word under cursor
 map <leader>f :Rg <c-r>=expand("<cword>")<cr>
+map <leader>ft :Rg <c-r>=expand("<cword>")<cr> -t
