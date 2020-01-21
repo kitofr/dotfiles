@@ -17,7 +17,6 @@ alias dcd='docker-compose down --remove-orphans --volumes'
 alias dcl='docker-compose logs'
 alias dcr='docker-compose run'
 alias dcu='docker-compose up'
-alias elm='./node_modules/.bin/elm'
 alias less='less -N'
 alias lla='ll -a'
 alias lll='ll -a | lolcat'
@@ -44,6 +43,7 @@ alias docker_kill_volumes="docker volume rm $(docker volume ls -qf dangling=true
 
 #javacript
 alias yarni='yarn install --prefer-offline'
+alias jtags="ctags -R embed-podcast embed js mobile-web-player server test && sed -i ‘’ -E ‘/^(if|switch|function|module\.exports|it|describe).+language:js$/d’ tags"
 
 #git
 alias g='git'
@@ -61,6 +61,7 @@ alias gst='git status'
 alias gup='git pull -v -n --rebase'
 alias gclean='git clean -fd'
 alias gshowf='git show --name-only --oneline'
+alias gdeletemerged='git branch --merged | egrep -v "(^\*|master|dev)" | xargs git branch -d'
 
 # tmux
 alias tls="tmux ls"
@@ -115,3 +116,5 @@ export PATH=$HOME/.fnm:$PATH
 eval "`fnm env --multi`"
 
 export PATH=/usr/local/opt/avr-gcc@7/bin:$PATH
+
+export PATH="$HOME/.yarn/bin:$HOME/.config/yarn/global/node_modules/.bin:$PATH"
