@@ -27,7 +27,7 @@ alias rcop='rubocop -c ~/Projects/style-guide/rubocop.yml'
 alias vi='nvim'
 alias vim='nvim' #use vim8 from brew
 alias weather='curl wttr.in/~Stockholm'
-alias work='cd ~/code/spotify/client-web/open/'
+alias work='cd ~/code/spotify/'
 
 # Ruby
 alias be='noglob bundle exec'
@@ -57,6 +57,7 @@ alias gd='git diff --color=always'
 alias gca='git commit -av'
 alias gco='git checkout'
 alias gcv='git commit -av --no-verify'
+alias grc='git rebase --continue'
 alias gst='git status'
 alias gup='git pull -v -n --rebase'
 alias gclean='git clean -fd'
@@ -107,6 +108,17 @@ vim_show() {
 #keix elixir
 # test -s "$HOME/.kiex/scripts/kiex" && source "$HOME/.kiex/scripts/kiex"
 
+# java
+export JAVA_11_HOME=$(/usr/libexec/java_home -v11)
+export JAVA_13_HOME=$(/usr/libexec/java_home -v13)
+
+alias java11='export JAVA_HOME=$JAVA_11_HOME'
+alias java13='export JAVA_HOME=$JAVA_13_HOME'
+
+# default to Java 11
+java11
+
+
 # perl and ack
 export LC_CTYPE=en_US.UTF-8
 export LC_ALL=en_US.UTF-8
@@ -115,6 +127,7 @@ export LC_ALL=en_US.UTF-8
 export PATH=$HOME/.fnm:$PATH
 eval "`fnm env --multi`"
 
-export PATH=/usr/local/opt/avr-gcc@7/bin:$PATH
+export CPPFLAGS="-I/usr/local/opt/openjdk/include"
 
-export PATH="$HOME/.yarn/bin:$HOME/.config/yarn/global/node_modules/.bin:$PATH"
+export PATH=/usr/local/opt/avr-gcc@7/bin:$PATH
+export PATH="$JAVA_HOME/bin:$HOME/.yarn/bin:$HOME/.config/yarn/global/node_modules/.bin:$PATH"
