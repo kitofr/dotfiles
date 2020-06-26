@@ -4,7 +4,7 @@ if [[ -s "${ZDOTDIR:-$HOME}/.zprezto/init.zsh" ]]; then
    source "${ZDOTDIR:-$HOME}/.zprezto/init.zsh"
 fi
 
-
+export AGNOSTER_PROMPT_SEGMENTS[2]=
 export TERM="xterm-256color"
 
 # Work related aliases
@@ -60,6 +60,7 @@ alias gcv='git commit -av --no-verify'
 alias grc='git rebase --continue'
 alias gst='git status'
 alias gup='git pull -v -n --rebase'
+alias gitk='/usr/local/bin/gitk'
 alias gclean='git clean -fd'
 alias gshowf='git show --name-only --oneline'
 alias gdeletemerged='git branch --merged | egrep -v "(^\*|master|dev)" | xargs git branch -d'
