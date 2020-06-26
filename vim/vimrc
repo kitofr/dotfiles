@@ -25,13 +25,12 @@ function! PackInit() abort
   call minpac#add('garbas/vim-snipmate')
   call minpac#add('isRuslan/vim-es6')
   call minpac#add('jelera/vim-javascript-syntax')
-  call minpac#add('joshdick/onedark.vim')
   call minpac#add('joukevandermaas/vim-ember-hbs')
   call minpac#add('jparise/vim-graphql')
   call minpac#add('jremmen/vim-ripgrep')
   call minpac#add('junegunn/fzf')
-  call minpac#add('lumiliet/vim-twig')
   call minpac#add('leafgarland/typescript-vim')
+  call minpac#add('lumiliet/vim-twig')
   call minpac#add('majutsushi/tagbar')
   call minpac#add('mhartington/oceanic-next')
   call minpac#add('ntpeters/vim-better-whitespace')
@@ -39,6 +38,7 @@ function! PackInit() abort
   call minpac#add('pangloss/vim-javascript')
   call minpac#add('radenling/vim-dispatch-neovim')
   call minpac#add('scrooloose/nerdtree')
+  call minpac#add('stefandtw/quickfix-reflector.vim')
   call minpac#add('thoughtbot/vim-rspec')
   call minpac#add('tomtom/tlib_vim')
   call minpac#add('tpope/vim-bundler')
@@ -55,7 +55,6 @@ function! PackInit() abort
   call minpac#add('vim-scripts/VimClojure')
   call minpac#add('vim-scripts/align')
   call minpac#add('w0rp/ale')
-
 endfunction
 
 command! PackUpdate call PackInit() | call minpac#update('', {'do': 'call minpac#status()'})
@@ -116,9 +115,9 @@ set hlsearch
 set incsearch
 set smartcase
 set ignorecase
-set expandtab         " tabs to spaces, just do :retab
-set tabstop=2
-set softtabstop=2
+" set expandtab         " tabs to spaces, just do :retab
+set tabstop=2         " Let's use editorconfig
+" set softtabstop=2
 set shiftround
 set shiftwidth=2
 syntax on             " Enable syntax highlighting
@@ -191,7 +190,7 @@ endfunction
 augroup AutoGroup
   if has("autocmd")
     autocmd!
-    autocmd bufwritepost .vimrc source $MYVIMRC
+    " autocmd bufwritepost .vimrc source $MYVIMRC
     autocmd BufNewFile,BufReadPost Gemfile setfiletype ruby
     autocmd BufNewFile,BufReadPost Guardfile setfiletype ruby
     autocmd BufNewFile,BufReadPost Dockerfile setfiletype config
@@ -237,7 +236,7 @@ endif
 
 " Theme
 syntax enable
-colorscheme oceanicnext
+colorscheme OceanicNext
 
 hi clear SpellBad
 hi SpellBad cterm=underline,bold ctermfg=red
@@ -264,6 +263,7 @@ let g:airline_section_y=''
 " Global backup dir
 set backupdir=~/.vim/swp
 set directory=~/.vim/swp
+set nowritebackup
 
 " CTRLP ignore
 let g:ctrlp_custom_ignore = {
