@@ -1,11 +1,11 @@
 local wezterm = require 'wezterm';
 return {
-	font_size = 14.0,
+  font_size = 14.0,
   font = wezterm.font("Fira Code"),
-	color_scheme = "BlueBerry Pie",
+  color_scheme = "BlueBerry Pie",
 
 
-	-- timeout_milliseconds defaults to 1000 and can be omitted
+  -- timeout_milliseconds defaults to 1000 and can be omitted
   leader = { key="a", mods="CTRL", timeout_milliseconds=1000 },
   keys = {
     {key="h", mods="LEADER", action=wezterm.action{SplitHorizontal={domain="CurrentPaneDomain"}}},
@@ -16,7 +16,7 @@ return {
     {key="a", mods="LEADER|CTRL", action=wezterm.action{SendString="\x01"}},
   },
 
-	colors = {
+  colors = {
     tab_bar = {
       background = "#0b0022",
 
@@ -38,5 +38,5 @@ return {
 
       }
     }
-	}
+  }
 }
