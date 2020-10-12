@@ -52,6 +52,7 @@ alias gs='git status'
 alias gsu='git status -uno'
 alias gl='git l'
 alias gp='git push'
+alias gpv='git push --no-verify'
 alias gc='git commit -v'
 alias gd='git diff --color=always'
 alias gca='git commit -av'
@@ -64,6 +65,7 @@ alias gitk='/usr/local/bin/gitk'
 alias gclean='git clean -fd'
 alias gshowf='git show --name-only --oneline'
 alias gdeletemerged='git branch --merged | egrep -v "(^\*|master|dev)" | xargs git branch -d'
+alias gcountauthor='git shortlog -sn'
 
 # tmux
 alias tls="tmux ls"
@@ -106,9 +108,6 @@ vim_show() {
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 
-#keix elixir
-# test -s "$HOME/.kiex/scripts/kiex" && source "$HOME/.kiex/scripts/kiex"
-
 # java
 export JAVA_11_HOME=$(/usr/libexec/java_home -v11)
 export JAVA_13_HOME=$(/usr/libexec/java_home -v13)
@@ -125,10 +124,13 @@ export LC_CTYPE=en_US.UTF-8
 export LC_ALL=en_US.UTF-8
 
 # fnm
-export PATH=$HOME/.fnm:$PATH
-eval "`fnm env --multi`"
+# export PATH=$HOME/.fnm:$PATH
+# eval "`fnm env --multi`"
 
 export CPPFLAGS="-I/usr/local/opt/openjdk/include"
 
 export PATH=/usr/local/opt/avr-gcc@7/bin:$PATH
 export PATH="$JAVA_HOME/bin:$HOME/.yarn/bin:$HOME/.config/yarn/global/node_modules/.bin:$PATH"
+
+export ERL_AFLAGS="-kernel shell_history enabled"
+. /usr/local/opt/asdf/asdf.sh
