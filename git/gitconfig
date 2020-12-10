@@ -1,6 +1,7 @@
 [user]
 	name = Kristoffer Roupé
 	email = kitofr@gmail.com
+	useConfigOnly = true
 [push]
 	default = simple
 [color]
