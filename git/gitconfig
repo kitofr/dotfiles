@@ -5,14 +5,28 @@
 [push]
 	default = simple
 [color]
-	ui = true
+  diff = auto
+  status = auto
+  branch = auto
+  interactive = auto
+  ui = true
+  pager = true
+[color "status"]
+  added = green
+  changed = red bold
+  untracked = magenta bold
+[color "branch"]
+  remote = yellow
 [alias]
 	l = log --color --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit
+	lc = log --color
 	g = grep --line-number --ignore-case
 	s = status
-	pr = pull -rebase
 	st = status
 	br = branch
+  local-branches = !git branch -vv | cut -c 3- | awk '$3 !~/\\[/ { print $1 }'
+	addcw = -c interactive.diffFilter=\"git diff --color-words\" add -p
+  branch-age = for-each-ref --sort=authordate --format '%(authordate:iso) <%(refname:short)> - %(subject)' refs/heads
 [core]
 	editor = /usr/local/bin/nvim
   excludesfile = ~/.gitignore

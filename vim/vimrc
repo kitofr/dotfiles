@@ -8,32 +8,37 @@ filetype on
 
 function! PackInit() abort
   packadd minpac
-  
+
   call minpac#init()
   call minpac#add('k-takata/minpac', {'type': 'opt'})
 
   call minpac#add('HerringtonDarkholme/yats.vim')
   call minpac#add('MarcWeber/vim-addon-mw-utils')
+  call minpac#add('airblade/vim-gitgutter')
   call minpac#add('altercation/vim-colors-solarized')
   call minpac#add('andrewradev/linediff.vim')
+  call minpac#add('cormacrelf/vim-colors-github')
   call minpac#add('editorconfig/editorconfig-vim')
   call minpac#add('ekalinin/Dockerfile.vim')
   call minpac#add('elixir-lang/vim-elixir')
   call minpac#add('elmcast/elm-vim')
   call minpac#add('garbas/vim-snipmate')
-  call minpac#add('iamcco/markdown-preview.nvim')
   call minpac#add('isRuslan/vim-es6')
   call minpac#add('jelera/vim-javascript-syntax')
-  call minpac#add('joshdick/onedark.vim')
   call minpac#add('joukevandermaas/vim-ember-hbs')
   call minpac#add('jparise/vim-graphql')
+  call minpac#add('jremmen/vim-ripgrep')
   call minpac#add('junegunn/fzf')
+  call minpac#add('leafgarland/typescript-vim')
+  call minpac#add('lumiliet/vim-twig')
   call minpac#add('majutsushi/tagbar')
   call minpac#add('mhartington/oceanic-next')
+  call minpac#add('ntpeters/vim-better-whitespace')
+  call minpac#add('othree/javascript-libraries-syntax.vim')
   call minpac#add('pangloss/vim-javascript')
   call minpac#add('radenling/vim-dispatch-neovim')
-  call minpac#add('rking/ag.vim')
   call minpac#add('scrooloose/nerdtree')
+  call minpac#add('stefandtw/quickfix-reflector.vim')
   call minpac#add('thoughtbot/vim-rspec')
   call minpac#add('tomtom/tlib_vim')
   call minpac#add('tpope/vim-bundler')
@@ -50,7 +55,6 @@ function! PackInit() abort
   call minpac#add('vim-scripts/VimClojure')
   call minpac#add('vim-scripts/align')
   call minpac#add('w0rp/ale')
-
 endfunction
 
 command! PackUpdate call PackInit() | call minpac#update('', {'do': 'call minpac#status()'})
@@ -62,13 +66,12 @@ command! ExpandSplit execute "vertical resize 800"
 command! CleanCR execute "%s/\\r\\(\\n\\)/\\1/g"
 
 " syntax for razor
-" Bundle "adamclerk/vim-razor"
-" 
 " Bundle "https://github.com/othree/javascript-libraries-syntax.vim.git"
 
-filetype plugin indent on
+filetype indent on    " Enable filetype-specific indenting
+filetype plugin on    " Enable filetype-specific plugins
 
-set guifont=Inconsolata\ for\ Powerline:h15
+set guifont=Fira\ Code:h15
 let g:Powerline_symbols = 'fancy'
 set encoding=utf-8
 set fillchars+=stl:\ ,stlnc:\
@@ -103,19 +106,21 @@ let vimclojure#HighlightContrib=1
 let vimclojure#DynamicHighlighting=1
 let vimclojure#ParenRainbow=1
 
+" https://spotify.slack.com/archives/C06GE07RU/p1572878174102000
 set bs=2
 set vb
 set nu!
 set cursorline
-" set cursorcolumn
 set hlsearch
-set expandtab         " tabs to spaces, just do :retab
-set tabstop=2
-set softtabstop=2
+set incsearch
+set smartcase
+set ignorecase
+" set expandtab         " tabs to spaces, just do :retab
+set tabstop=2         " Let's use editorconfig
+" set softtabstop=2
+set shiftround
 set shiftwidth=2
 syntax on             " Enable syntax highlighting
-filetype indent on    " Enable filetype-specific indenting
-filetype plugin on    " Enable filetype-specific plugins
 compiler ruby         " Enable compiler support for ruby
 set nowrap
 set mouse=a
@@ -124,11 +129,25 @@ let g:calendar_monday = 1
 vnoremap <C-r> "hy:%s/<C-r>h//gc<left><left><left>
 runtime macros/matchit.vim
 
-set incsearch ignorecase hlsearch
 nnoremap <silent> <Space> :silent noh<Bar>echo<CR>
 nnoremap <C-p> :<C-u>FZF<CR>
 
-filetype on           " Enable filetype detection
+" ALE / Lintng
+" Lint only on save
+let g:ale_lint_on_text_changed = 'never'
+" You can disable this option too
+" if you don't want linters to run on opening a file
+let g:ale_lint_on_enter = 0
+" let g:ale_sign_error = '❌'
+" let g:ale_sign_warning = '⚠️'
+" let g:ale_fixers['javascript'] = ['eslint']
+
+" Fix files automatically on save
+" let g:ale_fix_on_save = 1
+" Enable CTRL+J/K to move around errors
+nmap <silent> <C-k> <Plug>(ale_previous_wrap)
+nmap <silent> <C-j> <Plug>(ale_next_wrap)
+
 " remove scrollers...
 setglobal guioptions-=T     " Disable toolbars by default
 setglobal guioptions-=L
@@ -150,9 +169,6 @@ set listchars=tab:»\ ,trail:·
 "Vim masterclass
 xnoremap . :norm.<CR>
 
-" Preview markdown in macdown
-map <leader>pre :w<cr>:silent! !open -a MacDown % > /dev/null &<cr>:redraw!<cr>
-
 "Invisible character colors
 highlight NonText guifg=#4a4a59
 highlight SpecialKey guifg=#4a4a59
@@ -162,9 +178,6 @@ highlight SpecialKey guifg=#4a4a59
 """"""""""""""""""""""""""""""
 " Always show the status line
 set laststatus=2
-
-" tpope's
-set statusline=[%n]\ %<%.99f\ %h%w%m%r%{exists('*CapsLockStatusline')?CapsLockStatusline():''}%y%=%-16(\ %l,%c-%v\ %)%P
 
 " Returns true if paste mode is enabled
 function! HasPaste()
@@ -177,7 +190,7 @@ endfunction
 augroup AutoGroup
   if has("autocmd")
     autocmd!
-    autocmd bufwritepost .vimrc source $MYVIMRC
+    " autocmd bufwritepost .vimrc source $MYVIMRC
     autocmd BufNewFile,BufReadPost Gemfile setfiletype ruby
     autocmd BufNewFile,BufReadPost Guardfile setfiletype ruby
     autocmd BufNewFile,BufReadPost Dockerfile setfiletype config
@@ -223,36 +236,49 @@ endif
 
 " Theme
 syntax enable
-colorscheme oceanicnext
+colorscheme OceanicNext
 
-
-let g:syntastic_javascript_checkers = ['eslint']
-" let g:syntastic_javascript_eslint_exec = ['/usr/local/bin/eslint']
-" set statusline+=%#warningmsg#
-" set statusline+=%{SyntasticStatuslineFlag()}
-" set statusline+=%*
-
-" let g:syntastic_always_populate_loc_list = 1
-let g:syntastic_auto_loc_list = 1
-" let g:syntastic_check_on_open = 1
-" let g:syntastic_check_on_wq = 0
-" let g:syntastic_debug = 3
+hi clear SpellBad
+hi SpellBad cterm=underline,bold ctermfg=red
 
 let g:airline_powerline_fonts = 1
-let g:airline_theme='oceanicnext'
+let g:airline_theme='aurora'
 
+let g:airline_section_a='%{toupper(mode())}'
+let g:airline_section_x=''
+let g:airline_section_y=''
+let g:airline#extensions#branch#format = 1
 
 " Global backup dir
 set backupdir=~/.vim/swp
 set directory=~/.vim/swp
+set nowritebackup
 
 " CTRLP ignore
 let g:ctrlp_custom_ignore = {
-    \ 'dir': '\.git$\|\.hg$\|\.svn$\|bower_components$\|dist$\|node_modules$\|project_files$\|public$\|tmp$\|webpack$\|elm-stuff$\|_build$',
+    \ 'dir': '\.git$\|\.hg$\|\.svn$\|bower_components$\|dist$\|node_modules$\|project_files$\|public$\|tmp$\|webpack$\|elm-stuff$\|_build$\|__mocks__$',
     \ 'file': '\.exe$\|\.so$\|\.dll$\|\.pyc$' }
+
+" Search for visual with *
+" xnoremap * :<C-u>
+" call <SID>VSetSearch()<CR>/<C-R>=@/<CR><CR>
+"
+" function! s:VSetSearch()
+"   let temp = @s
+"   norm! gv"sy
+"   let @/ = '\V' . substitute(escape(@s, '/\'), '\n', '\\n', 'g')
+"   let @s = temp
+" endfunction
 
 " Spell
 nmap <Leader>s :setlocal spell! spelllang=en_us<CR>
 
 "NERDTREE
 map <leader>nt :NERDTree%<cr>
+
+"Ripgrep word under cursor
+map <leader>f :Rg <c-r>=expand("<cword>")<cr>
+map <leader>ft :Rg <c-r>=expand("<cword>")<cr> -t
+map <leader>jf :set ft=json<cr><Esc>:%!python -m json.tool<cr>
+:command! -nargs=1 -range SuperRetab <line1>,<line2>s/\v%(^ *)@<= {<args>}/\t/g
+

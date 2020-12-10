@@ -1,31 +1,33 @@
-#Add new vcr cassettes and remove specs. Path to your oh-my-zsh configuration.
+#zmodload zsh/zprof
+
 if [[ -s "${ZDOTDIR:-$HOME}/.zprezto/init.zsh" ]]; then
-  source "${ZDOTDIR:-$HOME}/.zprezto/init.zsh"
+   source "${ZDOTDIR:-$HOME}/.zprezto/init.zsh"
 fi
 
+export AGNOSTER_PROMPT_SEGMENTS[2]=
 export TERM="xterm-256color"
 
 # Work related aliases
-alias vi='nvim'
-alias vim='nvim' #use vim8 from brew
-alias lla='ll -a'
-alias lll='ll -a | lolcat'
-alias my='cd ~/code/my/'
-alias code='cd ~/code/'
 alias agical='cd ~/code/work/agical/'
 alias cls='clear'
-alias rcop='rubocop -c ~/Projects/style-guide/rubocop.yml'
+alias code='cd ~/code/'
 alias dc='docker-compose'
-alias dcu='docker-compose up'
-alias dcl='docker-compose logs'
 alias dcb='docker-compose build'
-alias dcr='docker-compose run'
 alias dcd='docker-compose down --remove-orphans --volumes'
-alias myip='ifconfig | grep -e "inet\s"'
-alias weather='curl wttr.in/~Stockholm'
+alias dcl='docker-compose logs'
+alias dcr='docker-compose run'
+alias dcu='docker-compose up'
 alias less='less -N'
+alias lla='ll -a'
+alias lll='ll -a | lolcat'
 alias mutt='neomutt'
-alias elm='./node_modules/.bin/elm'
+alias my='cd ~/code/my/'
+alias myip='ifconfig | grep -e "inet\s"'
+alias rcop='rubocop -c ~/Projects/style-guide/rubocop.yml'
+alias vi='nvim'
+alias vim='nvim' #use vim8 from brew
+alias weather='curl wttr.in/~Stockholm'
+alias work='cd ~/code/spotify/'
 
 # Ruby
 alias be='noglob bundle exec'
@@ -41,6 +43,7 @@ alias docker_kill_volumes="docker volume rm $(docker volume ls -qf dangling=true
 
 #javacript
 alias yarni='yarn install --prefer-offline'
+alias jtags="ctags -R embed-podcast embed js mobile-web-player server test && sed -i ‘’ -E ‘/^(if|switch|function|module\.exports|it|describe).+language:js$/d’ tags"
 
 #git
 alias g='git'
@@ -49,20 +52,30 @@ alias gs='git status'
 alias gsu='git status -uno'
 alias gl='git l'
 alias gp='git push'
+alias gpv='git push --no-verify'
 alias gc='git commit -v'
-alias gd='git diff'
+alias gd='git diff --color=always'
 alias gca='git commit -av'
 alias gco='git checkout'
 alias gcv='git commit -av --no-verify'
+alias grc='git rebase --continue'
 alias gst='git status'
 alias gup='git pull -v -n --rebase'
+alias gitk='/usr/local/bin/gitk'
 alias gclean='git clean -fd'
 alias gshowf='git show --name-only --oneline'
+alias gdeletemerged='git branch --merged | egrep -v "(^\*|master|dev)" | xargs git branch -d'
+alias gcountauthor='git shortlog -sn'
 
 # tmux
 alias tls="tmux ls"
 alias tat="tmux attach -t"
 alias tns="tmux new -s"
+
+#nvm
+
+# spotify
+alias spm='npm --registry https://artifactory.spotify.net/artifactory/api/npm/virtual-npm --userconfig ~/.spmrc --always-auth=true'
 
 export VIMCONFIG=~/.vim
 export VIMDATA=~/.vim
@@ -95,12 +108,31 @@ vim_show() {
   vim $(git show --name-only --oneline "$1" | tail -n+2)
 }
 
-export NVM_DIR="$HOME/.nvm"
-[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
-[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
-
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 
-#keix elixir
-test -s "$HOME/.kiex/scripts/kiex" && source "$HOME/.kiex/scripts/kiex"
+# java
+export JAVA_11_HOME=$(/usr/libexec/java_home -v11)
+export JAVA_13_HOME=$(/usr/libexec/java_home -v13)
 
+alias java11='export JAVA_HOME=$JAVA_11_HOME'
+alias java13='export JAVA_HOME=$JAVA_13_HOME'
+
+# default to Java 11
+java11
+
+
+# perl and ack
+export LC_CTYPE=en_US.UTF-8
+export LC_ALL=en_US.UTF-8
+
+# fnm
+# export PATH=$HOME/.fnm:$PATH
+# eval "`fnm env --multi`"
+
+export CPPFLAGS="-I/usr/local/opt/openjdk/include"
+
+export PATH=/usr/local/opt/avr-gcc@7/bin:$PATH
+export PATH="$JAVA_HOME/bin:$HOME/.yarn/bin:$HOME/.config/yarn/global/node_modules/.bin:$PATH"
+
+export ERL_AFLAGS="-kernel shell_history enabled"
+. /usr/local/opt/asdf/asdf.sh
