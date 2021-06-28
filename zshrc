@@ -27,7 +27,6 @@ alias rcop='rubocop -c ~/Projects/style-guide/rubocop.yml'
 alias vi='nvim'
 alias vim='nvim' #use vim8 from brew
 alias weather='curl wttr.in/~Stockholm'
-alias work='cd ~/code/spotify/'
 
 # Ruby
 alias be='noglob bundle exec'
@@ -35,7 +34,7 @@ alias rake='noglob rake'
 alias brake='noglob bundle exec rake'
 alias rspec='noglob bundle exec rspec'
 alias guard='noglob bundle exec guard'
-alias pcat="pygmentize -f terminal256 -O style=native -g"
+alias cat="bat"
 alias mex="iex -S mix"
 alias docker_kill_ps="docker ps -aq | awk '{print $1}' | xargs docker rm -f"
 alias docker_kill_images="docker images -aq | awk '{print $1}' | xargs docker rmi -f"
@@ -44,6 +43,9 @@ alias docker_kill_volumes="docker volume rm $(docker volume ls -qf dangling=true
 #javacript
 alias yarni='yarn install --prefer-offline'
 alias jtags="ctags -R embed-podcast embed js mobile-web-player server test && sed -i ‘’ -E ‘/^(if|switch|function|module\.exports|it|describe).+language:js$/d’ tags"
+
+#kubectl
+alias k='kubectl'
 
 #git
 alias g='git'
@@ -59,12 +61,14 @@ alias gca='git commit -av'
 alias gco='git checkout'
 alias gcv='git commit -av --no-verify'
 alias grc='git rebase --continue'
+alias gra='git rebase --abort'
 alias gst='git status'
 alias gup='git pull -v -n --rebase'
 alias gitk='/usr/local/bin/gitk'
 alias gclean='git clean -fd'
 alias gshowf='git show --name-only --oneline'
 alias gdeletemerged='git branch --merged | egrep -v "(^\*|master|dev)" | xargs git branch -d'
+alias gremotemerged='git branch -r --merged | egrep -v "(^\*|master|dev)"'
 alias gcountauthor='git shortlog -sn'
 
 # tmux
@@ -72,10 +76,8 @@ alias tls="tmux ls"
 alias tat="tmux attach -t"
 alias tns="tmux new -s"
 
-#nvm
-
-# spotify
-alias spm='npm --registry https://artifactory.spotify.net/artifactory/api/npm/virtual-npm --userconfig ~/.spmrc --always-auth=true'
+#kubectl
+alias k='kubectl'
 
 export VIMCONFIG=~/.vim
 export VIMDATA=~/.vim
